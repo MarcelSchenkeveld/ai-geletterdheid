@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Icon from '../components/Icon.astro';
 import { url } from '../lib/url.ts';
 ---
 <BaseLayout
@@ -16,14 +17,16 @@ import { url } from '../lib/url.ts';
       <div class="flex flex-col sm:flex-row gap-3">
         <a
           href={url('/over/')}
-          class="inline-block px-5 py-3 bg-accent text-bg no-underline hover:bg-accent-hover rounded-sm font-medium"
+          class="inline-flex items-center gap-2 px-5 py-3 bg-accent text-bg no-underline hover:bg-accent-hover rounded-sm font-medium"
         >
           Bekijk het programma
+          <Icon name="arrow-right" size={18} />
         </a>
         <a
           href={url('/aanmelden/')}
-          class="inline-block px-5 py-3 border border-accent text-accent no-underline hover:bg-accent-soft rounded-sm font-medium"
+          class="inline-flex items-center gap-2 px-5 py-3 border border-accent text-accent no-underline hover:bg-accent-soft rounded-sm font-medium"
         >
+          <Icon name="mail" size={18} />
           Meld je aan
         </a>
       </div>
@@ -48,36 +51,56 @@ import { url } from '../lib/url.ts';
 
       <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none p-0 m-0">
         <li class="border border-rule rounded-md p-5 bg-white/40">
-          <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-3 m-0">Kickoff</p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
+              <Icon name="flag" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Kickoff</p>
+          </div>
           <div class="flex gap-1 mb-4" aria-hidden="true">
-            <span class="h-8 flex-1 bg-accent rounded-sm"></span>
+            <span class="h-2 flex-1 bg-accent rounded-sm"></span>
           </div>
           <p class="font-medium text-ink m-0">Werkweek 1</p>
           <p class="text-sm text-ink-muted mt-1 mb-0">Gezamenlijke start, eerste zelftest, kennismaking met casus 1.</p>
         </li>
         <li class="border border-rule rounded-md p-5 bg-white/40">
-          <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-3 m-0">Casus 1</p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
+              <Icon name="layers" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Casus 1</p>
+          </div>
           <div class="flex gap-1 mb-4" aria-hidden="true">
-            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
-            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
-            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
+            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
+            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
+            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
           </div>
           <p class="font-medium text-ink m-0">Werkweken 2 – 4</p>
           <p class="text-sm text-ink-muted mt-1 mb-0">Drie weken werken aan een commerciële casus. Aan het einde een vertaalslag naar je eigen Business Challenge.</p>
         </li>
         <li class="border border-rule rounded-md p-5 bg-white/40">
-          <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-3 m-0">Casus 2</p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
+              <Icon name="layers" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Casus 2</p>
+          </div>
           <div class="flex gap-1 mb-4" aria-hidden="true">
-            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
-            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
+            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
+            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
           </div>
           <p class="font-medium text-ink m-0">Werkweken 5 – 6</p>
           <p class="text-sm text-ink-muted mt-1 mb-0">Kortere, intensievere tweede casus. Opnieuw een vertaalslag naar je Business Challenge.</p>
         </li>
         <li class="border border-rule rounded-md p-5 bg-white/40">
-          <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-3 m-0">Afsluiting</p>
+          <div class="flex items-center gap-3 mb-4">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
+              <Icon name="check" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Afsluiting</p>
+          </div>
           <div class="flex gap-1 mb-4" aria-hidden="true">
-            <span class="h-8 flex-1 bg-accent rounded-sm"></span>
+            <span class="h-2 flex-1 bg-accent rounded-sm"></span>
           </div>
           <p class="font-medium text-ink m-0">Werkweek 7</p>
           <p class="text-sm text-ink-muted mt-1 mb-0">Tweede zelftest, integratie en doorkijk naar de rest van je studie.</p>
@@ -85,7 +108,10 @@ import { url } from '../lib/url.ts';
       </ol>
 
       <p class="text-sm mt-6 mb-0">
-        <a href={url('/architectuur/')}>Bekijk de volledige programma-opbouw →</a>
+        <a href={url('/architectuur/')} class="inline-flex items-center gap-1">
+          Bekijk de volledige programma-opbouw
+          <Icon name="arrow-right" size={16} />
+        </a>
       </p>
     </div>
   </section>
@@ -95,10 +121,16 @@ import { url } from '../lib/url.ts';
       <h2 class="text-2xl md:text-3xl mb-6 mt-0">Wat je per week doet</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-prose">
         <div>
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="users" size={20} />
+          </span>
           <h3 class="mb-2 mt-0">Eén werksessie per week</h3>
           <p class="text-ink-muted m-0">30 tot 60 minuten, binnen het gewone samenwerkend leren-blok. Je werkt aan de lopende casus, krijgt feedback en bespreekt lastige keuzes met elkaar.</p>
         </div>
         <div>
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="clock" size={20} />
+          </span>
           <h3 class="mb-2 mt-0">2 tot 5 uur in eigen tempo</h3>
           <p class="text-ink-muted m-0">De rest pak je wanneer het uitkomt. Deze tijd betaalt zich terug in het werk dat je toch al doet voor je Business Challenge en andere vakken.</p>
         </div>
@@ -114,6 +146,9 @@ import { url } from '../lib/url.ts';
           href={url('/over/')}
           class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
         >
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="compass" size={20} />
+          </span>
           <h3 class="mb-2 mt-0 text-ink">Over het programma</h3>
           <p class="text-sm text-ink-muted m-0">Voor wie het is, wat je eraan hebt, hoe het is opgebouwd.</p>
         </a>
@@ -121,6 +156,9 @@ import { url } from '../lib/url.ts';
           href={url('/weken/')}
           class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
         >
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="calendar" size={20} />
+          </span>
           <h3 class="mb-2 mt-0 text-ink">Per werkweek</h3>
           <p class="text-sm text-ink-muted m-0">Wat er in elke week gebeurt en wat je in eigen tempo doet.</p>
         </a>
@@ -128,6 +166,9 @@ import { url } from '../lib/url.ts';
           href={url('/casussen/')}
           class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
         >
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="layers" size={20} />
+          </span>
           <h3 class="mb-2 mt-0 text-ink">Casussen</h3>
           <p class="text-sm text-ink-muted m-0">De twee casussen uit de praktijk waaraan je werkt.</p>
         </a>
@@ -159,9 +200,10 @@ import { url } from '../lib/url.ts';
       </ol>
       <a
         href={url('/aanmelden/')}
-        class="inline-block px-5 py-3 bg-accent text-bg no-underline hover:bg-accent-hover rounded-sm font-medium"
+        class="inline-flex items-center gap-2 px-5 py-3 bg-accent text-bg no-underline hover:bg-accent-hover rounded-sm font-medium"
       >
         Naar het aanmeldformulier
+        <Icon name="arrow-right" size={18} />
       </a>
     </div>
   </section>

@@ -1,22 +1,136 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PlaceholderSection from '../../components/PlaceholderSection.astro';
+import Icon from '../../components/Icon.astro';
+import TijdlijnSchema from '../../components/TijdlijnSchema.astro';
+import { url } from '../../lib/url.ts';
 ---
 <BaseLayout
   title="Programma-opbouw"
   description="De zeven werkweken, de twee casussen en de momenten waarop je terugkoppelt naar je eigen Business Challenge."
 >
-  <PlaceholderSection
-    eyebrow="Placeholder · visuele tijdlijn volgt"
-    title="Programma-opbouw"
-    lede="De zeven werkweken, de twee casussen en de twee momenten waarop je het geleerde toepast op je eigen Business Challenge."
-    items={[
-      "Werkweek 1: plenaire kickoff, eerste zelftest, kennismaking met casus 1",
-      "Werkweken 2 – 4: casus 1 (drie weken); aan het einde vertaalslag naar je eigen Business Challenge",
-      "Werkweken 5 – 6: casus 2 (twee weken); opnieuw een vertaalslag naar je Business Challenge",
-      "Werkweek 7: plenaire afsluiting, tweede zelftest, integratie-reflectie",
-      "Visuele tijdlijn met de structuur 1 + 3 + 2 + 1 en markers voor beide vertaalslagen",
-    ]}
-    note="Tijdlijn wordt in stap 4 als volwaardig component uitgewerkt, met een gecomprimeerde versie in de header van elke weekpagina."
-  />
+  <section class="py-12 md:py-16">
+    <div class="max-w-3xl">
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Programma-opbouw</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Zo ziet het programma eruit</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Zeven werkweken in de structuur 1 + 3 + 2 + 1. Eén plenaire kickoff, drie weken aan de eerste casus, twee weken aan de tweede, en een plenaire afsluiting. Tussendoor twee momenten waarop je het geleerde toepast op je eigen Business Challenge.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-8 md:py-10 border-t border-rule">
+    <div class="max-w-5xl">
+      <TijdlijnSchema />
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Hoe je de tijdlijn leest</h2>
+      <dl class="space-y-6 max-w-prose">
+        <div class="flex gap-4 items-start">
+          <span class="flex-shrink-0 inline-block w-16 h-10 bg-accent rounded-sm" aria-hidden="true"></span>
+          <div>
+            <dt class="font-semibold m-0">Gevuld blok</dt>
+            <dd class="text-ink-muted m-0">Een plenaire werkweek: kickoff (werkweek 1) of afsluiting (werkweek 7). Je komt fysiek samen en de hele groep doorloopt hetzelfde.</dd>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="flex-shrink-0 inline-block w-16 h-10 bg-accent-soft border border-accent rounded-sm" aria-hidden="true"></span>
+          <div>
+            <dt class="font-semibold m-0">Open blok</dt>
+            <dd class="text-ink-muted m-0">Een werkweek binnen een lopende casus. Je werkt aan de casus, bent voor 30 tot 60 minuten samen en doet de rest in eigen tempo.</dd>
+          </div>
+        </div>
+        <div class="flex gap-4 items-start">
+          <span class="flex-shrink-0 inline-flex w-16 h-10 items-center justify-center text-accent">
+            <svg width="40" height="36" viewBox="0 0 40 36" fill="none" aria-hidden="true">
+              <line x1="20" y1="4" x2="20" y2="22" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 3" />
+              <path d="M16 20 L20 26 L24 20" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </span>
+          <div>
+            <dt class="font-semibold m-0">Vertaalslag-marker</dt>
+            <dd class="text-ink-muted m-0">Na werkweek 4 en werkweek 6 pas je de werkwijze uit de casus toe op je eigen Business Challenge. Geen extra opdracht; juist versnelling op het werk dat je toch al doet.</dd>
+          </div>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-5xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Per fase in het kort</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+        <article class="border border-rule rounded-md p-6 bg-white/40">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
+              <Icon name="flag" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Kickoff · werkweek 1</p>
+          </div>
+          <h3 class="mt-0 mb-2">Gezamenlijke start</h3>
+          <p class="text-ink-muted m-0">Kennismaking met de groep en met de eerste casus. Je vult de zelftest in en formuleert je eigen voornemen voor het programma.</p>
+        </article>
+        <article class="border border-rule rounded-md p-6 bg-white/40">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
+              <Icon name="layers" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Casus 1 · werkweken 2 – 4</p>
+          </div>
+          <h3 class="mt-0 mb-2">Eerste casus uit de praktijk</h3>
+          <p class="text-ink-muted m-0">Drie weken werken aan een commerciële casus waarin data, marketing en klantbeleving samenkomen. Aan het einde: vertaalslag naar je eigen Business Challenge.</p>
+        </article>
+        <article class="border border-rule rounded-md p-6 bg-white/40">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
+              <Icon name="layers" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Casus 2 · werkweken 5 – 6</p>
+          </div>
+          <h3 class="mt-0 mb-2">Tweede casus, andere klemtoon</h3>
+          <p class="text-ink-muted m-0">Korter en intensiever. Andere hoek, zelfde soort werk, zodat je ziet hoe je de aanpak kunt overzetten. Opnieuw een vertaalslag naar je Business Challenge.</p>
+        </article>
+        <article class="border border-rule rounded-md p-6 bg-white/40">
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
+              <Icon name="check" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Afsluiting · werkweek 7</p>
+          </div>
+          <h3 class="mt-0 mb-2">Synthese en doorkijk</h3>
+          <p class="text-ink-muted m-0">Tweede zelftest, gezamenlijke betekenisgeving, en wat je hier hebt opgebouwd nemen we mee naar de rest van je studie.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Wat een werkweek inhoudt</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-prose mb-8">
+        <div>
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="users" size={20} />
+          </span>
+          <h3 class="mb-2 mt-0">Eén werksessie</h3>
+          <p class="text-ink-muted m-0">30 tot 60 minuten in het samenwerkend leren-blok. Werken aan de casus, feedback ophalen, lastige keuzes bespreken.</p>
+        </div>
+        <div>
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="clock" size={20} />
+          </span>
+          <h3 class="mb-2 mt-0">2 tot 5 uur eigen werk</h3>
+          <p class="text-ink-muted m-0">Zelf doorbouwen in je eigen tempo. Deze tijd betaalt zich terug in het werk dat je toch al doet.</p>
+        </div>
+      </div>
+      <p class="m-0">
+        <a href={url('/weken/')} class="inline-flex items-center gap-1">
+          Per werkweek in detail
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </p>
+    </div>
+  </section>
 </BaseLayout>

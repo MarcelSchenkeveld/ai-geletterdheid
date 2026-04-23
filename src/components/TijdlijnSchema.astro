@@ -1,0 +1,154 @@
+---
+interface Week {
+  n: number;
+  phase: 'kickoff' | 'casus1' | 'casus2' | 'afsluiting';
+  hasTranslation?: boolean;
+}
+
+const weeks: Week[] = [
+  { n: 1, phase: 'kickoff' },
+  { n: 2, phase: 'casus1' },
+  { n: 3, phase: 'casus1' },
+  { n: 4, phase: 'casus1', hasTranslation: true },
+  { n: 5, phase: 'casus2' },
+  { n: 6, phase: 'casus2', hasTranslation: true },
+  { n: 7, phase: 'afsluiting' },
+];
+
+const phases = [
+  { key: 'kickoff', label: 'Kickoff', startIdx: 0, endIdx: 0 },
+  { key: 'casus1', label: 'Casus 1', startIdx: 1, endIdx: 3 },
+  { key: 'casus2', label: 'Casus 2', startIdx: 4, endIdx: 5 },
+  { key: 'afsluiting', label: 'Afsluiting', startIdx: 6, endIdx: 6 },
+];
+
+// Layout math (viewBox units)
+const startX = 40;
+const blockWidth = 92;
+const gap = 14;
+const blockY = 70;
+const blockHeight = 48;
+const width = startX * 2 + blockWidth * 7 + gap * 6; // 40+40 + 644 + 84 = 808
+const height = 220;
+
+const getBlockX = (i: number) => startX + i * (blockWidth + gap);
+const getBlockCenter = (i: number) => getBlockX(i) + blockWidth / 2;
+
+const phaseCenter = (p: { startIdx: number; endIdx: number }) => {
+  const left = getBlockX(p.startIdx);
+  const right = getBlockX(p.endIdx) + blockWidth;
+  return (left + right) / 2;
+};
+
+// Connector line between blocks within a phase
+const phaseBounds = phases.map((p) => ({
+  key: p.key,
+  left: getBlockX(p.startIdx),
+  right: getBlockX(p.endIdx) + blockWidth,
+}));
+---
+<figure class="not-prose my-4">
+  <svg
+    viewBox={`0 0 ${width} ${height}`}
+    xmlns="http://www.w3.org/2000/svg"
+    class="w-full h-auto"
+    role="img"
+    aria-labelledby="tijdlijn-title tijdlijn-desc"
+  >
+    <title id="tijdlijn-title">Programma-opbouw: zeven werkweken</title>
+    <desc id="tijdlijn-desc">
+      Horizontale tijdlijn van het programma. Werkweek 1 is de plenaire kickoff. Werkweken 2, 3 en 4 vormen casus 1; na werkweek 4 volgt een vertaalslag naar de eigen Business Challenge. Werkweken 5 en 6 vormen casus 2; na werkweek 6 volgt opnieuw een vertaalslag. Werkweek 7 is de plenaire afsluiting.
+    </desc>
+
+    {/* Phase labels */}
+    {phases.map((p) => (
+      <text
+        x={phaseCenter(p)}
+        y={38}
+        text-anchor="middle"
+        style="fill: var(--color-ink-muted); font-family: var(--font-sans); font-size: 12px; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase;"
+      >
+        {p.label}
+      </text>
+    ))}
+
+    {/* Phase bracket lines (subtle underline for each phase) */}
+    {phaseBounds.map((p) => (
+      <line
+        x1={p.left}
+        y1={50}
+        x2={p.right}
+        y2={50}
+        style="stroke: var(--color-rule); stroke-width: 1;"
+      />
+    ))}
+
+    {/* Week blocks */}
+    {weeks.map((w, i) => {
+      const accent = w.phase === 'kickoff' || w.phase === 'afsluiting';
+      const x = getBlockX(i);
+      const cx = getBlockCenter(i);
+      return (
+        <>
+          <rect
+            x={x}
+            y={blockY}
+            width={blockWidth}
+            height={blockHeight}
+            rx="3"
+            style={accent
+              ? 'fill: var(--color-accent); stroke: var(--color-accent); stroke-width: 1;'
+              : 'fill: var(--color-accent-soft); stroke: var(--color-accent); stroke-width: 1;'}
+          />
+          <text
+            x={cx}
+            y={blockY + blockHeight / 2 + 5}
+            text-anchor="middle"
+            style={accent
+              ? 'fill: var(--color-bg); font-family: var(--font-sans); font-size: 13px; font-weight: 600;'
+              : 'fill: var(--color-accent); font-family: var(--font-sans); font-size: 13px; font-weight: 600;'}
+          >
+            Wk {w.n}
+          </text>
+        </>
+      );
+    })}
+
+    {/* Vertaalslag markers */}
+    {weeks.map((w, i) => {
+      if (!w.hasTranslation) return null;
+      const markerX = getBlockX(i) + blockWidth + gap / 2;
+      const topY = blockY + blockHeight + 6;
+      const bottomY = blockY + blockHeight + 30;
+      const labelY = blockY + blockHeight + 52;
+      return (
+        <>
+          <line
+            x1={markerX}
+            y1={topY}
+            x2={markerX}
+            y2={bottomY - 2}
+            style="stroke: var(--color-accent); stroke-width: 1.5; stroke-dasharray: 2 3;"
+          />
+          <path
+            d={`M ${markerX - 4} ${bottomY - 4} L ${markerX} ${bottomY + 2} L ${markerX + 4} ${bottomY - 4}`}
+            style="fill: none; stroke: var(--color-accent); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round;"
+          />
+          <text
+            x={markerX}
+            y={labelY}
+            text-anchor="middle"
+            style="fill: var(--color-ink-muted); font-family: var(--font-sans); font-size: 11px;"
+          >
+            Vertaalslag naar
+            <tspan x={markerX} dy="13">je Business Challenge</tspan>
+          </text>
+        </>
+      );
+    })}
+  </svg>
+
+  <figcaption class="text-sm text-ink-muted mt-3 max-w-prose">
+    Zeven werkweken in de structuur 1 + 3 + 2 + 1. De gemarkeerde momenten na werkweek 4 en werkweek 6 zijn de vertaalslagen waarin je het geleerde toepast op je eigen Business Challenge.
+  </figcaption>
+</figure>
