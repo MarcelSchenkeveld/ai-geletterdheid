@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PlaceholderSection from '../../components/PlaceholderSection.astro';
+---
+<BaseLayout
+  title="Zelftest"
+  description="Waarom de zelftest er is, wanneer je hem invult en wat er met je antwoorden gebeurt."
+>
+  <PlaceholderSection
+    title="Zelftest"
+    lede="De zelftest is op zichzelf een leermoment: je maakt je eigen positie zichtbaar voor jezelf. Je vult hem twee keer in, aan het begin en aan het einde van het programma."
+    items={[
+      "Waarom: eigenaarschap over je eigen leerproces, afstemming van het aanbod, voortgang zichtbaar maken",
+      "Wanneer: in werkweek 1 en werkweek 7 (en eventueel een tussenmeting)",
+      "Hoe: via Microsoft Forms, ingebedde link volgt",
+      "Wat met je antwoorden: we werken met deelnemerscodes, niet met namen. AVG-proof by design.",
+      "Terugkoppeling: je ziet zelf je groei tussen begin en eind; geaggregeerde inzichten worden teruggekoppeld in werkweek 7",
+    ]}
+    note="Forms-link wordt ingebed zodra het instrument klaar is."
+  />
+</BaseLayout>

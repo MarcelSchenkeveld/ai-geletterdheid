@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/url.ts';
+---
+<BaseLayout
+  title="AI-geletterdheid voor hoofdfase-studenten"
+  description="Zeven weken, twee casussen uit de praktijk, werk dat direct rendeert in je Business Challenge."
+>
+  <section class="py-12 md:py-20">
+    <div class="max-w-3xl">
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Fontys Commerciële Economie · hoofdfase</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">AI-geletterdheid voor hoofdfase-studenten</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-8 max-w-prose">
+        Zeven weken, twee casussen uit de praktijk, en werk dat direct rendeert in je Business Challenge. Vrijwillig, maar voor het werk dat je toch al doet.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3">
+        <a
+          href={url('/over/')}
+          class="inline-block px-5 py-3 bg-accent text-bg no-underline hover:bg-accent-hover rounded-sm font-medium"
+        >
+          Bekijk het programma
+        </a>
+        <a
+          href={url('/aanmelden/')}
+          class="inline-block px-5 py-3 border border-accent text-accent no-underline hover:bg-accent-soft rounded-sm font-medium"
+        >
+          Meld je aan
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Wat dit programma is</h2>
+      <div class="space-y-5 text-lg leading-relaxed max-w-prose">
+        <p class="m-0">Een facultatief programma binnen Commerciële Economie dat je leert hoe je AI serieus inzet in je eigen werk. Geen losse tool-trucs, maar werken aan echte vragen uit de commerciële praktijk met AI erbij.</p>
+        <p class="m-0">De vaardigheden die je hier opbouwt zijn niet optioneel in het werk dat je straks doet. Ze maken je onderzoek scherper, je marketingplan sterker, en je Business Challenge beter. Geen extra studiepunten; wel winst op het werk dat je toch al doet.</p>
+        <p class="m-0">Je kiest zelf of je meedoet. Die keuze maak je bewust, aan het begin, en dat is geen formaliteit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-5xl">
+      <h2 class="text-2xl md:text-3xl mb-2 mt-0">Zeven werkweken, één ritme</h2>
+      <p class="text-ink-muted mb-8 max-w-prose">Na een plenaire kickoff werk je aan twee casussen. Tussendoor pas je het geleerde twee keer toe op je eigen Business Challenge. In de laatste week trek je het geheel samen.</p>
+
+      <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none p-0 m-0">
+        <li class="border border-rule rounded-md p-5 bg-white/40">
+          <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-3 m-0">Kickoff</p>
+          <div class="flex gap-1 mb-4" aria-hidden="true">
+            <span class="h-8 flex-1 bg-accent rounded-sm"></span>
+          </div>
+          <p class="font-medium text-ink m-0">Werkweek 1</p>
+          <p class="text-sm text-ink-muted mt-1 mb-0">Gezamenlijke start, eerste zelftest, kennismaking met casus 1.</p>
+        </li>
+        <li class="border border-rule rounded-md p-5 bg-white/40">
+          <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-3 m-0">Casus 1</p>
+          <div class="flex gap-1 mb-4" aria-hidden="true">
+            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
+            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
+            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
+          </div>
+          <p class="font-medium text-ink m-0">Werkweken 2 – 4</p>
+          <p class="text-sm text-ink-muted mt-1 mb-0">Drie weken werken aan een commerciële casus. Aan het einde een vertaalslag naar je eigen Business Challenge.</p>
+        </li>
+        <li class="border border-rule rounded-md p-5 bg-white/40">
+          <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-3 m-0">Casus 2</p>
+          <div class="flex gap-1 mb-4" aria-hidden="true">
+            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
+            <span class="h-8 flex-1 bg-accent-soft rounded-sm"></span>
+          </div>
+          <p class="font-medium text-ink m-0">Werkweken 5 – 6</p>
+          <p class="text-sm text-ink-muted mt-1 mb-0">Kortere, intensievere tweede casus. Opnieuw een vertaalslag naar je Business Challenge.</p>
+        </li>
+        <li class="border border-rule rounded-md p-5 bg-white/40">
+          <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-3 m-0">Afsluiting</p>
+          <div class="flex gap-1 mb-4" aria-hidden="true">
+            <span class="h-8 flex-1 bg-accent rounded-sm"></span>
+          </div>
+          <p class="font-medium text-ink m-0">Werkweek 7</p>
+          <p class="text-sm text-ink-muted mt-1 mb-0">Tweede zelftest, integratie en doorkijk naar de rest van je studie.</p>
+        </li>
+      </ol>
+
+      <p class="text-sm mt-6 mb-0">
+        <a href={url('/architectuur/')}>Bekijk de volledige programma-opbouw →</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Wat je per week doet</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-prose">
+        <div>
+          <h3 class="mb-2 mt-0">Eén werksessie per week</h3>
+          <p class="text-ink-muted m-0">30 tot 60 minuten, binnen het gewone samenwerkend leren-blok. Je werkt aan de lopende casus, krijgt feedback en bespreekt lastige keuzes met elkaar.</p>
+        </div>
+        <div>
+          <h3 class="mb-2 mt-0">2 tot 5 uur in eigen tempo</h3>
+          <p class="text-ink-muted m-0">De rest pak je wanneer het uitkomt. Deze tijd betaalt zich terug in het werk dat je toch al doet voor je Business Challenge en andere vakken.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-5xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Drie routes vanaf hier</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <a
+          href={url('/over/')}
+          class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
+        >
+          <h3 class="mb-2 mt-0 text-ink">Over het programma</h3>
+          <p class="text-sm text-ink-muted m-0">Voor wie het is, wat je eraan hebt, hoe het is opgebouwd.</p>
+        </a>
+        <a
+          href={url('/weken/')}
+          class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
+        >
+          <h3 class="mb-2 mt-0 text-ink">Per werkweek</h3>
+          <p class="text-sm text-ink-muted m-0">Wat er in elke week gebeurt en wat je in eigen tempo doet.</p>
+        </a>
+        <a
+          href={url('/casussen/')}
+          class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
+        >
+          <h3 class="mb-2 mt-0 text-ink">Casussen</h3>
+          <p class="text-sm text-ink-muted m-0">De twee casussen uit de praktijk waaraan je werkt.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Meedoen begint met een bewuste keuze</h2>
+      <p class="text-ink-muted mb-8 max-w-prose">Niet iedereen hoeft mee. Wie meedoet, spreekt dat aan het begin expliciet uit. Dat verandert hoe je erin staat en hoeveel je eruit haalt.</p>
+      <ol class="space-y-4 mb-10 max-w-prose list-none p-0">
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-3xl text-accent leading-none pt-1">1</span>
+          <span>Lees op de <a href={url('/over/')}>info-pagina</a> wat het programma inhoudt.</span>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-3xl text-accent leading-none pt-1">2</span>
+          <span>Vul het korte <a href={url('/aanmelden/')}>aanmeldformulier</a> in.</span>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-3xl text-accent leading-none pt-1">3</span>
+          <span>Je ontvangt een persoonlijke welkomstmail met je deelnemerscode.</span>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-3xl text-accent leading-none pt-1">4</span>
+          <span>In werkweek 1 doe je de <a href={url('/zelftest/')}>zelftest</a> en formuleer je je eigen voornemen.</span>
+        </li>
+      </ol>
+      <a
+        href={url('/aanmelden/')}
+        class="inline-block px-5 py-3 bg-accent text-bg no-underline hover:bg-accent-hover rounded-sm font-medium"
+      >
+        Naar het aanmeldformulier
+      </a>
+    </div>
+  </section>
+</BaseLayout>

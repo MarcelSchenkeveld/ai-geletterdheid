@@ -1,0 +1,36 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { url } from '../lib/url.ts';
+
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Programma AI-geletterdheid voor Fontys Commerciële Economie' } = Astro.props;
+const fullTitle = title.toLowerCase().includes('ai-geletterdheid')
+  ? title
+  : `${title} · AI-geletterdheid`;
+---
+<!doctype html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{fullTitle}</title>
+    <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
+  </head>
+  <body>
+    <a href="#main" class="skip-link">Direct naar inhoud</a>
+    <Header />
+    <main id="main" class="flex-1">
+      <div class="mx-auto max-w-5xl px-4 md:px-6">
+        <slot />
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
