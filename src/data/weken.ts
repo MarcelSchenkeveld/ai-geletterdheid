@@ -5,9 +5,9 @@ export interface WeekInfo {
   oneliner: string;
   functie: 'start' | 'casus1' | 'casus2' | 'afronding';
   vertaalslag?: boolean;
+  vertaalslagLabel?: string;
   plenair?: boolean;
   periode: string;
-  dominantAccent: string;
 }
 
 export const weken: WeekInfo[] = [
@@ -19,64 +19,59 @@ export const weken: WeekInfo[] = [
     functie: 'start',
     plenair: true,
     periode: 'Week van 11 mei',
-    dominantAccent: 'regie',
   },
   {
     n: 2,
     slug: 'week-2',
-    kop: 'Casus 1 · verkennen',
-    oneliner: 'Je leert het vraagstuk kennen en kiest passende AI-toepassingen voor de eerste stappen.',
+    kop: 'Passende AI-toepassingen kiezen voor De Vier Vaten',
+    oneliner: 'Je presenteert welke twee tot drie AI-toepassingen je deze week wilt inzetten en waarom, en krijgt er een kritische vraag op terug.',
     functie: 'casus1',
     periode: 'Week van 18 mei',
-    dominantAccent: 'toepassen',
   },
   {
     n: 3,
     slug: 'week-3',
-    kop: 'Casus 1 · verdiepen',
-    oneliner: 'Creatief en analytisch denken met AI: alternatieven, tegenargumenten, eerste keuzes.',
+    kop: 'Scherper en breder denken met AI',
+    oneliner: 'Idee, tegenargument, keuze: in tweetallen werk je volgens een vast patroon om je propositie aan te scherpen.',
     functie: 'casus1',
     periode: 'Week van 25 mei',
-    dominantAccent: 'denken',
   },
   {
     n: 4,
     slug: 'week-4',
-    kop: 'Casus 1 afronden en eerste vertaalslag',
-    oneliner: 'Casus 1 leveren we op; je neemt iets van de werkwijze direct mee naar je Business Challenge.',
+    kop: 'Oplevering aan De Vier Vaten en eerste vertaalslag',
+    oneliner: 'Je levert het mini-plan op, leest in drietallen elkaars werk tegen en zet de eerste vertaalslag naar je eigen Business Challenge.',
     functie: 'casus1',
     vertaalslag: true,
+    vertaalslagLabel: 'Vertaalslag naar je Business Challenge',
     periode: 'Week van 1 juni',
-    dominantAccent: 'regie',
   },
   {
     n: 5,
     slug: 'week-5',
-    kop: 'Casus 2 · verkennen',
-    oneliner: 'Een nieuw vraagstuk in een ander domein, met je ervaring uit casus 1 op zak.',
+    kop: 'Vervolgvraag van De Vier Vaten, opnieuw kiezen',
+    oneliner: 'Nieuwe toolkeuze met je logboek uit casus 1 ernaast: wat houd je aan, wat doe je nu anders en waarom?',
     functie: 'casus2',
     periode: 'Week van 8 juni',
-    dominantAccent: 'toepassen',
   },
   {
     n: 6,
     slug: 'week-6',
-    kop: 'Casus 2 verdiepen en tweede vertaalslag',
-    oneliner: 'Scherpere keuzes onder tijdsdruk, en opnieuw een stap in je Business Challenge.',
+    kop: 'Scenarios wegen en vergelijkende vertaalslag',
+    oneliner: 'Drie wervingsscenarios kritisch toetsen, je advies scherpen en in je tweede vertaalslag vergelijken met vertaalslag 1.',
     functie: 'casus2',
     vertaalslag: true,
+    vertaalslagLabel: 'Vergelijkende vertaalslag',
     periode: 'Week van 15 juni',
-    dominantAccent: 'denken',
   },
   {
     n: 7,
     slug: 'week-7',
     kop: 'Terugblik en vervolgstappen',
-    oneliner: 'Tweede zelftest, wat is er veranderd in hoe je AI inzet, en wat neem je mee in je studie.',
+    oneliner: 'Tweede zelftest, wat is er veranderd in hoe je AI inzet, en met wie hou jij jezelf verantwoordelijk na dit programma.',
     functie: 'afronding',
     plenair: true,
     periode: 'Week van 22 juni',
-    dominantAccent: 'regie',
   },
 ];
 

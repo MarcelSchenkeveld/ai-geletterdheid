@@ -3,15 +3,17 @@ interface Week {
   n: number;
   phase: 'start' | 'casus1' | 'casus2' | 'afronding';
   hasTranslation?: boolean;
+  translationLine1?: string;
+  translationLine2?: string;
 }
 
 const weeks: Week[] = [
   { n: 1, phase: 'start' },
   { n: 2, phase: 'casus1' },
   { n: 3, phase: 'casus1' },
-  { n: 4, phase: 'casus1', hasTranslation: true },
+  { n: 4, phase: 'casus1', hasTranslation: true, translationLine1: 'Vertaalslag naar', translationLine2: 'je Business Challenge' },
   { n: 5, phase: 'casus2' },
-  { n: 6, phase: 'casus2', hasTranslation: true },
+  { n: 6, phase: 'casus2', hasTranslation: true, translationLine1: 'Vergelijkende vertaalslag', translationLine2: 'naar je Business Challenge' },
   { n: 7, phase: 'afronding' },
 ];
 
@@ -57,7 +59,7 @@ const phaseBounds = phases.map((p) => ({
   >
     <title id="tijdlijn-title">Programma-opbouw: zeven werkweken</title>
     <desc id="tijdlijn-desc">
-      Horizontale tijdlijn van het programma. Werkweek 1 is de plenaire startbijeenkomst. Werkweken 2, 3 en 4 vormen casus 1; na werkweek 4 volgt een vertaalslag naar de eigen Business Challenge. Werkweken 5 en 6 vormen casus 2; na werkweek 6 volgt opnieuw een vertaalslag. Werkweek 7 is de plenaire afronding.
+      Horizontale tijdlijn van het programma. Werkweek 1 is de plenaire startbijeenkomst. Werkweken 2 tot en met 6 werken aan één doorlopend dossier voor dezelfde opdrachtgever: casus 1 in werkweken 2, 3 en 4 met een vertaalslag naar de eigen Business Challenge; casus 2 als vervolgvraag in werkweken 5 en 6 met een tweede, vergelijkende vertaalslag. Werkweek 7 is de plenaire afronding.
     </desc>
 
     {/* Phase labels */}
@@ -140,8 +142,8 @@ const phaseBounds = phases.map((p) => ({
             text-anchor="middle"
             style="fill: var(--color-ink-muted); font-family: var(--font-sans); font-size: 11px;"
           >
-            Vertaalslag naar
-            <tspan x={markerX} dy="13">je Business Challenge</tspan>
+            {w.translationLine1 ?? 'Vertaalslag naar'}
+            <tspan x={markerX} dy="13">{w.translationLine2 ?? 'je Business Challenge'}</tspan>
           </text>
         </>
       );
@@ -149,6 +151,6 @@ const phaseBounds = phases.map((p) => ({
   </svg>
 
   <figcaption class="text-sm text-ink-muted mt-3 max-w-prose">
-    Zeven werkweken in de structuur 1 + 3 + 2 + 1. De gemarkeerde momenten na werkweek 4 en werkweek 6 zijn de vertaalslagen waarin je het geleerde toepast op je eigen Business Challenge.
+    Zeven werkweken in de structuur 1 + 3 + 2 + 1. Werkweken 2 tot en met 6 werken aan één doorlopend dossier voor dezelfde opdrachtgever. De gemarkeerde momenten na werkweek 4 en werkweek 6 zijn de vertaalslagen waarin je het geleerde toepast op je eigen Business Challenge; de tweede is vergelijkend en kijkt terug op de eerste.
   </figcaption>
 </figure>

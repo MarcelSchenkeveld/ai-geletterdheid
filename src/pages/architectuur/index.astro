@@ -25,14 +25,14 @@ const vaardigheden = [
 ---
 <BaseLayout
   title="Programma-opbouw"
-  description="De zeven werkweken, de twee casussen en de momenten waarop je terugkoppelt naar je eigen Business Challenge."
+  description="Zeven werkweken, één doorlopende opdracht voor Brouwerij De Vier Vaten, en twee vertaalslagen naar je eigen Business Challenge."
 >
   <section class="py-12 md:py-16">
     <div class="max-w-3xl">
       <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Programma-opbouw</p>
       <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Zo ziet het programma eruit</h1>
       <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
-        Zeven werkweken in de structuur 1 + 3 + 2 + 1. Eén plenaire startbijeenkomst, drie weken aan de eerste casus, twee weken aan de tweede, en een plenaire afronding. Tussendoor twee momenten waarop je het geleerde toepast op je eigen Business Challenge.
+        Zeven werkweken in de structuur 1 + 3 + 2 + 1. Eén plenaire startbijeenkomst, vijf weken werken aan een doorlopende opdracht voor Brouwerij De Vier Vaten, en een plenaire afronding. Tussendoor twee vertaalslagen naar je eigen Business Challenge.
       </p>
     </div>
   </section>
@@ -40,6 +40,17 @@ const vaardigheden = [
   <section class="py-8 md:py-10 border-t border-rule">
     <div class="max-w-5xl">
       <TijdlijnSchema />
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="border-l-4 border-accent pl-5 max-w-prose">
+        <h2 class="text-xl md:text-2xl mt-0 mb-3 font-sans font-semibold text-ink">Eén opdrachtgever, vijf weken, twee oplevermomenten</h2>
+        <p class="text-lg leading-relaxed m-0">
+          Casus 1 en casus 2 zijn geen twee losse opdrachten. Je werkt vijf werkweken lang aan één doorlopend dossier voor Brouwerij De Vier Vaten. Casus 1 is je eerste opdracht (week 2 tot en met 4); casus 2 is de vervolgvraag die de opdrachtgever stelt nadat hij jouw werk intern heeft besproken (week 5 en 6). De tweede helft is een natuurlijk vervolg op de eerste, geen nieuw begin.
+        </p>
+      </div>
     </div>
   </section>
 
@@ -58,7 +69,7 @@ const vaardigheden = [
           <span class="flex-shrink-0 inline-block w-16 h-10 bg-accent-soft border border-accent rounded-sm" aria-hidden="true"></span>
           <div>
             <dt class="font-semibold m-0">Open blok</dt>
-            <dd class="text-ink-muted m-0">Een werkweek binnen een lopende casus. Je werkt aan de casus, bent voor 30 tot 60 minuten samen en doet de rest in eigen tempo.</dd>
+            <dd class="text-ink-muted m-0">Een werkweek binnen de lopende opdracht voor De Vier Vaten. Je werkt aan de casus, bent voor 30 tot 60 minuten samen en doet de rest in eigen tempo.</dd>
           </div>
         </div>
         <div class="flex gap-4 items-start">
@@ -70,7 +81,7 @@ const vaardigheden = [
           </span>
           <div>
             <dt class="font-semibold m-0">Vertaalslag-markering</dt>
-            <dd class="text-ink-muted m-0">Na werkweek 4 en werkweek 6 pas je de werkwijze uit de casus toe op je eigen Business Challenge. Geen extra opdracht; juist versnelling op het werk dat je toch al doet.</dd>
+            <dd class="text-ink-muted m-0">Na werkweek 4 en werkweek 6 pas je de werkwijze uit de casus toe op je eigen Business Challenge. Geen extra opdracht; juist versnelling op het werk dat je toch al doet. De tweede vertaalslag is vergelijkend: hij kijkt expliciet terug op wat je na de eerste vertaalslag in je BC daadwerkelijk hebt gedaan.</dd>
           </div>
         </div>
       </dl>
@@ -139,7 +150,7 @@ const vaardigheden = [
                     {hasVertaalslag && (
                       <span class="inline-flex items-center gap-1 text-xs text-accent bg-accent-soft/60 px-2 py-0.5 rounded-sm font-medium">
                         <Icon name="target" size={12} />
-                        Vertaalslag naar je Business Challenge
+                        {w.vertaalslagLabel ?? 'Vertaalslag naar je Business Challenge'}
                       </span>
                     )}
                   </div>

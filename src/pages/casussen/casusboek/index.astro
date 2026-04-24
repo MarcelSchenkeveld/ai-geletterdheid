@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Icon from '../../../components/Icon.astro';
+import { url } from '../../../lib/url.ts';
+---
+<BaseLayout
+  title="Casusboek Brouwerij De Vier Vaten"
+  description="Achtergrond bij de opdrachtgever: oprichters, assortiment, brewpub, publiek, communicatie en cijfers op hoofdlijnen."
+>
+  <section class="py-12 md:py-16">
+    <div class="max-w-3xl">
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Casusboek</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Brouwerij De Vier Vaten</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Dit is het casusboek dat De Vier Vaten je bij de start van je opdracht meegeeft. Lees het als een onboardingsdocument: genoeg achtergrond om je werk te voeden, niet zoveel dat je alles al krijgt aangereikt. Waar informatie ontbreekt maak je een plausibele aanname en leg je die vast in je <a href={url('/ai-logboek/')}>AI-logboek</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-5 mt-0">Wie wij zijn</h2>
+      <div class="space-y-4 text-lg leading-relaxed max-w-prose">
+        <p class="m-0">Wij zijn vier vrienden die elkaar leerden kennen omdat onze kinderen bij elkaar in de klas zaten. Na een paar avonden samen bier drinken kwam het idee om zelf eens iets te brouwen. Dat begon in een schuur in 2012, met spullen die we bij elkaar geritseld hadden. Drie jaar prutsen, drie jaar smaken bedenken, drie jaar dingen weggooien die niet smaakten.</p>
+        <p class="m-0">In juni 2015 ging ons eerste bier de markt op. Sindsdien is er veel gebeurd. We hebben sinds 2023 een eigen brouwlocatie met een sfeervolle brewpub ernaast, in een verbouwd voormalig industrieel pand in een middelgrote Brabantse stad.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-5 mt-0">De vier vaten</h2>
+      <p class="text-lg leading-relaxed max-w-prose mb-6">Er zit een grap in onze naam: vier vaten staat voor de vier oprichters, maar ook voor de vier huisbieren waarmee we begonnen. Wij houden van die soort dubbele bodems.</p>
+      <dl class="space-y-4 max-w-prose">
+        <div>
+          <dt class="font-semibold m-0">Bram</dt>
+          <dd class="text-ink-muted m-0">Doet alles wat met handel te maken heeft. Onderhoudt het contact met de horeca en de slijters, en kent inmiddels half Brabant.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold m-0">Joris</dt>
+          <dd class="text-ink-muted m-0">Hoofdbrouwer en de creatieve motor achter ons assortiment. Verzint de seizoensbieren en de samenwerkingen met andere brouwerijen.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold m-0">Maarten</dt>
+          <dd class="text-ink-muted m-0">Draait de brewpub. Staat het vaakst achter de bar, kent de vaste klanten bij naam en zorgt dat de gastvrijheid klopt.</dd>
+        </div>
+        <div>
+          <dt class="font-semibold m-0">Sanne</dt>
+          <dd class="text-ink-muted m-0">Doet de marketing, het social media-werk en de community rond de brouwerij. Verantwoordelijk voor onze instagram, onze (sporadische) nieuwsbrief en de wekelijkse proeverij.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-5 mt-0">Wat wij brouwen</h2>
+      <div class="space-y-4 text-lg leading-relaxed max-w-prose mb-6">
+        <p class="m-0">Wij hebben vijf doorlopende huisbieren en daarnaast wisselen er continu seizoens- en samenwerkingsbieren. Daarbovenop draaien er op elk moment vijf tot zeven seizoens- of samenwerkingsbieren, en regelmatig brouwen we met andere kleine brouwerijen iets nieuws. Onze meest recente collab was een porter met tonkabonen, samen met een brouwerij uit Den Bosch. Dat soort dingen.</p>
+      </div>
+      <h3 class="mt-0 mb-4 text-base font-sans font-semibold text-ink uppercase tracking-[0.12em]">Onze vijf huisbieren</h3>
+      <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
+        <li class="flex gap-3 items-baseline">
+          <span class="font-serif text-accent text-lg leading-none flex-shrink-0">·</span>
+          <span><strong class="font-semibold">Lange Lente</strong> · vienna lager, 5,2%. Ons toegankelijkste bier.</span>
+        </li>
+        <li class="flex gap-3 items-baseline">
+          <span class="font-serif text-accent text-lg leading-none flex-shrink-0">·</span>
+          <span><strong class="font-semibold">Vier Vrienden</strong> · american pale ale, 5,5%. Vernoemd naar onszelf.</span>
+        </li>
+        <li class="flex gap-3 items-baseline">
+          <span class="font-serif text-accent text-lg leading-none flex-shrink-0">·</span>
+          <span><strong class="font-semibold">De Donkere Vat</strong> · belgian strong dark ale, 9,5%. Ons winterbier.</span>
+        </li>
+        <li class="flex gap-3 items-baseline">
+          <span class="font-serif text-accent text-lg leading-none flex-shrink-0">·</span>
+          <span><strong class="font-semibold">Kleine Karel</strong> · session IPA, 4,2%. Voor de lange middagen.</span>
+        </li>
+        <li class="flex gap-3 items-baseline">
+          <span class="font-serif text-accent text-lg leading-none flex-shrink-0">·</span>
+          <span><strong class="font-semibold">Hoplied</strong> · american IPA, 6,5%. Onze fanfavoriet.</span>
+        </li>
+      </ul>
+      <p class="text-ink-muted mt-6 max-w-prose m-0">Wij brouwen jaarlijks ongeveer tachtigduizend liter (240 hectoliter). Klein dus. Bewust klein.</p>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-5 mt-0">De brewpub</h2>
+      <div class="space-y-4 text-lg leading-relaxed max-w-prose">
+        <p class="m-0">In de brewpub staan eenentwintig wisselende taps en is er een koelkast met flesjes en blikken speciaalbier. Naast bier hebben we een lunch- en dinermenu en een uitgebreide borrelkaart. We zijn dinsdag tot en met zondag open, met vrijdag- en zaterdagavond als drukste momenten.</p>
+        <p class="m-0">Elke woensdag organiseren we een proeverij van vier tasters plus bitterballen voor vijftien euro, rond een biersoort of thema. In 2024 zijn we uitgeroepen tot beste café en bar van de regio.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-5 mt-0">Hoe wij ons publiek kennen</h2>
+      <div class="space-y-4 text-lg leading-relaxed max-w-prose">
+        <p class="m-0">We zien ruwweg drie groepen vaste klanten in de brewpub. De grootste groep zijn lokale liefhebbers tussen de dertig en vijfenvijftig die het leuk vinden om iedere paar weken een biertje te komen drinken en een nieuw seizoensbier te proberen. Daarnaast hebben we een kleinere groep die we de "verzamelaars" noemen: mensen die elke nieuwe collab willen proeven, alle limited editions in huis hebben, en op instagram fanatiek meeleven. Tot slot zien we steeds vaker mensen uit andere regio's die specifiek voor ons komen, vaak in het weekend, soms met een groep voor een rondleiding of arrangement.</p>
+        <p class="m-0">Wat we niét goed in beeld hebben, is wie ons online volgt en niet (meer) in de brewpub komt. Onze instagram heeft ruim achtduizend volgers, onze nieuwsbrief ongeveer tweeduizend abonnees, en daar zit ongetwijfeld een groep tussen die ooit in onze brewpub was, of ons via via heeft leren kennen, en nu uit het zicht is verdwenen. Wij hebben het vermoeden dat dáár veel van de potentie van een proefdoos-abonnement zit, maar zeker weten doen we dat niet.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-5 mt-0">Hoe wij nu communiceren</h2>
+      <div class="space-y-4 text-lg leading-relaxed max-w-prose">
+        <p class="m-0">Onze instagram is ons drukst bespeelde kanaal. Sanne post er ongeveer drie keer per week iets, vooral nieuwe taps, foto's uit de brouwerij, aankondigingen van proeverijen en collabs. We krijgen veel reacties; de tone of voice is droog, een beetje eigenwijs, met soms een knipoog naar lokale Brabantse humor.</p>
+        <p class="m-0">Onze website is functioneel maar gedateerd. Hij doet wat hij moet doen (openingstijden, kaart, agenda), maar verkoopt niets. We hebben geen webshop. Onze nieuwsbrief gaat ruwweg eens per twee maanden uit, met een aankondiging van seizoensbieren, een terugblik op een evenement en soms een verhaal over een collab.</p>
+        <p class="m-0">Wij hebben geen reclame, geen betaalde campagnes, en geen invloeden via influencers. Mond tot mond werkt voor ons al twaalf jaar.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-5 mt-0">Hoe wij onszelf zien</h2>
+      <div class="space-y-4 text-lg leading-relaxed max-w-prose">
+        <p class="m-0">Wij zijn ambachtelijk, eigenwijs, en lokaal. Wij maken bier omdat wij van bier houden, niet omdat wij groot willen worden. Wij hebben twee keer een aanbieding gehad voor een partnerschap met een grotere distributeur, en twee keer afgewezen. Niet omdat wij een hekel hebben aan groei, wel omdat we het verhaal achter ons bier overeind willen houden. Dat verhaal gaat over vier mensen, een schuur, twaalf jaar bouwen aan iets eigens, en een gemeenschap die met ons mee groeit.</p>
+        <p class="m-0"><strong class="font-semibold">Wat past bij ons:</strong> lokale samenwerkingen, bewuste seizoensbieren, transparantie over ingrediënten en proces, persoonlijke verhalen over de brouwers en het brouwen.</p>
+        <p class="m-0"><strong class="font-semibold">Wat níet past bij ons:</strong> supermarkt, suggestieve of seksuele marketing, koppelingen met grote evenementen (festivals, sportbonden, betaalde campagnes), en kunstmatige schaarste-trucs zoals drops met hype-marketing. Liever drie nieuwe abonnees per week dertig weken lang dan honderd op een ochtend.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-5 mt-0">Cijfers op hoofdlijnen</h2>
+      <dl class="grid grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-5 max-w-prose">
+        <div>
+          <dt class="text-xs uppercase tracking-[0.12em] text-ink-muted font-medium mb-1">Omzet per jaar</dt>
+          <dd class="font-serif text-2xl text-ink m-0">€ 1,5 mln</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-[0.12em] text-ink-muted font-medium mb-1">Uit de brewpub</dt>
+          <dd class="font-serif text-2xl text-ink m-0">≈ 50%</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-[0.12em] text-ink-muted font-medium mb-1">Productie per jaar</dt>
+          <dd class="font-serif text-2xl text-ink m-0">80 000 l</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-[0.12em] text-ink-muted font-medium mb-1">Medewerkers</dt>
+          <dd class="font-serif text-2xl text-ink m-0">12</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-[0.12em] text-ink-muted font-medium mb-1">Instagram-volgers</dt>
+          <dd class="font-serif text-2xl text-ink m-0">≈ 8 000</dd>
+        </div>
+        <div>
+          <dt class="text-xs uppercase tracking-[0.12em] text-ink-muted font-medium mb-1">Nieuwsbrief-abonnees</dt>
+          <dd class="font-serif text-2xl text-ink m-0">≈ 2 000</dd>
+        </div>
+      </dl>
+      <p class="text-ink-muted mt-8 max-w-prose m-0">Voor de doorrekening van een proefdoos-abonnement denken wij aan een instapprijs ergens tussen de vijfendertig en vijftig euro per box, met zes tot acht bieren erin. Tweemaandelijkse frequentie. Voor het eerste jaar mikken we op vijfhonderd tot duizend abonnees, mits we de werving slim aanpakken. Of dat realistisch is, mag jij ons vertellen.</p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <p class="m-0">
+        <a href={url('/casussen/')} class="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-medium no-underline">
+          <Icon name="arrow-right" size={16} class="rotate-180" />
+          Terug naar de casus-overzichtspagina
+        </a>
+      </p>
+    </div>
+  </section>
+</BaseLayout>

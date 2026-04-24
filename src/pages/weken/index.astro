@@ -54,7 +54,7 @@ import { weken } from '../../data/weken.ts';
                     {hasVertaalslag && (
                       <span class="inline-flex items-center gap-1 text-xs text-accent bg-accent-soft/60 px-2 py-0.5 rounded-sm font-medium">
                         <Icon name="target" size={12} />
-                        Vertaalslag naar je Business Challenge
+                        {w.vertaalslagLabel ?? 'Vertaalslag naar je Business Challenge'}
                       </span>
                     )}
                   </div>
