@@ -32,12 +32,37 @@ const week = getWeek(3)!;
         </span>
         <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
       </div>
-      <p class="text-ink text-lg leading-relaxed max-w-prose m-0">
-        Deze week zit je in de creatieve en analytische fase van <a href={url('/casussen/casus-1/')}>casus 1</a>. Je gebruikt AI als gereedschap om alternatieven en tegenargumenten te verkennen, niet om een antwoord te laten schrijven. In de werksessie deel je wat je hebt geprobeerd en scherp je keuzes aan met elkaar.
-      </p>
-      <p class="text-sm text-ink-muted italic mt-4 max-w-prose border-l-2 border-accent-soft pl-4 m-0">
-        De precieze inhoud van de werksessie wordt door je docent uitgewerkt op basis van de casusbriefing.
-      </p>
+      <p class="text-ink-muted mb-5 max-w-prose">Plenair, 30 tot 60 minuten. Je werkt in tweetallen volgens een kort patroon, met AI als tegenstem.</p>
+      <ol class="space-y-4 max-w-prose list-none p-0 m-0">
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Je docent modelleert vooraf</p>
+            <p class="text-ink-muted m-0">Vijf minuten waarin het werkpatroon hardop wordt voorgedaan: zo ziet de vraag eruit, zo lees je AI-output, zo beslis je wat je overneemt.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Formuleer een idee of richting</p>
+            <p class="text-ink-muted m-0">In tweetallen. Eén voorgenomen keuze voor De Vier Vaten (propositie, positionering, kanaal), kort en concreet.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Vraag AI om drie tegenargumenten</p>
+            <p class="text-ink-muted m-0">Laat AI expliciet tegen jouw keuze ingaan: welke invalshoeken of bezwaren zie jij niet? Niet om jezelf te overtuigen, wel om scherp te worden.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">4</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Samen wegen wat je overneemt</p>
+            <p class="text-ink-muted m-0">Bespreek in het tweetal welk tegenargument hout snijdt, wat je overneemt in je eigen aanpak, en waarom je iets juist níet overneemt.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -49,11 +74,12 @@ const week = getWeek(3)!;
         </span>
         <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
       </div>
-      <p class="text-ink-muted mb-5 max-w-prose">Indicatief 2 tot 5 uur. De meeste tijd zit in het daadwerkelijk denken met AI, niet in het lezen erover.</p>
+      <p class="text-ink-muted mb-5 max-w-prose">Indicatief 2 tot 5 uur. De meeste tijd zit in het daadwerkelijk denken met en zonder AI, niet in het lezen erover.</p>
       <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
-        <li>Werk aan de casus en wissel bewust af tussen met AI en zonder AI denken.</li>
-        <li>Laat AI alternatieven en tegenargumenten bij jouw aanpak genereren; verwerk die in je keuzes.</li>
-        <li>Leg in je <a href={url('/ai-logboek/')}>AI-logboek</a> vast wat AI toevoegde en waar je zelf moest bijsturen.</li>
+        <li>Werk je propositie-canvas uit voor het proefdoos-abonnement.</li>
+        <li>Kies een eerste richting voor de positionering en een eerste opzet voor de kanaalmix.</li>
+        <li>Wissel bewust af tussen denken-met-AI en denken-zonder-AI. Laat minstens één creatieve fase eerst dertig minuten zonder AI lopen, pas daarna AI erbij als tegenstem.</li>
+        <li>Leg in je <a href={url('/ai-logboek/')}>AI-logboek</a> vast wat AI je opleverde dat je zelf niet had bedacht, en wat je bewust niet hebt overgenomen.</li>
       </ul>
     </div>
   </section>
@@ -62,7 +88,7 @@ const week = getWeek(3)!;
     <div class="max-w-3xl">
       <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
       <p class="text-lg leading-relaxed max-w-prose m-0">
-        Wat je deze week verkent, landt in <a href={url('/weken/week-4/')}>werkweek 4</a>: daar ronden we casus 1 af en maak je de eerste vertaalslag naar je eigen Business Challenge.
+        Deze week is de inhoudelijke verdieping. In <a href={url('/weken/week-4/')}>werkweek 4</a> rond je het mini-plan voor De Vier Vaten af en maak je de eerste vertaalslag naar je eigen Business Challenge.
       </p>
     </div>
   </section>
@@ -73,7 +99,7 @@ const week = getWeek(3)!;
       <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
         <li class="flex items-start gap-3">
           <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/casussen/casus-1/')}>Casus 1</a></span>
+          <span><a href={url('/casussen/')}>De casus: Brouwerij De Vier Vaten</a></span>
         </li>
         <li class="flex items-start gap-3">
           <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />

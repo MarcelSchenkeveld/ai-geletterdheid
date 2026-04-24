@@ -26,18 +26,44 @@ const week = getWeek(5)!;
 
   <section class="py-10 border-t border-rule">
     <div class="max-w-3xl">
+      <p class="text-lg leading-relaxed max-w-prose m-0">
+        De Vier Vaten heeft je mini-plan intern besproken en is positief. Voordat zij groen licht geven willen zij twee dingen weten: hoe zorg je dat abonnees blijven, en welke van drie wervingsscenarios voor de eerste tweehonderd abonnees zij zouden moeten kiezen, met onderbouwing. De vervolgbriefing ontvang je via Teams aan het einde van werkweek 4.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
       <div class="flex items-center gap-3 mb-5">
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
           <Icon name="users" size={20} />
         </span>
         <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
       </div>
-      <p class="text-ink text-lg leading-relaxed max-w-prose m-0">
-        Deze week start <a href={url('/casussen/casus-2/')}>casus 2</a> in een ander commercieel domein dan casus 1. Je past de werkwijze die je net hebt doorlopen toe op dit nieuwe vraagstuk, en merkt onmiddellijk wat overdraagbaar is en wat je opnieuw moet uitvinden.
-      </p>
-      <p class="text-sm text-ink-muted italic mt-4 max-w-prose border-l-2 border-accent-soft pl-4 m-0">
-        De inhoud van casus 2 wordt later bekend gemaakt; de werkwijze blijft herkenbaar.
-      </p>
+      <p class="text-ink-muted mb-5 max-w-prose">Plenair, 30 tot 45 minuten. Kantelmoment met vergelijking: opnieuw kiezen, maar nu met je ervaring uit casus 1 in handen.</p>
+      <ol class="space-y-4 max-w-prose list-none p-0 m-0">
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Twee minuten pitch</p>
+            <p class="text-ink-muted m-0">Welke twee tot drie AI-toepassingen wil je voor de vervolgvraag inzetten, en wat is anders dan in casus 1?</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Eén kritische vraag op de vergelijking</p>
+            <p class="text-ink-muted m-0">Een medestudent vraagt: waarom werkte dit toen wel en nu niet, of omgekeerd? Die vergelijking maakt je keuze scherper dan een losse rechtvaardiging.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Patronen in het herijken</p>
+            <p class="text-ink-muted m-0">Je docent vangt op waar de groep als geheel verschuift ten opzichte van casus 1, en koppelt dat terug.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -49,10 +75,19 @@ const week = getWeek(5)!;
         </span>
         <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
       </div>
-      <p class="text-ink-muted mb-5 max-w-prose">Indicatief 2 tot 5 uur. Het tempo ligt iets hoger dan in casus 1, want er zijn maar twee weken.</p>
+      <p class="text-ink-muted mb-6 max-w-prose">Indicatief 2 tot 5 uur.</p>
+
+      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Vóór de werksessie</h3>
+      <ul class="list-disc pl-6 text-ink-muted mb-8 space-y-2 max-w-prose">
+        <li>Blader je <a href={url('/ai-logboek/')}>AI-logboek</a> van de afgelopen drie weken door. Beantwoord voor jezelf in maximaal vijf zinnen: welke toolkeuze houd ik aan, welke doe ik dit keer anders, en waarom?</li>
+        <li>Lees de vervolgbriefing die je via Teams hebt ontvangen.</li>
+      </ul>
+
+      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Na de werksessie</h3>
       <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
-        <li>Verken het vraagstuk van casus 2 en kies passende AI-toepassingen. Gebruik wat in casus 1 werkte, maar wees alert op wat dit vraagstuk anders maakt.</li>
-        <li>Schrijf in je <a href={url('/ai-logboek/')}>AI-logboek</a> kort wat je van casus 1 meeneemt en waar je bewust iets anders probeert.</li>
+        <li>Verdiep je in de drie wervingsscenarios die De Vier Vaten op tafel legt; breng de retentievraag in kaart.</li>
+        <li>Werk de drie scenarios in concept uit (één à anderhalve A4 in totaal) en formuleer een eerste retentie-aanpak.</li>
+        <li>Houd je logboek bij. Deze week is de vergelijking met casus 1 extra waardevol: welke toepassing gebruik je opnieuw, welke doe je anders, en welk effect heeft dat op je werk?</li>
       </ul>
     </div>
   </section>
@@ -61,7 +96,7 @@ const week = getWeek(5)!;
     <div class="max-w-3xl">
       <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
       <p class="text-lg leading-relaxed max-w-prose m-0">
-        In <a href={url('/weken/week-6/')}>werkweek 6</a> verdiep je casus 2 en doe je de tweede vertaalslag naar je Business Challenge. Daarna volgt de afronding.
+        In <a href={url('/weken/week-6/')}>werkweek 6</a> weeg je de drie scenarios kritisch, gebruik je AI als tegenstem bij je eigen advies en lever je de vervolgnotitie op. Dan volgt ook de tweede vertaalslag naar je eigen Business Challenge.
       </p>
     </div>
   </section>
@@ -72,11 +107,11 @@ const week = getWeek(5)!;
       <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
         <li class="flex items-start gap-3">
           <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/casussen/casus-2/')}>Casus 2</a></span>
+          <span><a href={url('/casussen/')}>De casus: Brouwerij De Vier Vaten</a> · dezelfde opdrachtgever, een vervolgvraag op jouw werk uit casus 1.</span>
         </li>
         <li class="flex items-start gap-3">
           <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/ai-logboek/')}>AI-logboek</a></span>
+          <span><a href={url('/ai-logboek/')}>AI-logboek</a> · ook je eigen logboek uit casus 1 is bronmateriaal deze week.</span>
         </li>
       </ul>
     </div>

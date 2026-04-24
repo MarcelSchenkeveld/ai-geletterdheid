@@ -32,12 +32,30 @@ const week = getWeek(2)!;
         </span>
         <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
       </div>
-      <p class="text-ink text-lg leading-relaxed max-w-prose m-0">
-        Deze week start <a href={url('/casussen/casus-1/')}>casus 1</a>. In de werksessie verken je het vraagstuk gezamenlijk en maak je een eerste keuze welke AI-toepassingen passen bij de eerste stappen van het werk.
-      </p>
-      <p class="text-sm text-ink-muted italic mt-4 max-w-prose border-l-2 border-accent-soft pl-4 m-0">
-        De precieze inhoud van de werksessie wordt door je docent uitgewerkt op basis van de casusbriefing die je na de startbijeenkomst hebt ontvangen.
-      </p>
+      <p class="text-ink-muted mb-5 max-w-prose">Plenair, 30 tot 60 minuten. Kantelmoment: welke AI-toepassingen ga je inzetten, en waarom?</p>
+      <ol class="space-y-4 max-w-prose list-none p-0 m-0">
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Drie minuten pitch</p>
+            <p class="text-ink-muted m-0">Je presenteert welke twee tot drie AI-toepassingen je deze week wilt inzetten: welke fase, welke rol, welke verwachting. Kort en concreet.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Eén kritische vraag terug</p>
+            <p class="text-ink-muted m-0">Een medestudent stelt één pittige vraag bij jouw keuze. Niet oordelen, wel scherpen.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Patronen en afspraken voor deze week</p>
+            <p class="text-ink-muted m-0">Je docent maakt zichtbaar welke patronen in de toolkeuzes opvallen en wat we deze week extra in het logboek willen zien.</p>
+          </div>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -49,11 +67,19 @@ const week = getWeek(2)!;
         </span>
         <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
       </div>
-      <p class="text-ink-muted mb-5 max-w-prose">Indicatief 2 tot 5 uur, verdeeld over kennismaken met de casus en eerste stappen zetten.</p>
+      <p class="text-ink-muted mb-6 max-w-prose">Indicatief 2 tot 5 uur. Verdeeld over oriëntatie, inhoudelijk werk en documentatie.</p>
+
+      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Vóór de werksessie</h3>
+      <ul class="list-disc pl-6 text-ink-muted mb-8 space-y-2 max-w-prose">
+        <li>Lees de briefing van <a href={url('/casussen/')}>De Vier Vaten</a> rustig door (volgt via Teams na de startbijeenkomst).</li>
+        <li>Oriënteer je een uurtje op een paar bestaande craft-brouwerijwebsites; bedenk vast waar jouw vragen liggen. Niet uitwerken, wel scherp worden.</li>
+      </ul>
+
+      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Na de werksessie</h3>
       <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
-        <li>Lees de casusbriefing grondig en maak een eigen aantekening van wat je opvalt.</li>
-        <li>Probeer één of twee AI-toepassingen die je bij deze fase geschikt acht en leg je bevindingen vast in je <a href={url('/ai-logboek/')}>AI-logboek</a>.</li>
-        <li>Formuleer één concrete vraag die je in de werksessie van werkweek 3 wilt inbrengen.</li>
+        <li>Werk één of twee persona's uit voor de doelgroep van het proefdoos-abonnement.</li>
+        <li>Schets een eerste positionering (richtinggevende statements, nog geen definitief statement).</li>
+        <li>Documenteer je AI-keuzes in je <a href={url('/ai-logboek/')}>AI-logboek</a>: welke prompt, welke output, welke nabewerking, en wat zou je in een tweede ronde anders doen? Vul dat laatste veld deze week nadrukkelijk in; de toolkeuze is nog vers en herzienbaar.</li>
       </ul>
     </div>
   </section>
@@ -62,7 +88,7 @@ const week = getWeek(2)!;
     <div class="max-w-3xl">
       <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
       <p class="text-lg leading-relaxed max-w-prose m-0">
-        De verkenning van deze week is opmaat voor de <a href={url('/weken/week-3/')}>creatieve en analytische fase in werkweek 3</a>, waarin AI vooral gereedschap wordt voor denken en afwegen.
+        Dit is de start van drie weken werken voor De Vier Vaten. In <a href={url('/weken/week-3/')}>werkweek 3</a> ga je dieper in op idee-ontwikkeling en alternatieven; in <a href={url('/weken/week-4/')}>werkweek 4</a> lever je het mini-plan op en maak je de eerste vertaalslag naar je eigen Business Challenge.
       </p>
     </div>
   </section>
@@ -73,10 +99,14 @@ const week = getWeek(2)!;
       <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
         <li class="flex items-start gap-3">
           <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/casussen/casus-1/')}>Casus 1</a> · briefing en context</span>
+          <span><a href={url('/casussen/')}>De casus: Brouwerij De Vier Vaten</a> · briefing en context</span>
         </li>
         <li class="flex items-start gap-3">
           <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/casussen/casusboek/')}>Casusboek</a> · achtergrond bij de opdrachtgever</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
           <span><a href={url('/ai-logboek/')}>AI-logboek</a> · vaste velden per entry</span>
         </li>
       </ul>

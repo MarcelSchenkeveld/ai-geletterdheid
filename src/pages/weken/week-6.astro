@@ -7,6 +7,15 @@ import { url } from '../../lib/url.ts';
 import { getWeek } from '../../data/weken.ts';
 
 const week = getWeek(6)!;
+
+const vertaalslagKoppen = [
+  { n: 1, titel: 'Mijn werkwijze in deze casus', hint: 'Wat viel op aan je eigen aanpak in de vervolgvraag? Welke tool waarvoor, welk moment bewust zonder AI?' },
+  { n: 2, titel: 'Wat ik overneem in mijn lopende Business Challenge', hint: 'Een herkenbare actie, maximaal drie elementen. Geen vaag voornemen.' },
+  { n: 3, titel: 'Hoe ik dat navolgbaar maak in mijn BC-werk', hint: 'Welke documentatie, en op welk moment laat je anderen meekijken in je keuzes?' },
+  { n: 4, titel: 'Wat ik bewust niet overneem en waarom', hint: 'Regie is óók weten wat je niet doet. Wat past niet bij je BC of team?' },
+  { n: 5, titel: 'Wat ik hieruit leer over mijn ontwikkeling', hint: 'Eerlijke observatie. Welke vraag wil je openleggen bij je coach of medestudenten?' },
+  { n: 6, titel: 'Vergelijking met mijn vorige vertaalslag', hint: 'Pak je vertaalslag uit werkweek 4 erbij. Welk voornemen heb je echt vastgehouden, welk niet? Wat doe je nu in je BC dat je drie weken geleden nog niet deed? Drie tot vijf zinnen volstaan.' },
+];
 ---
 <BaseLayout
   title={`Werkweek ${week.n}: ${week.kop}`}
@@ -19,7 +28,7 @@ const week = getWeek(6)!;
         <p class="text-sm text-ink-muted m-0">{week.periode}</p>
         <span class="inline-flex items-center gap-1 text-xs text-accent bg-accent-soft/60 px-2 py-0.5 rounded-sm font-medium">
           <Icon name="target" size={12} />
-          Vertaalslag naar je Business Challenge
+          Vergelijkende vertaalslag
         </span>
       </div>
       <h1 class="text-4xl md:text-5xl leading-[1.05] mb-5 mt-0">{week.kop}</h1>
@@ -36,38 +45,21 @@ const week = getWeek(6)!;
         </span>
         <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
       </div>
-      <p class="text-ink text-lg leading-relaxed max-w-prose m-0">
-        We verdiepen de tweede casus onder tijdsdruk: kortere doorlooptijd, dus scherpere keuzes. Kritisch en creatief denken met AI staat centraal. Tegelijk zetten we de tweede vertaalslag naar je Business Challenge, in het verlengde van de eerste.
-      </p>
-      <p class="text-sm text-ink-muted italic mt-4 max-w-prose border-l-2 border-accent-soft pl-4 m-0">
-        De inhoud van casus 2 wordt later bekend gemaakt; de vertaalslag-aanpak ligt vast.
-      </p>
-    </div>
-  </section>
-
-  <section class="py-10 border-t border-rule">
-    <div class="max-w-3xl">
-      <div class="flex items-center gap-3 mb-5">
-        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
-          <Icon name="target" size={20} />
-        </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Tweede vertaalslag naar je Business Challenge</h2>
-      </div>
-      <p class="text-ink-muted mb-5 max-w-prose">
-        Je hebt nu twee casussen doorlopen en één vertaalslag gezet. De tweede vertaalslag is geen herhaling maar verdieping:
-      </p>
-      <ol class="space-y-4 list-none p-0 m-0 max-w-prose">
+      <p class="text-ink-muted mb-5 max-w-prose">Plenair, 30 tot 60 minuten. Twee delen: eerst scherpen met AI als tegenstem, daarna je vertaalslag schrijven.</p>
+      <ol class="space-y-4 max-w-prose list-none p-0 m-0">
         <li class="flex gap-5 items-start">
           <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
-          <p class="m-0 text-ink">Wat heeft de eerste vertaalslag in je BC daadwerkelijk opgeleverd, en wat niet?</p>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Scenarios tegenlezen in drietallen</p>
+            <p class="text-ink-muted m-0">Je legt je voorgenomen advies aan De Vier Vaten op tafel. Voor elk scenario haal je via AI drie tegenargumenten op. Je bespreekt welke hout snijden en welke niet, en welke aanpassing je in je advies maakt.</p>
+          </div>
         </li>
         <li class="flex gap-5 items-start">
           <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
-          <p class="m-0 text-ink">Wat ga je in je BC anders aanpakken dan na vertaalslag 1?</p>
-        </li>
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
-          <p class="m-0 text-ink">Welke werkwijze neem je nu écht over voor de rest van je BC?</p>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Je vertaalslag-notitie schrijven</p>
+            <p class="text-ink-muted m-0">Tweede deel van de sessie. Je schrijft de notitie volgens het vaste format, met de extra zesde sectie waarin je vergelijkt met je vertaalslag uit werkweek 4.</p>
+          </div>
         </li>
       </ol>
     </div>
@@ -81,11 +73,37 @@ const week = getWeek(6)!;
         </span>
         <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
       </div>
+      <p class="text-ink-muted mb-5 max-w-prose">Indicatief 2 tot 5 uur. Afronden en vertalen.</p>
       <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
-        <li>Rond je bijdrage aan casus 2 af.</li>
-        <li>Zet de tweede vertaalslag in je BC en leg kort vast wat er gebeurt.</li>
-        <li>Schrijf een korte slot-entry casus 2 in je AI-logboek, plus een losse entry voor de vertaalslag.</li>
+        <li>Rond je vervolgnotitie voor De Vier Vaten af: retentie-aanpak (halve pagina), drie wervingsscenarios met voor- en nadelen (één pagina), onderbouwd advies (halve pagina).</li>
+        <li>Maak je vertaalslag-notitie compleet. De zesde sectie vraagt drie tot vijf zinnen: wat van je voornemen uit werkweek 4 heb je vastgehouden, wat heb je losgelaten, en wat doe je nu in je Business Challenge dat je drie weken geleden nog niet deed?</li>
+        <li>Plaats de vertaalslag-notitie in je portfolio. Het <a href={url('/ai-logboek/')}>AI-logboek</a> over werkweek 5 en 6 gaat als bijlage mee.</li>
       </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="target" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">De vertaalslag-notitie, nu met zes kopregels</h2>
+      </div>
+      <p class="text-ink-muted mb-6 max-w-prose">
+        Dezelfde vijf kopregels als in werkweek 4, plus één zesde die terugkijkt op je vorige vertaalslag. Het format ontvang je (opnieuw) via Teams. Hieronder de kopregels als richting.
+      </p>
+      <ol class="space-y-4 list-none p-0 m-0 max-w-prose">
+        {vertaalslagKoppen.map((k) => (
+          <li class="flex gap-5 items-start">
+            <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">{k.n}</span>
+            <div>
+              <p class="font-medium text-ink m-0 mb-1">{k.titel}</p>
+              <p class="text-ink-muted m-0 text-sm">{k.hint}</p>
+            </div>
+          </li>
+        ))}
+      </ol>
     </div>
   </section>
 
@@ -93,7 +111,7 @@ const week = getWeek(6)!;
     <div class="max-w-3xl">
       <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
       <p class="text-lg leading-relaxed max-w-prose m-0">
-        In <a href={url('/weken/week-7/')}>werkweek 7</a> kijken we terug op wat zeven weken hebben opgeleverd en kijken we vooruit naar wat je in je lopende werk blijft doen.
+        In <a href={url('/weken/week-7/')}>werkweek 7</a> sluiten we het programma plenair af en kijken we terug op zeven werkweken.
       </p>
     </div>
   </section>
@@ -104,11 +122,15 @@ const week = getWeek(6)!;
       <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
         <li class="flex items-start gap-3">
           <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/casussen/casus-2/')}>Casus 2</a></span>
+          <span><a href={url('/casussen/')}>De casus: Brouwerij De Vier Vaten</a></span>
         </li>
         <li class="flex items-start gap-3">
           <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
           <span><a href={url('/ai-logboek/')}>AI-logboek</a></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="target" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Vertaalslag-notitie-format (met zesde sectie) · via Teams</span>
         </li>
       </ul>
     </div>
