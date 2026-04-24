@@ -1,93 +1,23 @@
 ---
+import { url } from '../lib/url.ts';
+
 export interface Props {
-  variant?: 'horizontal' | 'stacked' | 'mark';
-  markSize?: number;
+  variant?: 'horizontal' | 'full';
+  height?: number;
   class?: string;
 }
 
-const { variant = 'horizontal', markSize = 44, class: className = '' } = Astro.props;
+const { variant = 'horizontal', height = 44, class: className = '' } = Astro.props;
 
-// Beeldmerk "De Lezer": drie elementen in compositie.
-// - Cirkel (dun): kader van onderzoek, de casus waarbinnen je denkt
-// - Asymmetrische S-curve (dik): de dialoog tussen jou en AI, die het kader verlaat
-// - Vaste stip aan het eind van de curve: het moment van eigen oordeel
-// De curve begint binnen de cirkel en eindigt daarbuiten: inzicht blijft niet theoretisch,
-// het landt in je eigen werk (de vertaalslagen naar de Business Challenge).
-// Alles in currentColor zodat het zich naar de context schikt.
+// variant "horizontal" = compacte "ai"-ligatuur met schaalbalk; past in de header
+// variant "full" = volledig logo met wordmark, voor hero of marketingcontext
+const src = variant === 'full' ? url('/logo-horizontal.png') : url('/logo-mark.png');
 ---
-{variant === 'horizontal' && (
-  <span class:list={['inline-flex items-center gap-3 md:gap-4', className]}>
-    <svg
-      width={markSize}
-      height={markSize}
-      viewBox="0 0 80 80"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      aria-hidden="true"
-      class="flex-shrink-0 text-accent"
-    >
-      <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="2.5"/>
-      <path
-        d="M 18 26 Q 40 32 40 42 Q 40 52 64 54"
-        stroke="currentColor"
-        stroke-width="5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <circle cx="64" cy="54" r="5" fill="currentColor"/>
-    </svg>
-    <span class="leading-none">
-      <span class="block font-serif text-xl md:text-[1.4rem] text-ink leading-[1.05]">AI-geletterdheid</span>
-      <span class="block text-[0.66rem] md:text-[0.7rem] text-ink-muted uppercase tracking-[0.18em] mt-2 font-sans font-medium">Fontys Commerciële Economie</span>
-    </span>
-  </span>
-)}
-{variant === 'stacked' && (
-  <span class:list={['inline-flex flex-col items-center gap-4', className]}>
-    <svg
-      width={markSize}
-      height={markSize}
-      viewBox="0 0 80 80"
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      aria-hidden="true"
-      class="text-accent"
-    >
-      <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="2.5"/>
-      <path
-        d="M 18 26 Q 40 32 40 42 Q 40 52 64 54"
-        stroke="currentColor"
-        stroke-width="5"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      />
-      <circle cx="64" cy="54" r="5" fill="currentColor"/>
-    </svg>
-    <span class="text-center leading-none">
-      <span class="block font-serif text-3xl md:text-4xl text-ink leading-[1.05]">AI-geletterdheid</span>
-      <span class="block text-xs md:text-sm text-ink-muted uppercase tracking-[0.18em] mt-3 font-sans font-medium">Fontys Commerciële Economie</span>
-    </span>
-  </span>
-)}
-{variant === 'mark' && (
-  <svg
-    width={markSize}
-    height={markSize}
-    viewBox="0 0 80 80"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    role="img"
-    aria-label="AI-geletterdheid beeldmerk"
-    class:list={['text-accent', className]}
-  >
-    <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="2.5"/>
-    <path
-      d="M 18 26 Q 40 32 40 42 Q 40 52 64 54"
-      stroke="currentColor"
-      stroke-width="5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
-    <circle cx="64" cy="54" r="5" fill="currentColor"/>
-  </svg>
-)}
+<img
+  src={src}
+  alt="AI-geletterd · Fontys Commerciële Economie"
+  height={height}
+  style={`height: ${height}px; width: auto;`}
+  class:list={['block select-none', className]}
+  draggable="false"
+/>
