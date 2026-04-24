@@ -140,8 +140,8 @@ import { url } from '../lib/url.ts';
 
   <section class="py-12 border-t border-rule">
     <div class="max-w-5xl">
-      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Drie routes vanaf hier</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Verkennen</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <a
           href={url('/over/')}
           class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
@@ -151,6 +151,16 @@ import { url } from '../lib/url.ts';
           </span>
           <h3 class="mb-2 mt-0 text-ink">Over het programma</h3>
           <p class="text-sm text-ink-muted m-0">Voor wie het is, wat je eraan hebt, hoe het is opgebouwd.</p>
+        </a>
+        <a
+          href={url('/leeruitkomsten/')}
+          class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
+        >
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="target" size={20} />
+          </span>
+          <h3 class="mb-2 mt-0 text-ink">Wat je leert</h3>
+          <p class="text-sm text-ink-muted m-0">Drie leerdoelen die als rode draad door het programma lopen.</p>
         </a>
         <a
           href={url('/weken/')}
