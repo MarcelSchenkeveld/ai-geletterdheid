@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
+---
+<BaseLayout
+  title="Casus 1: De Ambachtsbrouwerij"
+  description="Commerciële opdrachtgever in food en beverage met vraagstukken rond marketing, klantbeleving en data. Drie weken doorlooptijd."
+>
+  <section class="py-12 md:py-16">
+    <div class="max-w-3xl">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4">
+        <p class="text-sm uppercase tracking-[0.15em] text-ink-muted m-0">Casus 1</p>
+        <p class="text-sm text-ink-muted m-0">Werkweken 2 – 4</p>
+      </div>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">De Ambachtsbrouwerij</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Een commerciële opdrachtgever in food en beverage. Vraagstukken liggen rond marketing, klantbeleving en data. In deze casus komen meerdere vaardigheden natuurlijk samen.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Context</h2>
+      <div class="space-y-4 text-lg leading-relaxed max-w-prose text-ink">
+        <p class="m-0">De Ambachtsbrouwerij is een fictieve opdrachtgever die jou in staat stelt vrijuit met echte vraagstukken te werken. Het commerciële terrein (positionering, klantgroepen, data, content, klantbeleving) is bewust breed gekozen, zodat verschillende AI-toepassingen een natuurlijke plek hebben.</p>
+        <p class="m-0">Je werkt aan deze casus gedurende drie werkweken: werkweek 2 (verkennen), werkweek 3 (verdiepen) en werkweek 4 (afronden, plus de eerste vertaalslag naar je eigen Business Challenge).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Hoe deze casus loopt</h2>
+      <ol class="space-y-4 list-none p-0 m-0 max-w-prose">
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1"><a href={url('/weken/week-2/')}>Werkweek 2 · verkennen</a></p>
+            <p class="text-ink-muted m-0">Het vraagstuk leren kennen, passende AI-toepassingen kiezen voor de eerste stappen.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1"><a href={url('/weken/week-3/')}>Werkweek 3 · verdiepen</a></p>
+            <p class="text-ink-muted m-0">Creatief en analytisch denken met AI: alternatieven en tegenargumenten verkennen.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1"><a href={url('/weken/week-4/')}>Werkweek 4 · afronden en eerste vertaalslag</a></p>
+            <p class="text-ink-muted m-0">Casus opleveren en de werkwijze toepassen op je eigen Business Challenge.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Wat je nodig hebt</h2>
+      <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
+        <li class="flex items-start gap-3">
+          <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Een opgezet <a href={url('/ai-logboek/')}>AI-logboek</a> waarin je je werkstappen vastlegt.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>De casusbriefing die je na de startbijeenkomst via Teams ontvangt.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <p class="text-sm text-ink-muted border-l-2 border-accent-soft pl-4 italic max-w-prose">
+        De inhoudelijke uitwerking van de casus (hoofdvraag, concrete deelvragen, beschikbare data, specifieke deliverables) wordt later aangevuld. Deze pagina geeft nu de strekking en de werkwijze.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

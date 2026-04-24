@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MiniTijdlijn from '../../components/MiniTijdlijn.astro';
+import WeekNav from '../../components/WeekNav.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
+import { getWeek } from '../../data/weken.ts';
+
+const week = getWeek(6)!;
+---
+<BaseLayout
+  title={`Werkweek ${week.n}: ${week.kop}`}
+  description={week.oneliner}
+>
+  <section class="py-10 md:py-14">
+    <div class="max-w-3xl">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4">
+        <p class="text-sm uppercase tracking-[0.15em] text-ink-muted m-0">Werkweek {week.n}</p>
+        <p class="text-sm text-ink-muted m-0">{week.periode}</p>
+        <span class="inline-flex items-center gap-1 text-xs text-accent bg-accent-soft/60 px-2 py-0.5 rounded-sm font-medium">
+          <Icon name="target" size={12} />
+          Vertaalslag naar je Business Challenge
+        </span>
+      </div>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-5 mt-0">{week.kop}</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-8 max-w-prose">{week.oneliner}</p>
+      <MiniTijdlijn current={week.n} />
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="users" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
+      </div>
+      <p class="text-ink text-lg leading-relaxed max-w-prose m-0">
+        We verdiepen de tweede casus onder tijdsdruk: kortere doorlooptijd, dus scherpere keuzes. Kritisch en creatief denken met AI staat centraal. Tegelijk zetten we de tweede vertaalslag naar je Business Challenge, in het verlengde van de eerste.
+      </p>
+      <p class="text-sm text-ink-muted italic mt-4 max-w-prose border-l-2 border-accent-soft pl-4 m-0">
+        De inhoud van casus 2 wordt later bekend gemaakt; de vertaalslag-aanpak ligt vast.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="target" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Tweede vertaalslag naar je Business Challenge</h2>
+      </div>
+      <p class="text-ink-muted mb-5 max-w-prose">
+        Je hebt nu twee casussen doorlopen en één vertaalslag gezet. De tweede vertaalslag is geen herhaling maar verdieping:
+      </p>
+      <ol class="space-y-4 list-none p-0 m-0 max-w-prose">
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
+          <p class="m-0 text-ink">Wat heeft de eerste vertaalslag in je BC daadwerkelijk opgeleverd, en wat niet?</p>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
+          <p class="m-0 text-ink">Wat ga je in je BC anders aanpakken dan na vertaalslag 1?</p>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
+          <p class="m-0 text-ink">Welke werkwijze neem je nu écht over voor de rest van je BC?</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="clock" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
+      </div>
+      <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
+        <li>Rond je bijdrage aan casus 2 af.</li>
+        <li>Zet de tweede vertaalslag in je BC en leg kort vast wat er gebeurt.</li>
+        <li>Schrijf een korte slot-entry casus 2 in je AI-logboek, plus een losse entry voor de vertaalslag.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
+      <p class="text-lg leading-relaxed max-w-prose m-0">
+        In <a href={url('/weken/week-7/')}>werkweek 7</a> kijken we terug op wat zeven weken hebben opgeleverd en kijken we vooruit naar wat je in je lopende werk blijft doen.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Bronnen voor deze week</h2>
+      <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
+        <li class="flex items-start gap-3">
+          <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/casussen/casus-2/')}>Casus 2</a></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/ai-logboek/')}>AI-logboek</a></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <WeekNav current={week.n} />
+</BaseLayout>

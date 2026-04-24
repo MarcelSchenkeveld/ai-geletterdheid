@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
 ---
 <BaseLayout
   title="Casussen"
@@ -7,27 +9,44 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 >
   <section class="py-12 md:py-16">
     <div class="max-w-3xl">
-      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Placeholder</p>
-      <h1 class="text-4xl md:text-5xl leading-tight mb-6 mt-0">Casussen</h1>
-      <p class="text-xl text-ink-muted leading-relaxed mb-10 max-w-prose">
-        Je werkt aan twee casussen uit de commerciële praktijk. De eerste is een fictief bedrijf, De Ambachtsbrouwerij. De tweede volgt.
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Casussen</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Twee casussen uit de praktijk</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Je werkt aan twee casussen in verschillende commerciële domeinen. De eerste loopt drie weken, de tweede twee. Na elke casus zet je een vertaalslag naar je eigen Business Challenge.
       </p>
     </div>
+  </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl">
-      <article class="border border-rule rounded-md p-6 bg-white/40">
-        <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-2 m-0">Casus 1 · werkweken 2 – 4</p>
-        <h2 class="text-2xl mt-0 mb-3">De Ambachtsbrouwerij</h2>
-        <p class="text-ink-muted mb-3">Een fictief bedrijf: een regionale ambachtelijke brouwerij met marketing-, klant- en data-vragen waarin meerdere stukken AI-geletterdheid natuurlijk samenkomen.</p>
-        <p class="text-sm text-ink-muted m-0">Hoofdvraag, context en werkwijze worden hier uitgewerkt.</p>
-      </article>
-
-      <article class="border border-rule rounded-md p-6 bg-white/40">
-        <p class="text-xs uppercase tracking-[0.12em] text-ink-muted mb-2 m-0">Casus 2 · werkweken 5 – 6</p>
-        <h2 class="text-2xl mt-0 mb-3">Volgt</h2>
-        <p class="text-ink-muted mb-3">De tweede casus is korter en intensiever en legt de klemtoon op andere clusters binnen dezelfde programmalijn.</p>
-        <p class="text-sm text-ink-muted m-0">Inhoud wordt later in het ontwerptraject bepaald.</p>
-      </article>
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-4xl">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a
+          href={url('/casussen/casus-1/')}
+          class="block border border-rule rounded-md p-6 bg-white/40 no-underline hover:border-accent hover:bg-accent-soft/30 transition-colors"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent flex-shrink-0">
+              <Icon name="layers" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0 font-medium">Werkweken 2 – 4</p>
+          </div>
+          <h2 class="mt-0 mb-2 text-2xl text-ink">De Ambachtsbrouwerij</h2>
+          <p class="text-ink-muted m-0">Commerciële opdrachtgever in food en beverage met vraagstukken rond marketing, klantbeleving en data.</p>
+        </a>
+        <a
+          href={url('/casussen/casus-2/')}
+          class="block border border-rule rounded-md p-6 bg-white/40 no-underline hover:border-accent hover:bg-accent-soft/30 transition-colors"
+        >
+          <div class="flex items-center gap-3 mb-3">
+            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent flex-shrink-0">
+              <Icon name="layers" size={20} />
+            </span>
+            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0 font-medium">Werkweken 5 – 6</p>
+          </div>
+          <h2 class="mt-0 mb-2 text-2xl text-ink">Casus 2</h2>
+          <p class="text-ink-muted m-0">Ander commercieel domein, andere klemtoon. Inhoud volgt.</p>
+        </a>
+      </div>
     </div>
   </section>
 </BaseLayout>

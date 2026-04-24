@@ -1,0 +1,86 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MiniTijdlijn from '../../components/MiniTijdlijn.astro';
+import WeekNav from '../../components/WeekNav.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
+import { getWeek } from '../../data/weken.ts';
+
+const week = getWeek(5)!;
+---
+<BaseLayout
+  title={`Werkweek ${week.n}: ${week.kop}`}
+  description={week.oneliner}
+>
+  <section class="py-10 md:py-14">
+    <div class="max-w-3xl">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4">
+        <p class="text-sm uppercase tracking-[0.15em] text-ink-muted m-0">Werkweek {week.n}</p>
+        <p class="text-sm text-ink-muted m-0">{week.periode}</p>
+      </div>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-5 mt-0">{week.kop}</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-8 max-w-prose">{week.oneliner}</p>
+      <MiniTijdlijn current={week.n} />
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="users" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
+      </div>
+      <p class="text-ink text-lg leading-relaxed max-w-prose m-0">
+        Deze week start <a href={url('/casussen/casus-2/')}>casus 2</a> in een ander commercieel domein dan casus 1. Je past de werkwijze die je net hebt doorlopen toe op dit nieuwe vraagstuk, en merkt onmiddellijk wat overdraagbaar is en wat je opnieuw moet uitvinden.
+      </p>
+      <p class="text-sm text-ink-muted italic mt-4 max-w-prose border-l-2 border-accent-soft pl-4 m-0">
+        De inhoud van casus 2 wordt later bekend gemaakt; de werkwijze blijft herkenbaar.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="clock" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
+      </div>
+      <p class="text-ink-muted mb-5 max-w-prose">Indicatief 2 tot 5 uur. Het tempo ligt iets hoger dan in casus 1, want er zijn maar twee weken.</p>
+      <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
+        <li>Verken het vraagstuk van casus 2 en kies passende AI-toepassingen. Gebruik wat in casus 1 werkte, maar wees alert op wat dit vraagstuk anders maakt.</li>
+        <li>Schrijf in je <a href={url('/ai-logboek/')}>AI-logboek</a> kort wat je van casus 1 meeneemt en waar je bewust iets anders probeert.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
+      <p class="text-lg leading-relaxed max-w-prose m-0">
+        In <a href={url('/weken/week-6/')}>werkweek 6</a> verdiep je casus 2 en doe je de tweede vertaalslag naar je Business Challenge. Daarna volgt de afronding.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Bronnen voor deze week</h2>
+      <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
+        <li class="flex items-start gap-3">
+          <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/casussen/casus-2/')}>Casus 2</a></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/ai-logboek/')}>AI-logboek</a></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <WeekNav current={week.n} />
+</BaseLayout>

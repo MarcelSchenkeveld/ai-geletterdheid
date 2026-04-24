@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MiniTijdlijn from '../../components/MiniTijdlijn.astro';
+import WeekNav from '../../components/WeekNav.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
+import { getWeek } from '../../data/weken.ts';
+
+const week = getWeek(3)!;
+---
+<BaseLayout
+  title={`Werkweek ${week.n}: ${week.kop}`}
+  description={week.oneliner}
+>
+  <section class="py-10 md:py-14">
+    <div class="max-w-3xl">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4">
+        <p class="text-sm uppercase tracking-[0.15em] text-ink-muted m-0">Werkweek {week.n}</p>
+        <p class="text-sm text-ink-muted m-0">{week.periode}</p>
+      </div>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-5 mt-0">{week.kop}</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-8 max-w-prose">{week.oneliner}</p>
+      <MiniTijdlijn current={week.n} />
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="users" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
+      </div>
+      <p class="text-ink text-lg leading-relaxed max-w-prose m-0">
+        Deze week zit je in de creatieve en analytische fase van <a href={url('/casussen/casus-1/')}>casus 1</a>. Je gebruikt AI als gereedschap om alternatieven en tegenargumenten te verkennen, niet om een antwoord te laten schrijven. In de werksessie deel je wat je hebt geprobeerd en scherp je keuzes aan met elkaar.
+      </p>
+      <p class="text-sm text-ink-muted italic mt-4 max-w-prose border-l-2 border-accent-soft pl-4 m-0">
+        De precieze inhoud van de werksessie wordt door je docent uitgewerkt op basis van de casusbriefing.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="clock" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
+      </div>
+      <p class="text-ink-muted mb-5 max-w-prose">Indicatief 2 tot 5 uur. De meeste tijd zit in het daadwerkelijk denken met AI, niet in het lezen erover.</p>
+      <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
+        <li>Werk aan de casus en wissel bewust af tussen met AI en zonder AI denken.</li>
+        <li>Laat AI alternatieven en tegenargumenten bij jouw aanpak genereren; verwerk die in je keuzes.</li>
+        <li>Leg in je <a href={url('/ai-logboek/')}>AI-logboek</a> vast wat AI toevoegde en waar je zelf moest bijsturen.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
+      <p class="text-lg leading-relaxed max-w-prose m-0">
+        Wat je deze week verkent, landt in <a href={url('/weken/week-4/')}>werkweek 4</a>: daar ronden we casus 1 af en maak je de eerste vertaalslag naar je eigen Business Challenge.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Bronnen voor deze week</h2>
+      <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
+        <li class="flex items-start gap-3">
+          <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/casussen/casus-1/')}>Casus 1</a></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/ai-logboek/')}>AI-logboek</a></span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <WeekNav current={week.n} />
+</BaseLayout>
