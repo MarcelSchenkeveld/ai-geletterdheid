@@ -1,16 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
 import { url } from '../../lib/url.ts';
-
-const weeks = [
-  { n: 1, label: 'Kickoff', summary: 'Gezamenlijke start, eerste zelftest, kennismaking met casus 1.' },
-  { n: 2, label: 'Casus 1 · week 1', summary: 'Instap in de eerste casus, gezamenlijk kader.' },
-  { n: 3, label: 'Casus 1 · week 2', summary: 'Verdieping, peer review, gerichte ondersteuning.' },
-  { n: 4, label: 'Casus 1 · week 3', summary: 'Afronding casus 1, vertaalslag naar eigen Business Challenge.' },
-  { n: 5, label: 'Casus 2 · week 1', summary: 'Tweede casus, andere klemtoon, hoger tempo.' },
-  { n: 6, label: 'Casus 2 · week 2', summary: 'Afronding casus 2, tweede vertaalslag naar je Business Challenge.' },
-  { n: 7, label: 'Afsluiting', summary: 'Tweede zelftest, integratie, doorkijk naar het verdere curriculum.' },
-];
+import { weken } from '../../data/weken.ts';
 ---
 <BaseLayout
   title="Per werkweek"
@@ -18,29 +10,63 @@ const weeks = [
 >
   <section class="py-12 md:py-16">
     <div class="max-w-3xl">
-      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Placeholder</p>
-      <h1 class="text-4xl md:text-5xl leading-tight mb-6 mt-0">Per werkweek</h1>
-      <p class="text-xl text-ink-muted leading-relaxed mb-10 max-w-prose">
-        Wat er in elke werkweek gebeurt en wat je in eigen tempo doet. De volledige inhoud per week volgt; voor nu vind je hier het overzicht.
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Per werkweek</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Wat er elke week gebeurt</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Elke werkweek heeft dezelfde opbouw: één werksessie van 30 tot 60 minuten, plus 2 tot 5 uur werk in eigen tempo. Klik een week aan voor de volledige uitwerking.
       </p>
     </div>
+  </section>
 
-    <ol class="list-none p-0 m-0 space-y-3 max-w-3xl">
-      {weeks.map((w) => (
-        <li>
-          <article class="border border-rule rounded-md p-5 bg-white/40">
-            <div class="flex items-baseline gap-4 mb-1">
-              <span class="font-serif text-2xl text-accent leading-none">Wk {w.n}</span>
-              <h2 class="text-lg font-sans font-semibold m-0">{w.label}</h2>
-            </div>
-            <p class="text-ink-muted m-0">{w.summary}</p>
-          </article>
-        </li>
-      ))}
-    </ol>
-
-    <p class="text-sm text-ink-muted border-l-2 border-accent-soft pl-4 italic mt-10 max-w-prose">
-      Individuele weekpagina's met doel, werksessie-inhoud en eigen-tempo-werk worden in stap 4 gevuld.
-    </p>
+  <section class="py-8 md:py-10 border-t border-rule">
+    <div class="max-w-4xl">
+      <ol class="list-none p-0 m-0 space-y-3">
+        {weken.map((w) => {
+          const isPlenair = Boolean(w.plenair);
+          const hasVertaalslag = Boolean(w.vertaalslag);
+          return (
+            <li>
+              <a
+                href={url(`/weken/${w.slug}/`)}
+                class="flex items-start gap-4 md:gap-6 border border-rule rounded-md p-5 bg-white/40 no-underline hover:border-accent hover:bg-accent-soft/30 transition-colors group"
+              >
+                <span class:list={[
+                  'flex-shrink-0 inline-flex items-center justify-center w-14 h-14 rounded-md font-serif text-2xl',
+                  isPlenair
+                    ? 'bg-accent text-bg'
+                    : 'bg-accent-soft text-accent border border-accent',
+                ]}>
+                  {w.n}
+                </span>
+                <div class="flex-1 min-w-0">
+                  <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-1">
+                    <h2 class="m-0 text-lg font-sans font-semibold text-ink group-hover:text-accent">{w.kop}</h2>
+                    <span class="text-xs uppercase tracking-[0.12em] text-ink-muted font-medium">{w.periode}</span>
+                  </div>
+                  <p class="text-ink-muted m-0 mb-2">{w.oneliner}</p>
+                  <div class="flex flex-wrap gap-2">
+                    {isPlenair && (
+                      <span class="inline-flex items-center gap-1 text-xs text-accent bg-accent-soft/60 px-2 py-0.5 rounded-sm font-medium">
+                        <Icon name="users" size={12} />
+                        Plenair
+                      </span>
+                    )}
+                    {hasVertaalslag && (
+                      <span class="inline-flex items-center gap-1 text-xs text-accent bg-accent-soft/60 px-2 py-0.5 rounded-sm font-medium">
+                        <Icon name="target" size={12} />
+                        Vertaalslag naar je Business Challenge
+                      </span>
+                    )}
+                  </div>
+                </div>
+                <span class="flex-shrink-0 self-center text-accent opacity-0 group-hover:opacity-100 transition-opacity">
+                  <Icon name="arrow-right" size={18} />
+                </span>
+              </a>
+            </li>
+          );
+        })}
+      </ol>
+    </div>
   </section>
 </BaseLayout>

@@ -1,0 +1,35 @@
+---
+import { weken } from '../data/weken.ts';
+import { url } from '../lib/url.ts';
+
+export interface Props {
+  current: number;
+}
+
+const { current } = Astro.props;
+---
+<nav aria-label="Programma-tijdlijn" class="flex flex-wrap items-center gap-x-2 gap-y-2 text-xs">
+  <span class="text-ink-muted uppercase tracking-[0.1em] font-medium">Werkweek</span>
+  <ol class="flex items-center gap-1 list-none p-0 m-0">
+    {weken.map((w) => {
+      const isCurrent = w.n === current;
+      return (
+        <li>
+          <a
+            href={url(`/weken/${w.slug}/`)}
+            aria-current={isCurrent ? 'page' : undefined}
+            aria-label={`Werkweek ${w.n}: ${w.kop}${isCurrent ? ' (huidige week)' : ''}`}
+            class:list={[
+              'inline-flex items-center justify-center min-w-[2rem] h-7 px-2 rounded-sm border no-underline transition-colors',
+              isCurrent
+                ? 'bg-accent text-bg border-accent font-semibold'
+                : 'bg-accent-soft/40 text-accent border-accent-soft hover:border-accent hover:bg-accent-soft',
+            ]}
+          >
+            {w.n}
+          </a>
+        </li>
+      );
+    })}
+  </ol>
+</nav>

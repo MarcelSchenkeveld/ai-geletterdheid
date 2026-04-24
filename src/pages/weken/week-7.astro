@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import MiniTijdlijn from '../../components/MiniTijdlijn.astro';
+import WeekNav from '../../components/WeekNav.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
+import { getWeek } from '../../data/weken.ts';
+
+const week = getWeek(7)!;
+---
+<BaseLayout
+  title={`Werkweek ${week.n}: ${week.kop}`}
+  description={week.oneliner}
+>
+  <section class="py-10 md:py-14">
+    <div class="max-w-3xl">
+      <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4">
+        <p class="text-sm uppercase tracking-[0.15em] text-ink-muted m-0">Werkweek {week.n}</p>
+        <p class="text-sm text-ink-muted m-0">{week.periode}</p>
+      </div>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-5 mt-0">{week.kop}</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-8 max-w-prose">{week.oneliner}</p>
+      <MiniTijdlijn current={week.n} />
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="users" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
+      </div>
+      <p class="text-ink-muted mb-5 max-w-prose">Plenair, fysiek, tot 60 minuten. We sluiten af waar we begonnen en kijken vooruit.</p>
+      <ol class="space-y-4 max-w-prose list-none p-0 m-0">
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Tweede zelftest naast de eerste</p>
+            <p class="text-ink-muted m-0">We bekijken hoe het cohort zich in zeven weken heeft ontwikkeld. Jij legt je eigen antwoorden uit week 1 naast die van nu en ziet waar je verschoven bent.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Terugblik op zeven weken</p>
+            <p class="text-ink-muted m-0">Wat werkte, wat niet, en welke momenten waren voor jou van belang. Kort in tweetallen, daarna plenair.</p>
+          </div>
+        </li>
+        <li class="flex gap-5 items-start">
+          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Vervolgstappen in je lopende werk</p>
+            <p class="text-ink-muted m-0">Je formuleert één of twee dingen die je blijft doen in je Business Challenge en andere vakken, en wat je bewust laat.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="clock" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
+      </div>
+      <p class="text-ink-muted mb-6 max-w-prose">Indicatief 2 tot 5 uur. De meeste tijd zit in het teruglezen en het scherp krijgen van wat je meeneemt.</p>
+
+      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Vóór de werksessie</h3>
+      <ul class="list-disc pl-6 text-ink-muted mb-8 space-y-2 max-w-prose">
+        <li>Vul de <a href={url('/zelftest/')}>zelftest</a> voor de tweede keer in, uiterlijk 48 uur vóór de werksessie.</li>
+        <li>Lees je <a href={url('/ai-logboek/')}>AI-logboek</a> terug: welke momenten springen eruit, waar zie je jezelf iets anders doen dan in week 2?</li>
+      </ul>
+
+      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Na de werksessie</h3>
+      <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
+        <li>Schrijf één korte slotentry in je AI-logboek: wat je meeneemt en wat je bewust laat.</li>
+        <li>Bepaal welk bewijs uit dit programma je koppelt aan je ontwikkelportfolio. Zie ook: <a href={url('/vaardigheden/')}>wat je leert</a>.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
+      <p class="text-lg leading-relaxed max-w-prose m-0">
+        Hier houdt het programma op, niet jouw werk met AI. Wat je hier hebt opgebouwd (je logboek, je twee vertaalslagen naar je Business Challenge, je eigen reflecties) is direct bruikbaar in de rest van je studie en in je portfolio. Dat is de hele bedoeling.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Bronnen voor deze week</h2>
+      <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/zelftest/')}>Zelftest</a> · tweede afname, uiterlijk 48 uur vóór de werksessie</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/ai-logboek/')}>AI-logboek</a> · je eigen geheugen van zeven weken</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="target" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span><a href={url('/vaardigheden/')}>Wat je leert</a> · de drie vaardigheden als kapstok voor je reflectie</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <WeekNav current={week.n} />
+</BaseLayout>

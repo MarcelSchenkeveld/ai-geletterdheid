@@ -1,0 +1,47 @@
+---
+import { getWeek } from '../data/weken.ts';
+import { url } from '../lib/url.ts';
+import Icon from './Icon.astro';
+
+export interface Props {
+  current: number;
+}
+
+const { current } = Astro.props;
+const prev = getWeek(current - 1);
+const next = getWeek(current + 1);
+---
+<nav aria-label="Weeknavigatie" class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-12">
+  {prev ? (
+    <a
+      href={url(`/weken/${prev.slug}/`)}
+      class="block border border-rule rounded-md p-4 no-underline hover:border-accent hover:bg-accent-soft/30 transition-colors group"
+    >
+      <span class="text-xs uppercase tracking-[0.12em] text-ink-muted font-medium flex items-center gap-2 mb-1">
+        <Icon name="arrow-right" size={14} class="rotate-180" />
+        Vorige werkweek
+      </span>
+      <span class="text-ink group-hover:text-accent font-medium">
+        Werkweek {prev.n}: {prev.kop}
+      </span>
+    </a>
+  ) : (
+    <div class="hidden sm:block"></div>
+  )}
+  {next ? (
+    <a
+      href={url(`/weken/${next.slug}/`)}
+      class="block border border-rule rounded-md p-4 no-underline hover:border-accent hover:bg-accent-soft/30 transition-colors group sm:text-right"
+    >
+      <span class="text-xs uppercase tracking-[0.12em] text-ink-muted font-medium flex items-center gap-2 mb-1 sm:justify-end">
+        Volgende werkweek
+        <Icon name="arrow-right" size={14} />
+      </span>
+      <span class="text-ink group-hover:text-accent font-medium">
+        Werkweek {next.n}: {next.kop}
+      </span>
+    </a>
+  ) : (
+    <div class="hidden sm:block"></div>
+  )}
+</nav>

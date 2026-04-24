@@ -3,23 +3,23 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import Icon from '../../components/Icon.astro';
 import { url } from '../../lib/url.ts';
 
-interface Uitkomst {
-  code: string;
+interface Vaardigheid {
+  slug: string;
   titel: string;
   ondertitel: string;
   intro: string;
   icon: string;
-  criteria: { kop: string; tekst: string }[];
+  punten: { kop: string; tekst: string }[];
 }
 
-const uitkomsten: Uitkomst[] = [
+const vaardigheden: Vaardigheid[] = [
   {
-    code: 'AI-CT',
-    titel: 'AI toepassen in commerciële context',
-    ondertitel: 'Doelgericht kiezen en inzetten',
+    slug: 'toepassen',
+    titel: 'AI inzetten in commerciële vraagstukken',
+    ondertitel: 'Passende toepassing kiezen en beoordelen',
     icon: 'target',
-    intro: 'Je zet AI doelgericht in bij marketing, klantbeleving, onderzoek en business development. Je kiest wat past bij je vraagstuk, stuurt het gesprek met de AI actief aan en beoordeelt de output op bruikbaarheid voor je opdrachtgever. En je kunt in eigen woorden uitleggen hoe de tool op hoofdlijnen werkt en welke grenzen daaraan zitten.',
-    criteria: [
+    intro: 'Je zet AI doelgericht in bij marketing, klantbeleving, onderzoek en business development. Je kiest wat past bij je vraagstuk, stuurt het gesprek met de AI actief aan en beoordeelt of de output bruikbaar is voor je opdrachtgever. En je kunt in eigen woorden uitleggen hoe de tool op hoofdlijnen werkt en welke grenzen daaraan zitten.',
+    punten: [
       {
         kop: 'Doelgerichte toolkeuze',
         tekst: 'Je kiest een AI-toepassing die past bij doel, fase en gevoeligheid van je werk, en kunt onderbouwen waarom een andere toepassing of geen AI hier minder passend zou zijn.',
@@ -39,14 +39,14 @@ const uitkomsten: Uitkomst[] = [
     ],
   },
   {
-    code: 'AI-KD',
+    slug: 'denken',
     titel: 'Kritisch en creatief denken met AI',
     ondertitel: 'AI als gereedschap, jouw redenering leidend',
     icon: 'compass',
-    intro: 'Je gebruikt AI in je denkproces zonder dat het denken overneemt. Je wisselt bewust af tussen met AI en zonder AI werken, en gebruikt AI om alternatieven en tegenargumenten op te halen. In je uiteindelijke oplossing blijft jouw redenering herkenbaar leidend.',
-    criteria: [
+    intro: 'Je gebruikt AI in je denkproces zonder dat het denken overneemt. Je wisselt bewust af tussen met AI en zonder AI werken, en gebruikt AI om alternatieven en tegenargumenten op te halen die je zelf niet had bedacht. In je uiteindelijke oplossing blijft jouw redenering herkenbaar leidend.',
+    punten: [
       {
-        kop: 'Bewuste werkvormkeuze per denkfase',
+        kop: 'Bewuste keuze per denkfase',
         tekst: 'Je kiest per fase van je denkproces of je met of zonder AI werkt, en kunt toelichten waarom die keuze in deze fase de denkkwaliteit het meest dient.',
       },
       {
@@ -54,28 +54,28 @@ const uitkomsten: Uitkomst[] = [
         tekst: 'Je gebruikt AI om alternatieven, tegenargumenten of invalshoeken op te halen die je zelf niet had bedacht, en verwerkt die doordacht in je eigen denkproces.',
       },
       {
-        kop: 'Eigen redenering blijft leidend',
+        kop: 'Jouw redenering blijft leidend',
         tekst: 'In je uiteindelijke oplossing of product is jouw eigen redenering herkenbaar leidend; AI-bijdragen zijn navolgbaar verwerkt en niet vermomd als eigen conclusie.',
       },
       {
-        kop: 'Reflectie op het denkproces',
+        kop: 'Terugkijken op het denkproces',
         tekst: 'Je kunt na afloop benoemen wat AI in dit denkproces heeft toegevoegd, wat het mogelijk heeft weggeschoven of versimpeld, en wat je in een volgend vraagstuk anders zou aanpakken.',
       },
     ],
   },
   {
-    code: 'AI-EG',
-    titel: 'Eigenaarschap en verantwoord AI-gebruik',
-    ondertitel: 'Regie over je werk en je leren',
+    slug: 'regie',
+    titel: 'Regie en verantwoord AI-gebruik',
+    ondertitel: 'Je werk en je leren zelf in handen',
     icon: 'check',
     intro: 'Je maakt expliciete en navolgbare keuzes over hoe en wanneer je AI inzet, en kunt die keuzes verantwoorden naar je opdrachtgever en naar jezelf. Je houdt de regie over je werk en je leren zichtbaar in handen, ook waar AI is gebruikt.',
-    criteria: [
+    punten: [
       {
         kop: 'Navolgbare documentatie',
         tekst: 'Je houdt bij welke AI-toepassingen je op welke manier hebt ingezet (prompts, output, nabewerking), zodanig dat een ander je keuzes kan volgen en bevragen.',
       },
       {
-        kop: 'Verantwoording op ethische dimensies',
+        kop: 'Verantwoording op ethische afwegingen',
         tekst: 'Je kunt voor je eigen werk uitleggen welke afwegingen je hebt gemaakt rond eerlijkheid (bias, herkomst, omgang met andermans werk), transparantie en veiligheid van data.',
       },
       {
@@ -83,7 +83,7 @@ const uitkomsten: Uitkomst[] = [
         tekst: 'Je kunt situaties aanwijzen waarin je bewust zonder AI hebt gewerkt om je eigen denken te oefenen of om te voldoen aan een geldend kader, en kunt die keuze toelichten.',
       },
       {
-        kop: 'Reflectie op je ontwikkeling',
+        kop: 'Terugkijken op je ontwikkeling',
         tekst: 'Je formuleert wat je AI-gebruik in deze periode betekent voor je ontwikkeling als beginnend commercieel professional, welke vervolgstappen je daarin zet en welke vragen openstaan.',
       },
     ],
@@ -92,65 +92,65 @@ const uitkomsten: Uitkomst[] = [
 ---
 <BaseLayout
   title="Wat je leert"
-  description="Drie leerdoelen die dit programma scherp maakt: AI toepassen in commerciële context, kritisch en creatief denken met AI, en eigenaarschap en verantwoord AI-gebruik."
+  description="Drie vaardigheden die dit programma scherp maakt: AI inzetten in commerciële vraagstukken, kritisch en creatief denken met AI, en regie over je werk en je leren."
 >
   <section class="py-12 md:py-20">
     <div class="max-w-3xl">
       <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Wat je leert</p>
-      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Drie leerdoelen die dit programma scherp maakt</h1>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Drie vaardigheden die dit programma scherp maakt</h1>
       <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
-        Deze drie doelen lopen als een rode draad door alle werkweken, de casussen en de vertaalslagen naar je Business Challenge. Ze maken concreet waar je naartoe werkt.
+        Deze drie vaardigheden lopen als een rode draad door alle werkweken, de casussen en de vertaalslagen naar je Business Challenge. Samen maken ze concreet waar je naartoe werkt.
       </p>
     </div>
   </section>
 
   <section class="py-8 md:py-10 border-t border-rule">
     <div class="max-w-5xl">
-      <nav aria-label="Overzicht leerdoelen" class="grid grid-cols-1 md:grid-cols-3 gap-3">
-        {uitkomsten.map((u) => (
+      <nav aria-label="Overzicht vaardigheden" class="grid grid-cols-1 md:grid-cols-3 gap-3">
+        {vaardigheden.map((v, i) => (
           <a
-            href={`#${u.code.toLowerCase()}`}
+            href={`#${v.slug}`}
             class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
           >
             <div class="flex items-center gap-3 mb-3">
               <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent flex-shrink-0">
-                <Icon name={u.icon} size={20} />
+                <Icon name={v.icon} size={20} />
               </span>
-              <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0 font-medium">{u.code}</p>
+              <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0 font-medium">Vaardigheid {i + 1}</p>
             </div>
-            <h2 class="mt-0 mb-1 text-lg font-sans font-semibold text-ink">{u.titel}</h2>
-            <p class="text-sm text-ink-muted m-0">{u.ondertitel}</p>
+            <h2 class="mt-0 mb-1 text-lg font-sans font-semibold text-ink">{v.titel}</h2>
+            <p class="text-sm text-ink-muted m-0">{v.ondertitel}</p>
           </a>
         ))}
       </nav>
     </div>
   </section>
 
-  {uitkomsten.map((u) => (
-    <section id={u.code.toLowerCase()} class="py-12 md:py-16 border-t border-rule scroll-mt-8">
+  {vaardigheden.map((v, i) => (
+    <section id={v.slug} class="py-12 md:py-16 border-t border-rule scroll-mt-8">
       <div class="max-w-5xl">
         <div class="max-w-3xl mb-10">
           <div class="flex items-center gap-4 mb-5">
             <span class="w-14 h-14 rounded-full bg-accent-soft flex items-center justify-center text-accent flex-shrink-0">
-              <Icon name={u.icon} size={28} />
+              <Icon name={v.icon} size={28} />
             </span>
             <div>
-              <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0 font-medium">{u.code}</p>
-              <h2 class="text-2xl md:text-3xl mt-0 mb-0 leading-tight">{u.titel}</h2>
+              <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0 font-medium">Vaardigheid {i + 1}</p>
+              <h2 class="text-2xl md:text-3xl mt-0 mb-0 leading-tight">{v.titel}</h2>
             </div>
           </div>
-          <p class="text-lg text-ink leading-relaxed m-0 max-w-prose">{u.intro}</p>
+          <p class="text-lg text-ink leading-relaxed m-0 max-w-prose">{v.intro}</p>
         </div>
 
         <h3 class="text-sm uppercase tracking-[0.12em] text-ink-muted mt-0 mb-5 font-sans font-medium">Wat dat concreet betekent</h3>
         <ol class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 m-0">
-          {u.criteria.map((c, i) => (
+          {v.punten.map((p, pi) => (
             <li class="border border-rule rounded-md p-5 bg-white/40">
               <div class="flex items-baseline gap-3 mb-2">
-                <span class="font-serif text-xl text-accent leading-none">{i + 1}</span>
-                <h4 class="mt-0 mb-0 text-base font-sans font-semibold text-ink">{c.kop}</h4>
+                <span class="font-serif text-xl text-accent leading-none">{pi + 1}</span>
+                <h4 class="mt-0 mb-0 text-base font-sans font-semibold text-ink">{p.kop}</h4>
               </div>
-              <p class="text-ink-muted m-0">{c.tekst}</p>
+              <p class="text-ink-muted m-0">{p.tekst}</p>
             </li>
           ))}
         </ol>
@@ -162,8 +162,8 @@ const uitkomsten: Uitkomst[] = [
     <div class="max-w-3xl">
       <h2 class="text-2xl md:text-3xl mb-6 mt-0">Geen cijfer, wel richting</h2>
       <div class="space-y-4 text-lg leading-relaxed max-w-prose">
-        <p class="m-0">Binnen het programma is er geen formele toetsing en geen cijfer. Deze drie leerdoelen functioneren als richting voor de gesprekken die je voert over je eigen groei: met mij, met medestudenten en met jezelf.</p>
-        <p class="m-0">Het bewijs dat je in dit programma opbouwt (werk aan casussen, je AI-logboek, reflecties) is direct bruikbaar voor je ontwikkelportfolio. Daar wordt dat bewijs beoordeeld via de Fontys-leeruitkomsten in Taakgebied 2 (Waardecreatie &amp; ontwikkeling). De leerdoelen hier zijn smaller en specifieker; samen met ander werk uit je studie vormen ze een stevig puzzelstuk in je portfolio.</p>
+        <p class="m-0">Binnen het programma is er geen formele toetsing en geen cijfer. Deze drie vaardigheden functioneren als richting voor de gesprekken die je voert over je eigen groei: met je docent, met medestudenten en met jezelf.</p>
+        <p class="m-0">Het bewijs dat je in dit programma opbouwt (werk aan casussen, je AI-logboek, reflecties) is direct bruikbaar voor je ontwikkelportfolio. Daar wordt dat bewijs beoordeeld binnen Taakgebied 2 van je opleiding. Samen met ander werk uit je studie vormt het een stevig puzzelstuk.</p>
       </div>
     </div>
   </section>

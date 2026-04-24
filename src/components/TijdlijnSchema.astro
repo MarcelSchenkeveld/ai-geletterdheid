@@ -1,25 +1,25 @@
 ---
 interface Week {
   n: number;
-  phase: 'kickoff' | 'casus1' | 'casus2' | 'afsluiting';
+  phase: 'start' | 'casus1' | 'casus2' | 'afronding';
   hasTranslation?: boolean;
 }
 
 const weeks: Week[] = [
-  { n: 1, phase: 'kickoff' },
+  { n: 1, phase: 'start' },
   { n: 2, phase: 'casus1' },
   { n: 3, phase: 'casus1' },
   { n: 4, phase: 'casus1', hasTranslation: true },
   { n: 5, phase: 'casus2' },
   { n: 6, phase: 'casus2', hasTranslation: true },
-  { n: 7, phase: 'afsluiting' },
+  { n: 7, phase: 'afronding' },
 ];
 
 const phases = [
-  { key: 'kickoff', label: 'Kickoff', startIdx: 0, endIdx: 0 },
+  { key: 'start', label: 'Start', startIdx: 0, endIdx: 0 },
   { key: 'casus1', label: 'Casus 1', startIdx: 1, endIdx: 3 },
   { key: 'casus2', label: 'Casus 2', startIdx: 4, endIdx: 5 },
-  { key: 'afsluiting', label: 'Afsluiting', startIdx: 6, endIdx: 6 },
+  { key: 'afronding', label: 'Afronding', startIdx: 6, endIdx: 6 },
 ];
 
 // Layout math (viewBox units)
@@ -57,7 +57,7 @@ const phaseBounds = phases.map((p) => ({
   >
     <title id="tijdlijn-title">Programma-opbouw: zeven werkweken</title>
     <desc id="tijdlijn-desc">
-      Horizontale tijdlijn van het programma. Werkweek 1 is de plenaire kickoff. Werkweken 2, 3 en 4 vormen casus 1; na werkweek 4 volgt een vertaalslag naar de eigen Business Challenge. Werkweken 5 en 6 vormen casus 2; na werkweek 6 volgt opnieuw een vertaalslag. Werkweek 7 is de plenaire afsluiting.
+      Horizontale tijdlijn van het programma. Werkweek 1 is de plenaire startbijeenkomst. Werkweken 2, 3 en 4 vormen casus 1; na werkweek 4 volgt een vertaalslag naar de eigen Business Challenge. Werkweken 5 en 6 vormen casus 2; na werkweek 6 volgt opnieuw een vertaalslag. Werkweek 7 is de plenaire afronding.
     </desc>
 
     {/* Phase labels */}
@@ -85,7 +85,7 @@ const phaseBounds = phases.map((p) => ({
 
     {/* Week blocks */}
     {weeks.map((w, i) => {
-      const accent = w.phase === 'kickoff' || w.phase === 'afsluiting';
+      const accent = w.phase === 'start' || w.phase === 'afronding';
       const x = getBlockX(i);
       const cx = getBlockCenter(i);
       return (
