@@ -30,32 +30,9 @@ const week = getWeek(7)!;
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
           <Icon name="users" size={20} />
         </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doen we samen</h2>
       </div>
-      <p class="text-ink-muted mb-5 max-w-prose">Plenair, fysiek, 60 minuten. Drie delen die samen de cirkel sluiten die we in de startbijeenkomst openden.</p>
-      <ol class="space-y-4 max-w-prose list-none p-0 m-0">
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Je tweede zelftest naast je eerste</p>
-            <p class="text-ink-muted m-0">We bekijken op groepsniveau hoe de groep is verschoven. Jij legt je eigen antwoorden uit werkweek 1 naast die van nu en herkent waar jouw verandering zit.</p>
-          </div>
-        </li>
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Betekenisgeving in drietallen</p>
-            <p class="text-ink-muted m-0">Je kiest vooraf één moment uit de afgelopen zes weken waarover je zegt: dit was anders dan ik dacht. Geen succesverhaal, geen klacht; een verschuiving in je werkwijze of je denken. Elk drietal: vier minuten per persoon, één verdiepende vraag van de luisteraars.</p>
-          </div>
-        </li>
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Je vervolgcommitment</p>
-            <p class="text-ink-muted m-0">Drie korte vragen op een werkblad, in tweetal besproken, en daarna vrijwillig één zin plenair. Wat blijf je doen in je lopende werk, wat laat je bewust los, en met wie voer je in de komende weken verantwoording over deze keuze?</p>
-          </div>
-        </li>
-      </ol>
+      <p class="text-ink-muted max-w-prose m-0">Een plenaire afsluiting van zestig minuten, fysiek. Drie dingen: we kijken naar hoe de groep op de zelftest is verschoven tussen week 1 en week 7, je deelt in een drietal één moment uit de zes weken dat anders was dan je dacht, en je formuleert schriftelijk een vervolgcommitment dat je kort in een tweetal en plenair uitspreekt.</p>
     </div>
   </section>
 
@@ -65,50 +42,90 @@ const week = getWeek(7)!;
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
           <Icon name="clock" size={20} />
         </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doe je vóór de afsluiting</h2>
       </div>
-      <p class="text-ink-muted mb-6 max-w-prose">Indicatief 2 tot 5 uur. Vooral terugkijken en afronden.</p>
-
-      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Vóór de werksessie</h3>
-      <ul class="list-disc pl-6 text-ink-muted mb-8 space-y-2 max-w-prose">
-        <li>Vul de <a href={url('/zelftest/')}>zelftest</a> voor de tweede keer in, uiterlijk 48 uur vóór de werksessie.</li>
-        <li>Leg je <a href={url('/ai-logboek/')}>AI-logboek</a> en je twee vertaalslag-notities binnen handbereik in je portfolio.</li>
-      </ul>
-
-      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Na de werksessie</h3>
-      <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
-        <li>Plaats je vervolgcommitment in je portfolio (foto van het werkblad of uitgetypt), samen met je beide vertaalslag-notities, het AI-logboek over zes weken en een korte slot-reflectie.</li>
-        <li>Kies of, en zo ja met wie, je de komende weken verantwoording voert over je voornemens.</li>
-      </ul>
+      <ol class="list-decimal pl-6 text-ink-muted space-y-3 max-w-prose">
+        <li><strong class="font-medium text-ink">Vul de tweede <a href={url('/zelftest/')}>zelftest</a> in</strong> via de link in Teams. Deadline: minstens 48 uur vóór de bijeenkomst, zodat het groepsbeeld klaar is voor de zaal.</li>
+        <li><strong class="font-medium text-ink">Leg je AI-logboek over zes weken binnen handbereik</strong> plus je twee vertaalslag-notities. Je hoeft ze niet te lezen; je wilt ze kunnen openslaan als je één moment zoekt dat je in de drietalronde wilt delen.</li>
+        <li><strong class="font-medium text-ink">Kies vooraf één moment.</strong> In de zes weken bij De Vier Vaten of in een van je twee vertaalslagen was er iets dat anders was dan je dacht. Geen succesverhaal, geen klacht; een verschuiving in je werkwijze of denken. Eén zin volstaat.</li>
+      </ol>
     </div>
   </section>
 
   <section class="py-10 border-t border-rule">
     <div class="max-w-3xl">
-      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
-      <p class="text-lg leading-relaxed max-w-prose m-0">
-        Hier sluit het programma. Wat je leert blijft van jou en gaat mee naar je Business Challenge en je portfolio. Het Teams-kanaal blijft nog twee weken open voor vervolgvragen.
-      </p>
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="arrow-right" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doe je na de afsluiting</h2>
+      </div>
+      <ol class="list-decimal pl-6 text-ink-muted space-y-3 max-w-prose">
+        <li><strong class="font-medium text-ink">Plaats je vervolgcommitment in Portflow</strong> (foto van het werkblad of overgetypt), onder de programma-leeruitkomst over eigenaarschap en verantwoord AI-gebruik, en optioneel onder TG2-PPO.</li>
+        <li><strong class="font-medium text-ink">Rond je Portflow-landing af</strong> als je dat in week 4 en week 6 nog niet volledig hebt gedaan: de twee vertaalslag-notities en het AI-logboek over zes weken horen er bij, gekoppeld aan de programma-leeruitkomst over eigenaarschap. Voor de andere twee leeruitkomsten van dit programma geldt: koppel wat relevant is aan TG2-leeruitkomsten waar dat in je eigen route past.</li>
+        <li><strong class="font-medium text-ink">Houd het Teams-kanaal open voor vervolgvragen</strong> in de twee weken na de afsluiting.</li>
+      </ol>
     </div>
   </section>
 
   <section class="py-10 border-t border-rule">
     <div class="max-w-3xl">
-      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Bronnen voor deze week</h2>
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="document" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Je AI-logboek deze week</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Geen nieuwe verplichte entries; het logboek is af. Je gebruikt hem als geheugen voor de drietalronde en voor je vervolgcommitment.</p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="layers" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Bouwstenen bij deze week</h2>
+      </div>
       <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
         <li class="flex items-start gap-3">
           <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/zelftest/')}>Zelftest</a> · tweede afname, uiterlijk 48 uur vóór de werksessie</span>
+          <span>Je twee vertaalslag-notities (uit week 4 en week 6) in Portflow</span>
         </li>
         <li class="flex items-start gap-3">
-          <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/ai-logboek/')}>AI-logboek</a> · je eigen geheugen van zes weken bij De Vier Vaten</span>
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Je <a href={url('/ai-logboek/')}>AI-logboek</a> over zes weken</span>
         </li>
         <li class="flex items-start gap-3">
-          <Icon name="target" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/vaardigheden/')}>Wat je leert</a> · de drie vaardigheden als kapstok voor je reflectie</span>
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>De tweede <a href={url('/zelftest/')}>zelftest</a> via Teams</span>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="clock" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Tijdsbeslag</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Afsluiting 60 minuten. Daarnaast circa 1 tot 2 uur in eigen tempo (tweede zelftest vooraf, Portflow-landing erna).</p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="mail" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Waar je op kunt terugvallen</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Als je in de drietalronde een veilig moment kiest ("ik heb veel geleerd"), krijg je van je peers of van mij waarschijnlijk één doorvraag. Niet bedoeld als val; bedoeld om iets concreets op tafel te krijgen. Denk vooraf even aan één beslissing in week 5 die je in week 2 nog niet zou hebben genomen. Voor je vervolgcommitment geldt: concreet werkt ("vanaf maandag begin ik elke werksessie met een toolkeuze van twee minuten in mijn logboek"), een algemeenheid werkt niet ("ik ga AI bewuster gebruiken").</p>
     </div>
   </section>
 

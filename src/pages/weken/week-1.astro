@@ -30,32 +30,9 @@ const week = getWeek(1)!;
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
           <Icon name="users" size={20} />
         </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doen we samen</h2>
       </div>
-      <p class="text-ink-muted mb-5 max-w-prose">Plenair, fysiek, tot 60 minuten. Drie delen die aan het einde samenkomen.</p>
-      <ol class="space-y-4 max-w-prose list-none p-0 m-0">
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Spiegel via de zelftest</p>
-            <p class="text-ink-muted m-0">We bekijken samen wat de groepsuitkomst van de zelftest laat zien. Je legt je eigen antwoorden ernaast en herkent waar jouw groeiruimte zit.</p>
-          </div>
-        </li>
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Programma in zeven werkweken</p>
-            <p class="text-ink-muted m-0">Een heldere doorloop van de tijdlijn: wat doen we wanneer, wat is het ritme, wat krijg je van mij en wat vraag ik van jou.</p>
-          </div>
-        </li>
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Je eigen voornemen</p>
-            <p class="text-ink-muted m-0">Je schrijft in een paar minuten op wat je wilt leren, bespreekt dat in een tweetal en zegt je voornemen in één zin plenair uit.</p>
-          </div>
-        </li>
-      </ol>
+      <p class="text-ink-muted max-w-prose m-0">Een plenaire startbijeenkomst van zestig minuten, fysiek. Drie dingen: we bespreken de uitkomst van de zelftest die je vooraf invult, we lopen samen door hoe de zeven weken eruit zien, en je formuleert een eigen voornemen dat je kort aan iemand anders uitspreekt.</p>
     </div>
   </section>
 
@@ -65,52 +42,91 @@ const week = getWeek(1)!;
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
           <Icon name="clock" size={20} />
         </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doe je vóór de startbijeenkomst</h2>
       </div>
-      <p class="text-ink-muted mb-6 max-w-prose">Indicatief 2 tot 5 uur. Verdeeld over voorbereiding en uitloop.</p>
-
-      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Vóór de werksessie</h3>
-      <ul class="list-disc pl-6 text-ink-muted mb-8 space-y-2 max-w-prose">
-        <li>Vul de <a href={url('/zelftest/')}>zelftest</a> in, uiterlijk 48 uur vóór de werksessie. Zo kan ik een groepsoverzicht voorbereiden dat we in de sessie bespreken.</li>
-        <li>Denk kort na over waar je nu staat met AI in je werk, zodat het voornemen straks niet uit het niets hoeft te komen.</li>
-      </ul>
-
-      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Direct na de werksessie</h3>
-      <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
-        <li>Binnen 24 uur ontvang je in het Teams-kanaal een bericht met de briefing van casus 1 en de instructie voor je <a href={url('/ai-logboek/')}>AI-logboek</a>.</li>
-        <li>Lees de briefing van casus 1 door, zodat je de werksessie van werkweek 2 scherp instapt.</li>
-        <li>Zet je AI-logboek op (kies een medium dat bij je past) en schrijf één testentry over iets wat je deze week al met AI hebt gedaan.</li>
-        <li>Formuleer één concrete vraag waarmee je werkweek 2 wilt beginnen.</li>
-      </ul>
+      <ol class="list-decimal pl-6 text-ink-muted space-y-3 max-w-prose">
+        <li>Vul de <a href={url('/zelftest/')}>zelftest</a> in via de link in het Teams-kanaal. Deadline: minstens 48 uur vóór de startbijeenkomst, zodat het groepsbeeld klaar is voor de zaal.</li>
+        <li>Kom met één vraag binnen waar je zelf nog geen antwoord op hebt over AI in commercieel werk. Die vraag hoef je niet ergens in te leveren; hij helpt je om wakker de zaal in te stappen.</li>
+      </ol>
+      <p class="text-ink-muted mt-4 mb-0 max-w-prose">Meer werk dan dat hoef je in week 1 niet te doen. Het echte werk begint vanaf week 2.</p>
     </div>
   </section>
 
   <section class="py-10 border-t border-rule">
     <div class="max-w-3xl">
-      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
-      <p class="text-lg leading-relaxed max-w-prose m-0">
-        Na de startbijeenkomst pakken we in <a href={url('/weken/week-2/')}>werkweek 2</a> de eerste casus op. Je hebt dan al kennisgemaakt met de werkwijze, je hebt een logboek en een eigen voornemen. Dat zijn de haakjes waaraan de rest van het programma hangt.
-      </p>
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="arrow-right" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doe je na de startbijeenkomst</h2>
+      </div>
+      <p class="text-ink-muted mb-4 max-w-prose">Drie dingen vóór de werksessie van week 2.</p>
+      <ol class="list-decimal pl-6 text-ink-muted space-y-3 max-w-prose">
+        <li><strong class="font-medium text-ink">Zet je AI-logboek op.</strong> Lees eerst de <a href={url('/ai-logboek/')}>instructie voor het AI-logboek</a>. Kies een medium (Word, OneNote, Notion, Tana, papier, wat bij jou past), maak de eerste pagina, schrijf één testentry over iets wat je deze week met AI hebt gedaan.</li>
+        <li><strong class="font-medium text-ink">Lees de briefing van casus 1.</strong> Die komt binnen 24 uur na de startbijeenkomst in Teams. Rustig doorlezen, een uurtje rondkijken op websites van een paar Nederlandse craft-brouwerijen, bedenken waar jouw vragen liggen. Niet uitwerken.</li>
+        <li><strong class="font-medium text-ink">Noteer één concrete vraag</strong> waarmee je de werksessie van week 2 instapt. Bijvoorbeeld over welke tool bij welke fase past, of waar je begint als je een opdrachtgever in een voor jou nieuwe sector binnenloopt.</li>
+      </ol>
     </div>
   </section>
 
   <section class="py-10 border-t border-rule">
     <div class="max-w-3xl">
-      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Bronnen voor deze week</h2>
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="document" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Je AI-logboek deze week</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Doel deze week: logboek staat, één testentry is geschreven. Meer niet. In week 2 begin je met echte entries tijdens het werk voor De Vier Vaten.</p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="layers" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Bouwstenen bij deze week</h2>
+      </div>
       <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
         <li class="flex items-start gap-3">
           <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/zelftest/')}>Zelftest</a> · in te vullen uiterlijk 48 uur vóór de startbijeenkomst</span>
+          <span><a href={url('/ai-logboek/')}>Instructie AI-logboek</a></span>
         </li>
         <li class="flex items-start gap-3">
-          <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/ai-logboek/')}>AI-logboek</a> · uitleg en opzet</span>
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Briefing casus 1 zoals die in Teams verschijnt, plus het <a href={url('/casussen/casusboek/')}>casusboek De Vier Vaten</a> voor aanvullende achtergrond</span>
         </li>
         <li class="flex items-start gap-3">
-          <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span>Briefing casus 1 · volgt via Teams-bericht direct na de startbijeenkomst</span>
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Het Teams-kanaal van het programma voor vragen tussendoor</span>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="clock" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Tijdsbeslag</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Startbijeenkomst 60 minuten. Daarnaast circa 1 tot 2 uur in eigen tempo (zelftest vooraf, na de startbijeenkomst: logboek opzetten en briefing doorlezen). Week 1 is bewust lichter dan de casusweken; je hebt de tijd voor het volgende blok nodig.</p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="mail" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Waar je op kunt terugvallen</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Vragen over het logboek of over de casusbriefing zet je in het Teams-kanaal. Vragen die te groot zijn voor een bericht neem je mee naar de werksessie van week 2.</p>
     </div>
   </section>
 

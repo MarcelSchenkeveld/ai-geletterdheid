@@ -30,32 +30,9 @@ const week = getWeek(2)!;
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
           <Icon name="users" size={20} />
         </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doen we samen</h2>
       </div>
-      <p class="text-ink-muted mb-5 max-w-prose">Plenair, 30 tot 60 minuten. Kantelmoment: welke AI-toepassingen ga je inzetten, en waarom?</p>
-      <ol class="space-y-4 max-w-prose list-none p-0 m-0">
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Drie minuten pitch</p>
-            <p class="text-ink-muted m-0">Je presenteert welke twee tot drie AI-toepassingen je deze week wilt inzetten: welke fase, welke rol, welke verwachting. Kort en concreet.</p>
-          </div>
-        </li>
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Eén kritische vraag terug</p>
-            <p class="text-ink-muted m-0">Een medestudent stelt één pittige vraag bij jouw keuze. Niet oordelen, wel scherpen.</p>
-          </div>
-        </li>
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">3</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Patronen en afspraken voor deze week</p>
-            <p class="text-ink-muted m-0">Je docent maakt zichtbaar welke patronen in de toolkeuzes opvallen en wat we deze week extra in het logboek willen zien.</p>
-          </div>
-        </li>
-      </ol>
+      <p class="text-ink-muted max-w-prose m-0">Een werksessie van 30 tot 60 minuten. Je pitcht in drie minuten welke twee à drie AI-toepassingen je deze week wilt inzetten en waarom. Je buur stelt je één kritische vraag. Daarna bespreken we plenair welke patronen in de toolkeuzes van de groep zitten en waar de grootste onzekerheid ligt.</p>
     </div>
   </section>
 
@@ -65,51 +42,96 @@ const week = getWeek(2)!;
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
           <Icon name="clock" size={20} />
         </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doe je vóór de werksessie</h2>
       </div>
-      <p class="text-ink-muted mb-6 max-w-prose">Indicatief 2 tot 5 uur. Verdeeld over oriëntatie, inhoudelijk werk en documentatie.</p>
-
-      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Vóór de werksessie</h3>
-      <ul class="list-disc pl-6 text-ink-muted mb-8 space-y-2 max-w-prose">
-        <li>Lees de briefing van <a href={url('/casussen/')}>De Vier Vaten</a> rustig door (volgt via Teams na de startbijeenkomst).</li>
-        <li>Oriënteer je een uurtje op een paar bestaande craft-brouwerijwebsites; bedenk vast waar jouw vragen liggen. Niet uitwerken, wel scherp worden.</li>
-      </ul>
-
-      <h3 class="mt-0 mb-3 text-base font-sans font-semibold text-ink">Na de werksessie</h3>
-      <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose">
-        <li>Werk één of twee persona's uit voor de doelgroep van het proefdoos-abonnement.</li>
-        <li>Schets een eerste positionering (richtinggevende statements, nog geen definitief statement).</li>
-        <li>Documenteer je AI-keuzes in je <a href={url('/ai-logboek/')}>AI-logboek</a>: welke prompt, welke output, welke nabewerking, en wat zou je in een tweede ronde anders doen? Vul dat laatste veld deze week nadrukkelijk in; de toolkeuze is nog vers en herzienbaar.</li>
-      </ul>
+      <ol class="list-decimal pl-6 text-ink-muted space-y-3 max-w-prose">
+        <li><strong class="font-medium text-ink">Lees de briefing van casus 1 en het aanvullende casusboek</strong> rustig door. Deze staan sinds einde week 1 in Teams.</li>
+        <li><strong class="font-medium text-ink">Kijk een uurtje rond op een paar websites van Nederlandse craft-brouwerijen</strong> (bijvoorbeeld Brouwerij De Molen of Oedipus, of een brouwerij bij jou in de buurt). Let op hoe zij hun verhaal vertellen, wie hun klant lijkt te zijn, welke producten ze voeren. Niet samenvatten; inleven.</li>
+        <li><strong class="font-medium text-ink">Bepaal welke twee à drie AI-toepassingen je deze week wilt inzetten</strong> voor de eerste stappen (marktverkenning, persona's, eerste positionering). Per tool noteer je: welke fase ga ik hiermee aanpakken, welke rol geef ik de tool, wat verwacht ik dat eruit komt.</li>
+        <li><strong class="font-medium text-ink">Bereid je pitch van drie minuten voor</strong> op basis van die keuzes.</li>
+      </ol>
     </div>
   </section>
 
   <section class="py-10 border-t border-rule">
     <div class="max-w-3xl">
-      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
-      <p class="text-lg leading-relaxed max-w-prose m-0">
-        Dit is de start van drie weken werken voor De Vier Vaten. In <a href={url('/weken/week-3/')}>werkweek 3</a> ga je dieper in op idee-ontwikkeling en alternatieven; in <a href={url('/weken/week-4/')}>werkweek 4</a> lever je het mini-plan op en maak je de eerste vertaalslag naar je eigen Business Challenge.
-      </p>
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="arrow-right" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doe je na de werksessie</h2>
+      </div>
+      <p class="text-ink-muted mb-4 max-w-prose">Twee deliverables voor week 3.</p>
+      <ol class="list-decimal pl-6 text-ink-muted space-y-3 max-w-prose">
+        <li><strong class="font-medium text-ink">Een of twee persona's</strong> voor de doelgroep van het proefdoos-abonnement. Kies bewust welke persona's je maakt op basis van wat De Vier Vaten vraagt.</li>
+        <li><strong class="font-medium text-ink">Een eerste positioneringsschets.</strong> Richtinggevende statements, geen volledig positioneringsstatement nog.</li>
+      </ol>
+      <p class="text-ink-muted mt-4 mb-0 max-w-prose">Alle keuzes en stappen leg je vast in je <a href={url('/ai-logboek/')}>AI-logboek</a>.</p>
     </div>
   </section>
 
   <section class="py-10 border-t border-rule">
     <div class="max-w-3xl">
-      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Bronnen voor deze week</h2>
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="document" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Je AI-logboek deze week</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Per serieuze inzet van AI maak je een entry. Reken op drie tot vijf entries. Belangrijk deze week: het veld "wat zou ik anders doen" vul je nadrukkelijk in. Je toolkeuze is nu nog vers en dus herzienbaar; juist nu is de reflectie waardevol.</p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="layers" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Bouwstenen bij deze week</h2>
+      </div>
       <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
         <li class="flex items-start gap-3">
-          <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/casussen/')}>De casus: Brouwerij De Vier Vaten</a> · briefing en context</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/casussen/casusboek/')}>Casusboek</a> · achtergrond bij de opdrachtgever</span>
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Briefing casus 1 zoals die in Teams verschijnt</span>
         </li>
         <li class="flex items-start gap-3">
           <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/ai-logboek/')}>AI-logboek</a> · vaste velden per entry</span>
+          <span><a href={url('/casussen/casusboek/')}>Casusboek De Vier Vaten</a> voor extra achtergrond over de brouwerij, oprichters, assortiment, klanten, cijfers</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Je eigen <a href={url('/ai-logboek/')}>AI-logboek</a></span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Het Teams-kanaal voor vragen tussendoor</span>
         </li>
       </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="clock" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Tijdsbeslag</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Werksessie 30 tot 60 minuten. Daarnaast circa 3 uur in eigen tempo.</p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="mail" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Waar je op kunt terugvallen</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">De Vier Vaten beantwoordt deze weken geen aanvullende vragen. Dat is bewust: commerciële opdrachten werken vaak met onvolledige informatie. Loop je tegen een ontbrekend feit aan, maak een plausibele aanname en leg die vast in je logboek. Blijf je steken, zet je vraag in Teams.</p>
     </div>
   </section>
 

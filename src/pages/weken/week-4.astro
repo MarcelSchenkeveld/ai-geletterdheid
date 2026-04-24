@@ -7,14 +7,6 @@ import { url } from '../../lib/url.ts';
 import { getWeek } from '../../data/weken.ts';
 
 const week = getWeek(4)!;
-
-const vertaalslagKoppen = [
-  { n: 1, titel: 'Mijn werkwijze in deze casus', hint: 'Niet wat de casus inhield (dat staat in je mini-plan), wel wat opviel aan jouw eigen aanpak. Welke tool wanneer, welk moment bewust zonder AI?' },
-  { n: 2, titel: 'Wat ik overneem in mijn lopende Business Challenge', hint: 'Een herkenbare actie, geen vaag voornemen. Maximaal drie elementen, liever één goede dan drie halve.' },
-  { n: 3, titel: 'Hoe ik dat navolgbaar maak in mijn BC-werk', hint: 'Welk logboek of welke documentatie houd je bij, en op welk moment laat je je BC-coach of -team meekijken?' },
-  { n: 4, titel: 'Wat ik bewust niet overneem en waarom', hint: 'Even belangrijk als deel 2. Regie is óók weten wat je niet doet.' },
-  { n: 5, titel: 'Wat ik hieruit leer over mijn ontwikkeling', hint: 'Eerlijke observatie, geen brave conclusie. Welke vraag wil je openleggen bij je BC-coach of medestudenten?' },
-];
 ---
 <BaseLayout
   title={`Werkweek ${week.n}: ${week.kop}`}
@@ -25,10 +17,6 @@ const vertaalslagKoppen = [
       <div class="flex flex-wrap items-baseline gap-x-4 gap-y-1 mb-4">
         <p class="text-sm uppercase tracking-[0.15em] text-ink-muted m-0">Werkweek {week.n}</p>
         <p class="text-sm text-ink-muted m-0">{week.periode}</p>
-        <span class="inline-flex items-center gap-1 text-xs text-accent bg-accent-soft/60 px-2 py-0.5 rounded-sm font-medium">
-          <Icon name="target" size={12} />
-          Vertaalslag naar je Business Challenge
-        </span>
       </div>
       <h1 class="text-4xl md:text-5xl leading-[1.05] mb-5 mt-0">{week.kop}</h1>
       <p class="text-xl text-ink-muted leading-relaxed mb-8 max-w-prose">{week.oneliner}</p>
@@ -42,25 +30,11 @@ const vertaalslagKoppen = [
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
           <Icon name="users" size={20} />
         </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In de werksessie</h2>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doen we samen</h2>
       </div>
-      <p class="text-ink-muted mb-5 max-w-prose">Plenair, 30 tot 60 minuten. Twee delen die elkaar natuurlijk opvolgen.</p>
-      <ol class="space-y-4 max-w-prose list-none p-0 m-0">
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">1</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Elkaars mini-plan tegenlezen, in drietallen</p>
-            <p class="text-ink-muted m-0">Twee vragen op tafel per plan: wat is voor De Vier Vaten het sterkste onderdeel, en wat is het zwakste? Geen oordeel over personen, wel scherp kijken naar het werk.</p>
-          </div>
-        </li>
-        <li class="flex gap-5 items-start">
-          <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">2</span>
-          <div>
-            <p class="font-medium text-ink m-0 mb-1">Vertaalslag-pitch in hetzelfde drietal</p>
-            <p class="text-ink-muted m-0">Wat neem je uit de werkwijze van de afgelopen drie weken mee naar je lopende Business Challenge, en hoe ga je dat in je eigen werk zichtbaar maken? Geen beoordeling; herkenning bij elkaar staat centraal.</p>
-          </div>
-        </li>
-      </ol>
+      <p class="text-ink-muted max-w-prose mb-4">Een werksessie van 30 tot 60 minuten in twee delen.</p>
+      <p class="text-ink-muted max-w-prose mb-4">Eerst een dialoog in tweetallen op basis van je AI-logboek. Eén persoon vertelt vijf minuten over één entry waar hij iets heeft geleerd, de ander stelt verdiepende vragen. Dan wisselen.</p>
+      <p class="text-ink-muted max-w-prose m-0">Daarna een plenaire pitch. Je presenteert in drie minuten hoe je de werkwijze uit deze casus (toolkeuze, denkproces, regie over je AI-gebruik) in je lopende Business Challenge gaat overnemen, en welke navolgbaarheid je jezelf oplegt. Geen oordeel; herkenning bij elkaar staat centraal.</p>
     </div>
   </section>
 
@@ -70,14 +44,70 @@ const vertaalslagKoppen = [
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
           <Icon name="clock" size={20} />
         </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">In eigen tempo</h2>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doe je vóór de werksessie</h2>
       </div>
-      <p class="text-ink-muted mb-5 max-w-prose">Indicatief 2 tot 5 uur. Je consolideert wat je in de afgelopen drie weken hebt opgebouwd.</p>
-      <ul class="list-disc pl-6 text-ink-muted space-y-2 max-w-prose mb-6">
-        <li>Maak het mini-plan af (vier tot zes pagina's: persona's, propositie-canvas, positioneringsstatement, kanaalmix met onderbouwing, klantreis op hoofdlijnen).</li>
-        <li>Lever je gekozen voorbeeldcontent erbij (welkom-mailflow, drie social-posts, productpagina-tekst, of nieuwsbriefboodschap; één of twee elementen).</li>
-        <li>Schrijf je vertaalslag-notitie volgens het format hieronder. Plaats hem in je portfolio.</li>
-        <li>Rond je <a href={url('/ai-logboek/')}>AI-logboek</a> over deze drie weken af met een korte slotreflectie van honderd tot tweehonderd woorden: wat zegt dit AI-gebruik over jou als beginnend commercieel professional?</li>
+      <ol class="list-decimal pl-6 text-ink-muted space-y-3 max-w-prose">
+        <li><strong class="font-medium text-ink">Consolideer het mini-plan tot vier à zes pagina's.</strong> Je mini-plan bevat: één of twee persona's, een propositie-canvas, een positioneringsstatement, een kanaalmix met onderbouwing, en een klantreis op hoofdlijnen.</li>
+        <li><strong class="font-medium text-ink">Kies en werk je voorbeeldcontent af</strong> (één of twee van de elementen uit week 3).</li>
+        <li><strong class="font-medium text-ink">Schrijf een eerste schets voor de vertaalslag-notitie</strong> (maximaal twee A4). Gebruik de vijf vaste kopregels uit het format voor de vertaalslag-notitie dat je in Teams vindt. De zesde sectie laat je deze ronde leeg; die is voor vertaalslag 2 in week 6.</li>
+        <li><strong class="font-medium text-ink">Zorg dat je vier programma-bestanden bij de hand hebt</strong> in Teams: mini-plan, voorbeeldcontent, eerste schets vertaalslag-notitie, je AI-logboek over drie weken.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="arrow-right" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat doe je na de werksessie</h2>
+      </div>
+      <ol class="list-decimal pl-6 text-ink-muted space-y-3 max-w-prose">
+        <li><strong class="font-medium text-ink">Lever mini-plan en voorbeeldcontent in</strong> via Teams.</li>
+        <li><strong class="font-medium text-ink">Plaats de definitieve vertaalslag-notitie</strong> in je eigen ontwikkelportfolio (Portflow), gekoppeld aan de programma-leeruitkomst over eigenaarschap en verantwoord AI-gebruik, en optioneel aan TG2-PPO. Je AI-logboek voeg je als bijlage toe.</li>
+        <li><strong class="font-medium text-ink">Lees de vervolgbriefing voor casus 2.</strong> Die komt in Teams einde week 4.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="document" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Je AI-logboek deze week</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Geen nieuwe verplichte entries; het logboek is nu je bron voor de vertaalslag. Wel een korte slotreflectie van honderd tot tweehonderd woorden waarin je benoemt wat het eigen AI-gebruik in deze casus voor jou als beginnend commercieel professional betekent. Die reflectie hoort bij veld 5 van je logboek maar mag ook als losse notitie naast het logboek staan.</p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="layers" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Bouwstenen bij deze week</h2>
+      </div>
+      <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Format vertaalslag-notitie zoals dat in Teams staat</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Je eigen <a href={url('/ai-logboek/')}>AI-logboek</a> over drie weken</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Je werk uit week 2 en 3 (persona's, positionering, propositie, voorbeeldcontent)</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span>Portflow voor de landing van de vertaalslag-notitie</span>
+        </li>
       </ul>
     </div>
   </section>
@@ -86,56 +116,23 @@ const vertaalslagKoppen = [
     <div class="max-w-3xl">
       <div class="flex items-center gap-3 mb-5">
         <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
-          <Icon name="target" size={20} />
+          <Icon name="clock" size={20} />
         </span>
-        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Wat is een vertaalslag-notitie?</h2>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Tijdsbeslag</h2>
       </div>
-      <p class="text-ink-muted mb-6 max-w-prose">
-        Een korte notitie van maximaal twee A4 waarin je expliciet maakt wat je van de werkwijze in deze casus meeneemt naar je eigen Business Challenge. Geen rapport, wel eerlijk antwoord op vijf vragen. Het volledige format ontvang je via Teams; hieronder de vijf kopregels als richting.
-      </p>
-      <ol class="space-y-4 list-none p-0 m-0 max-w-prose">
-        {vertaalslagKoppen.map((k) => (
-          <li class="flex gap-5 items-start">
-            <span class="font-serif text-2xl text-accent leading-none pt-1 flex-shrink-0">{k.n}</span>
-            <div>
-              <p class="font-medium text-ink m-0 mb-1">{k.titel}</p>
-              <p class="text-ink-muted m-0 text-sm">{k.hint}</p>
-            </div>
-          </li>
-        ))}
-      </ol>
-      <p class="text-sm text-ink-muted italic mt-6 max-w-prose border-l-2 border-accent-soft pl-4 m-0">
-        In werkweek 6 schrijf je een tweede vertaalslag-notitie, met dezelfde vijf kopregels plus een korte zesde sectie waarin je terugkijkt op deze eerste.
-      </p>
+      <p class="text-ink-muted max-w-prose m-0">Werksessie 30 tot 60 minuten. Daarnaast circa 4 tot 5 uur in eigen tempo. Deze week is de zwaarste van casus 1 omdat je het mini-plan consolideert en de vertaalslag schrijft.</p>
     </div>
   </section>
 
   <section class="py-10 border-t border-rule">
     <div class="max-w-3xl">
-      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Waar gaat dit naartoe</h2>
-      <p class="text-lg leading-relaxed max-w-prose m-0">
-        Na deze week ontvangt De Vier Vaten je mini-plan en bespreekt het intern. In <a href={url('/weken/week-5/')}>werkweek 5</a> hoor je hoe zij erover dachten en welke vervolgvraag zij hebben.
-      </p>
-    </div>
-  </section>
-
-  <section class="py-10 border-t border-rule">
-    <div class="max-w-3xl">
-      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Bronnen voor deze week</h2>
-      <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
-        <li class="flex items-start gap-3">
-          <Icon name="layers" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/casussen/')}>De casus: Brouwerij De Vier Vaten</a></span>
-        </li>
-        <li class="flex items-start gap-3">
-          <Icon name="document" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span><a href={url('/ai-logboek/')}>AI-logboek</a> · je bronmateriaal voor de vertaalslag</span>
-        </li>
-        <li class="flex items-start gap-3">
-          <Icon name="target" size={18} class="text-accent flex-shrink-0 mt-1" />
-          <span>Vertaalslag-notitie-format · wordt gedeeld via Teams</span>
-        </li>
-      </ul>
+      <div class="flex items-center gap-3 mb-5">
+        <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+          <Icon name="mail" size={20} />
+        </span>
+        <h2 class="text-2xl md:text-3xl mt-0 mb-0">Waar je op kunt terugvallen</h2>
+      </div>
+      <p class="text-ink-muted max-w-prose m-0">Een dunne vertaalslag-notitie is meestal een teken van een dunner logboek. Herken je dat? Blader je logboek terug naar weken 2 en 3, vul twee of drie entries aan waar je toen te snel langsging, en begin dan opnieuw aan de notitie. Het format helpt je met scherpe kopregels; zie deel 2 voor wat een herkenbare actie is versus een vaag voornemen.</p>
     </div>
   </section>
 
