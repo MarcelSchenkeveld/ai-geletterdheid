@@ -1,20 +1,85 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PlaceholderSection from '../../components/PlaceholderSection.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
+
+const vaardigheden = [
+  {
+    titel: 'AI inzetten in commerciële vraagstukken',
+    tekst: 'Passende AI-toepassing kiezen, sturen op bruikbare output, beoordelen of het past bij wat je opdrachtgever nodig heeft.',
+    icon: 'target',
+  },
+  {
+    titel: 'Kritisch en creatief denken met AI',
+    tekst: 'AI gebruiken om scherper en breder te denken, in plaats van AI je denkwerk te laten overnemen.',
+    icon: 'compass',
+  },
+  {
+    titel: 'Regie en verantwoord AI-gebruik',
+    tekst: 'Navolgbaar maken hoe je AI hebt ingezet, ethische afwegingen kunnen toelichten, zelf de regie houden.',
+    icon: 'check',
+  },
+];
 ---
 <BaseLayout
   title="Achtergrond en bronnen"
-  description="Kort overzicht van de onderbouwing onder het programma, voor wie meer wil weten."
+  description="De onderbouwing onder het programma, kort en toegankelijk, voor wie meer wil weten."
 >
-  <PlaceholderSection
-    title="Achtergrond en bronnen"
-    lede="Voor wie meer wil weten waar dit programma op is gebaseerd: een korte, toegankelijke uitleg en verwijzingen naar de belangrijkste bronnen."
-    items={[
-      "AI-GO!: het Nederlandse raamwerk voor AI-geletterdheid in het onderwijs (Renkema et al., 2025)",
-      "UNESCO AI Competency Framework for Students: progressielogica Understand, Apply, Create",
-      "EU AI Act Artikel 4: waarom AI-geletterdheid nu expliciet wettelijk aandacht krijgt",
-      "Hoe we deze bronnen in het programma gebruiken, zonder je met vaktermen te belasten",
-    ]}
-    note="Tekst wordt geschreven in alledaags Nederlands; vakjargon blijft in de achtergronddocumenten in de onderwijsmap."
-  />
+  <section class="py-12 md:py-16">
+    <div class="max-w-3xl">
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Achtergrond en bronnen</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Waar dit programma op rust</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Dit programma is ontworpen op basis van onderzoek en richtlijnen die de afgelopen jaren in het onderwijs zijn verschenen. Hieronder in het kort waar het op rust, zonder diep in de literatuur te gaan.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-5xl">
+      <h2 class="text-2xl md:text-3xl mb-2 mt-0">Drie vaardigheden die door alles heen lopen</h2>
+      <p class="text-ink-muted mb-8 max-w-prose">Deze drie zijn de rode draad in zeven werkweken. Ze staan elders op de site in meer detail.</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        {vaardigheden.map((v) => (
+          <article class="border border-rule rounded-md p-6 bg-white/40">
+            <span class="inline-flex w-11 h-11 rounded-full bg-accent-soft items-center justify-center text-accent mb-4">
+              <Icon name={v.icon} size={22} />
+            </span>
+            <h3 class="mt-0 mb-2 text-base font-sans font-semibold text-ink">{v.titel}</h3>
+            <p class="text-ink-muted text-sm m-0">{v.tekst}</p>
+          </article>
+        ))}
+      </div>
+      <p class="text-sm mt-6 m-0">
+        <a href={url('/vaardigheden/')} class="inline-flex items-center gap-1">
+          Lees wat elke vaardigheid concreet betekent
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-8 mt-0">Waar het programma op rust</h2>
+      <div class="space-y-8 max-w-prose">
+        <div>
+          <h3 class="mt-0 mb-2 text-lg font-sans font-semibold text-ink">AI-GO! · een Nederlands raamwerk voor AI-geletterdheid</h3>
+          <p class="text-ink-muted m-0">Het raamwerk AI-GO! (Npuls, 2025) beschrijft wat AI-geletterdheid in het Nederlandse onderwijs inhoudt: kennis, vaardigheden en houdingen, met ethiek als doorlopend fundament. De drie vaardigheden in dit programma zijn geselecteerd uit dit raamwerk.</p>
+        </div>
+        <div>
+          <h3 class="mt-0 mb-2 text-lg font-sans font-semibold text-ink">UNESCO AI Competency Framework for Students</h3>
+          <p class="text-ink-muted m-0">UNESCO beschrijft drie niveaus waarop je AI in je werk inzet: begrijpen, toepassen en zelf vormgeven. Dit programma ligt vooral op het niveau "toepassen", met ruimte voor verdieping in de slotcasus.</p>
+        </div>
+        <div>
+          <h3 class="mt-0 mb-2 text-lg font-sans font-semibold text-ink">EU AI Act · artikel 4 over AI-geletterdheid</h3>
+          <p class="text-ink-muted m-0">Sinds februari 2025 verplicht de EU werkgevers en organisaties om medewerkers een redelijk niveau van AI-geletterdheid te geven. Dat maakt dit programma geen bijzaak maar relevant voor de beroepspraktijk waarin jij terechtkomt.</p>
+        </div>
+        <div>
+          <h3 class="mt-0 mb-2 text-lg font-sans font-semibold text-ink">Onderzoek naar informatie zoeken en verwerken in het HBO</h3>
+          <p class="text-ink-muted m-0">Uit recent Nederlands onderzoek blijkt dat studenten juist bij het verwerken en synthetiseren van informatie uit AI extra oefening nodig hebben. Het AI-logboek en de werkvormen in dit programma zijn daar mede op ingericht.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

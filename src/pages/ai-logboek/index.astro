@@ -1,0 +1,158 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
+
+const velden = [
+  {
+    n: 1,
+    kop: 'Wat wilde ik bereiken?',
+    tekst: 'Wat was je vraag of doel waarvoor je AI inzette?',
+  },
+  {
+    n: 2,
+    kop: 'Welke tool en welke prompt(s)?',
+    tekst: 'Welke AI-tool, en wat heb je ingetypt? Een korte samenvatting van je prompt is voldoende; je hoeft geen volledige transcripten te kopiëren.',
+  },
+  {
+    n: 3,
+    kop: 'Wat gaf AI?',
+    tekst: 'Het kernpunt van wat je terugkreeg. Niet de hele output, alleen wat ertoe deed.',
+  },
+  {
+    n: 4,
+    kop: 'Wat heb ik ermee gedaan?',
+    tekst: 'Heb je het overgenomen, bewerkt, weggegooid, deels gebruikt? Wat besloot je?',
+  },
+  {
+    n: 5,
+    kop: 'Wat heb ik geleerd of waarover twijfel ik?',
+    tekst: 'Eén of twee zinnen. Wat valt je op, of welke vraag blijft bij je hangen?',
+  },
+];
+---
+<BaseLayout
+  title="AI-logboek"
+  description="Het eenvoudige logboek dat je deze zeven weken bijhoudt om zichtbaar te maken waar je AI inzet, hoe en wat je ervan opsteekt."
+>
+  <section class="py-12 md:py-16">
+    <div class="max-w-3xl">
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">AI-logboek</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Je eigen logboek, vanaf dag één</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Een eenvoudig logboek waarin je per keer dat je iets serieus met AI doet kort opschrijft wat je wilde, wat je hebt gedaan en wat eruit kwam. Geen verplicht uitgebreid verslag. Wel een ritme dat zichtbaar maakt hoe je AI inzet.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Waarom dit logboek</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <article class="border border-rule rounded-md p-5 bg-white/40">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="compass" size={20} />
+          </span>
+          <h3 class="mt-0 mb-2 text-base font-sans font-semibold text-ink">Voor jezelf</h3>
+          <p class="text-sm text-ink-muted m-0">Je ziet over zeven weken wat je hebt geprobeerd, wat werkt en waar je nog twijfelt.</p>
+        </article>
+        <article class="border border-rule rounded-md p-5 bg-white/40">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="target" size={20} />
+          </span>
+          <h3 class="mt-0 mb-2 text-base font-sans font-semibold text-ink">Voor je werk</h3>
+          <p class="text-sm text-ink-muted m-0">In werkweek 4 en 6 pas je de werkwijze toe op je lopende Business Challenge. Het logboek is dan jouw eigen bron.</p>
+        </article>
+        <article class="border border-rule rounded-md p-5 bg-white/40">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="document" size={20} />
+          </span>
+          <h3 class="mt-0 mb-2 text-base font-sans font-semibold text-ink">Voor je portfolio</h3>
+          <p class="text-sm text-ink-muted m-0">De stukken die je bijhoudt zijn herbruikbaar als bewijs van je ontwikkeling.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-4xl">
+      <h2 class="text-2xl md:text-3xl mb-2 mt-0">Wat zet je per keer op</h2>
+      <p class="text-ink-muted mb-8 max-w-prose">Vijf korte velden. Een paar zinnen per veld is meestal genoeg.</p>
+      <ol class="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0 m-0">
+        {velden.map((v) => (
+          <li class="border border-rule rounded-md p-5 bg-white/40">
+            <div class="flex items-baseline gap-3 mb-2">
+              <span class="font-serif text-xl text-accent leading-none">{v.n}</span>
+              <h3 class="mt-0 mb-0 text-base font-sans font-semibold text-ink">{v.kop}</h3>
+            </div>
+            <p class="text-ink-muted m-0">{v.tekst}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Hoe vaak en waar</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-prose">
+        <div>
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="clock" size={20} />
+          </span>
+          <h3 class="mt-0 mb-2">Hoe vaak</h3>
+          <p class="text-ink-muted m-0">Per keer dat je iets serieus met AI doet. Niet voor elk klein dingetje. Reken op drie tot vijf entries per week.</p>
+        </div>
+        <div>
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="document" size={20} />
+          </span>
+          <h3 class="mt-0 mb-2">Waar</h3>
+          <p class="text-ink-muted m-0">Vrije keuze. Word, OneNote, Notion, Tana, je notitie-app, of op papier. Zolang je het zelf terugvindt en een stuk eruit snel kunt tonen, is het goed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Wanneer komt het logboek terug in het programma</h2>
+      <ul class="space-y-3 list-none p-0 m-0 max-w-prose">
+        <li class="flex items-start gap-3">
+          <Icon name="flag" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span class="text-ink"><strong class="font-semibold">Werkweek 1.</strong> Opzetten en een testentry schrijven, direct na de <a href={url('/weken/week-1/')}>startbijeenkomst</a>.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="target" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span class="text-ink"><strong class="font-semibold">Werkweek 4.</strong> Je logboek is je bron voor de <a href={url('/weken/week-4/')}>eerste vertaalslag</a> naar je Business Challenge.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="target" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span class="text-ink"><strong class="font-semibold">Werkweek 6.</strong> Opnieuw, voor de <a href={url('/weken/week-6/')}>tweede vertaalslag</a>.</span>
+        </li>
+        <li class="flex items-start gap-3">
+          <Icon name="check" size={18} class="text-accent flex-shrink-0 mt-1" />
+          <span class="text-ink"><strong class="font-semibold">Werkweek 7.</strong> Je leest je logboek terug voor de <a href={url('/weken/week-7/')}>afronding</a>; zie je zelf wat er is veranderd.</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Eén afspraak met jezelf</h2>
+      <p class="text-lg leading-relaxed max-w-prose m-0">
+        Schrijf de entry kort ná het werk, niet aan het eind van de week. Een entry van twee minuten direct na de actie levert meer op dan een poging om vrijdag een hele week te reconstrueren.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-4 mt-0">Beginnen</h2>
+      <p class="text-lg leading-relaxed max-w-prose m-0">
+        Zet vóór de werksessie van werkweek 2 je logboek op: kies een medium dat bij je past en schrijf één testentry over iets wat je deze week met AI hebt gedaan. Klaar.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

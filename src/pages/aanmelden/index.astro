@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
 import { url } from '../../lib/url.ts';
 ---
 <BaseLayout
@@ -8,53 +9,107 @@ import { url } from '../../lib/url.ts';
 >
   <section class="py-12 md:py-16">
     <div class="max-w-3xl">
-      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Placeholder</p>
-      <h1 class="text-4xl md:text-5xl leading-tight mb-6 mt-0">Aanmelden</h1>
-      <p class="text-xl text-ink-muted leading-relaxed mb-10 max-w-prose">
-        Meedoen begint met een bewuste keuze. Je spreekt aan het begin expliciet uit dat je meedoet; dat verandert hoe je erin staat en hoeveel je eruit haalt.
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Aanmelden</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Meedoen begint met een bewuste keuze</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Je spreekt aan het begin expliciet uit dat je meedoet. Dat verandert hoe je erin staat en hoeveel je eruit haalt. Daarom vier stappen, niet één klik.
       </p>
+    </div>
+  </section>
 
-      <h2 class="text-2xl mt-0 mb-6">De vier stappen</h2>
-      <ol class="space-y-4 mb-12 list-none p-0">
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-8 mt-0">De vier stappen</h2>
+      <ol class="space-y-6 list-none p-0 m-0 max-w-prose">
         <li class="flex gap-5 items-start">
-          <span class="font-serif text-3xl text-accent leading-none pt-1">1</span>
+          <span class="font-serif text-3xl text-accent leading-none pt-1 flex-shrink-0">1</span>
           <div>
-            <p class="font-medium m-0">Lees de info-pagina</p>
-            <p class="text-ink-muted mt-1 mb-0">Op de <a href={url('/over/')}>pagina over het programma</a> staat wat het is, voor wie en wat je eraan hebt.</p>
+            <p class="font-medium text-ink m-0 mb-1 text-lg">Aankondiging in je bestaande kanalen</p>
+            <p class="text-ink-muted m-0">Je hoort van het programma via de kanalen waar je al actief bent: lessen, Teams, wandelgangen. Geen extra nieuwsbrief om af te vangen.</p>
           </div>
         </li>
         <li class="flex gap-5 items-start">
-          <span class="font-serif text-3xl text-accent leading-none pt-1">2</span>
+          <span class="font-serif text-3xl text-accent leading-none pt-1 flex-shrink-0">2</span>
           <div>
-            <p class="font-medium m-0">Vul het aanmeldformulier in</p>
-            <p class="text-ink-muted mt-1 mb-0">Een kort formulier waarin je je voor het programma uitspreekt. Hier komt de Microsoft Forms-link.</p>
+            <p class="font-medium text-ink m-0 mb-1 text-lg">Deze info-pagina</p>
+            <p class="text-ink-muted m-0">Hier lees je wat het programma inhoudt, wat je eraan hebt en hoe het is opgebouwd. Zie <a href={url('/over/')}>Over het programma</a> en <a href={url('/vaardigheden/')}>Wat je leert</a>.</p>
           </div>
         </li>
         <li class="flex gap-5 items-start">
-          <span class="font-serif text-3xl text-accent leading-none pt-1">3</span>
+          <span class="font-serif text-3xl text-accent leading-none pt-1 flex-shrink-0">3</span>
           <div>
-            <p class="font-medium m-0">Ontvang je welkomstmail</p>
-            <p class="text-ink-muted mt-1 mb-0">Je krijgt een persoonlijke mail met je deelnemerscode en het programma-overzicht.</p>
+            <p class="font-medium text-ink m-0 mb-1 text-lg">Het aanmeldformulier</p>
+            <p class="text-ink-muted m-0">Een kort formulier waarin je je voor het programma uitspreekt. Zie de knop hieronder.</p>
           </div>
         </li>
         <li class="flex gap-5 items-start">
-          <span class="font-serif text-3xl text-accent leading-none pt-1">4</span>
+          <span class="font-serif text-3xl text-accent leading-none pt-1 flex-shrink-0">4</span>
           <div>
-            <p class="font-medium m-0">Start werkweek 1</p>
-            <p class="text-ink-muted mt-1 mb-0">Eerste plenaire kickoff, eerste zelftest, eigen voornemen formuleren. Je doet mee.</p>
+            <p class="font-medium text-ink m-0 mb-1 text-lg">Persoonlijke welkomstmail met deelnemerscode</p>
+            <p class="text-ink-muted m-0">Je ontvangt een welkomstbericht met je eigen deelnemerscode en het programma-overzicht. Daarna volgt een uitnodiging voor het Teams-kanaal van het programma.</p>
           </div>
         </li>
       </ol>
+    </div>
+  </section>
 
-      <div class="border border-accent-soft bg-accent-soft/40 rounded-md p-6">
-        <h3 class="mt-0 mb-2">Aanmeldformulier</h3>
-        <p class="text-ink-muted mb-4 m-0">Het ingebedde Microsoft Forms-formulier komt hier.</p>
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="border border-accent-soft bg-accent-soft/40 rounded-md p-6 md:p-8">
+        <h2 class="mt-0 mb-3 text-2xl">Aanmeldformulier</h2>
+        <p class="text-ink-muted mb-6 m-0 max-w-prose">Het formulier opent in Microsoft Forms binnen de Fontys-omgeving. Het duurt een paar minuten.</p>
         <a
           href="#TODO-forms-link"
-          class="inline-block px-5 py-3 bg-accent text-bg no-underline hover:bg-accent-hover rounded-sm font-medium"
+          class="inline-flex items-center gap-2 px-5 py-3 bg-accent text-bg no-underline hover:bg-accent-hover rounded-sm font-medium"
         >
-          Naar het formulier (placeholder)
+          Naar het aanmeldformulier
+          <Icon name="arrow-right" size={18} />
         </a>
+        <p class="text-sm text-ink-muted italic mt-4 m-0">Link volgt; zodra het formulier actief is, staat hij hier.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Wat gebeurt er na je aanmelding</h2>
+      <p class="text-ink-muted mb-6 max-w-prose">Drie dingen volgen elkaar op, bij voorkeur in de week vóór de startbijeenkomst van maandag 11 mei.</p>
+      <ol class="space-y-5 list-none p-0 m-0 max-w-prose">
+        <li class="flex gap-4 items-start">
+          <Icon name="mail" size={22} class="text-accent flex-shrink-0 mt-1" />
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Welkomstbericht via Teams</p>
+            <p class="text-ink-muted m-0">Je ontvangt een bericht in het programma-kanaal met je deelnemerscode, de link naar de zelftest en praktische info.</p>
+          </div>
+        </li>
+        <li class="flex gap-4 items-start">
+          <Icon name="check" size={22} class="text-accent flex-shrink-0 mt-1" />
+          <div>
+            <p class="font-medium text-ink m-0 mb-1"><a href={url('/zelftest/')}>Zelftest</a> invullen</p>
+            <p class="text-ink-muted m-0">Minimaal 48 uur vóór de startbijeenkomst. Duurt zes tot acht minuten. Zonder ingevulde zelftest geen cohort-spiegel, dus liever op tijd.</p>
+          </div>
+        </li>
+        <li class="flex gap-4 items-start">
+          <Icon name="users" size={22} class="text-accent flex-shrink-0 mt-1" />
+          <div>
+            <p class="font-medium text-ink m-0 mb-1">Plenaire startbijeenkomst</p>
+            <p class="text-ink-muted m-0">Op de aangekondigde datum, fysiek. Tijdstip en plaats ontvang je via Teams. Zie ook: <a href={url('/weken/week-1/')}>werkweek 1</a>.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="border border-rule rounded-md p-6 bg-white/40">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+            <Icon name="mail" size={20} />
+          </span>
+          <h3 class="mt-0 mb-0 text-lg font-sans font-semibold text-ink">Communicatie via Teams</h3>
+        </div>
+        <p class="text-ink-muted m-0 max-w-prose">Alle communicatie buiten de zaal verloopt via Microsoft Teams, in een eigen kanaal voor dit programma. Geen e-mail. Je krijgt na aanmelding een uitnodiging voor het kanaal.</p>
       </div>
     </div>
   </section>

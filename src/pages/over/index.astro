@@ -1,21 +1,78 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PlaceholderSection from '../../components/PlaceholderSection.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
 ---
 <BaseLayout
   title="Over het programma"
   description="Voor wie het programma is, waarom het nu belangrijk is, wat je ermee wint en hoe het is opgebouwd."
 >
-  <PlaceholderSection
-    title="Over het programma"
-    lede="Voor wie het programma is, waarom het nu belangrijk is, wat je ermee wint en hoe het is opgebouwd."
-    items={[
-      "Voor wie: hoofdfase-studenten CE (jaar 2 en 3), facultatief, groepsgrootte in overleg",
-      "Premisse: waarom AI-geletterdheid geen bonusvaardigheid is, maar voorwaarde voor het werk dat je toch al doet",
-      "Wat je eraan hebt, heel concreet: efficiënter onderzoek, scherpere plannen, betere Business Challenge",
-      "Hoe het is opgebouwd: ritme van werksessie + eigen tempo, twee casussen, twee vertaalslagen",
-      "Wat er niet is: geen extra studiepunten, geen dubbel werk, geen tool-circus",
-    ]}
-    note="Inhoud volgt in stap 4; toegankelijke vertaling van wat in voorstel-programma-collega-overleg.md staat."
-  />
+  <section class="py-12 md:py-20">
+    <div class="max-w-3xl">
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Over het programma</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Waarom dit programma er is</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Een facultatief programma binnen Commerciële Economie dat je leert hoe je AI serieus inzet in je eigen werk. Geen losse tool-trucs; werken aan echte vragen uit de commerciële praktijk met AI erbij.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Voor wie</h2>
+      <p class="text-lg leading-relaxed max-w-prose m-0">
+        Voor hoofdfase-studenten Commerciële Economie (jaar 2 en 3). Het programma is facultatief; je kiest zelf of je meedoet. Wie meedoet, spreekt dat aan het begin expliciet uit.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Wat je eraan hebt</h2>
+      <div class="space-y-4 text-lg leading-relaxed max-w-prose">
+        <p class="m-0">De vaardigheden die je hier opbouwt zijn niet optioneel in het werk dat je straks doet. Ze maken je onderzoek scherper, je marketingplan sterker en je Business Challenge beter. Geen extra studiepunten; wel directe winst op het werk dat je toch al doet.</p>
+        <p class="m-0">Bewijs uit dit programma (je AI-logboek, je werk in de casussen, je reflecties) is bovendien herbruikbaar voor je ontwikkelportfolio.</p>
+      </div>
+      <p class="text-sm mt-5 m-0">
+        <a href={url('/vaardigheden/')} class="inline-flex items-center gap-1">
+          Lees welke drie vaardigheden centraal staan
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Hoe het is opgebouwd</h2>
+      <p class="text-lg leading-relaxed max-w-prose mb-6">
+        Zeven werkweken in de structuur 1 + 3 + 2 + 1. Een plenaire startbijeenkomst, drie weken aan de eerste casus, twee weken aan de tweede, en een plenaire afronding. Tussendoor twee vertaalslagen waarin je de werkwijze uit de casus toepast op je eigen Business Challenge.
+      </p>
+      <p class="text-lg leading-relaxed max-w-prose m-0">
+        Per werkweek één werksessie van 30 tot 60 minuten plus 2 tot 5 uur in eigen tempo. De inhoud zit niet alleen in contacttijd; juist het zelf doen tussendoor is waar het gebeurt.
+      </p>
+      <p class="text-sm mt-5 m-0">
+        <a href={url('/architectuur/')} class="inline-flex items-center gap-1">
+          Bekijk de volledige programma-opbouw
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="border border-rule rounded-md p-6 bg-white/40">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+            <Icon name="mail" size={20} />
+          </span>
+          <h2 class="mt-0 mb-0 text-xl font-sans font-semibold text-ink">Communicatie via Teams</h2>
+        </div>
+        <p class="text-ink-muted m-0 max-w-prose">
+          Alle communicatie buiten de zaal verloopt via Microsoft Teams, in een eigen kanaal voor dit programma. Geen e-mail. Na aanmelding ontvang je een uitnodiging voor het kanaal.
+        </p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

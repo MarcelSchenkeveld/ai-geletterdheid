@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Icon from '../components/Icon.astro';
+import TijdlijnSchema from '../components/TijdlijnSchema.astro';
 import { url } from '../lib/url.ts';
 ---
 <BaseLayout
@@ -48,65 +49,7 @@ import { url } from '../lib/url.ts';
     <div class="max-w-5xl">
       <h2 class="text-2xl md:text-3xl mb-2 mt-0">Zeven werkweken, één ritme</h2>
       <p class="text-ink-muted mb-8 max-w-prose">Na een plenaire startbijeenkomst werk je aan twee casussen. Tussendoor pas je het geleerde twee keer toe op je eigen Business Challenge. In de laatste week trek je het geheel samen.</p>
-
-      <ol class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 list-none p-0 m-0">
-        <li class="border border-rule rounded-md p-5 bg-white/40">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
-              <Icon name="flag" size={20} />
-            </span>
-            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Start</p>
-          </div>
-          <div class="flex gap-1 mb-4" aria-hidden="true">
-            <span class="h-2 flex-1 bg-accent rounded-sm"></span>
-          </div>
-          <p class="font-medium text-ink m-0">Werkweek 1</p>
-          <p class="text-sm text-ink-muted mt-1 mb-0">Gezamenlijke start, eerste zelftest, kennismaking met casus 1.</p>
-        </li>
-        <li class="border border-rule rounded-md p-5 bg-white/40">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
-              <Icon name="layers" size={20} />
-            </span>
-            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Casus 1</p>
-          </div>
-          <div class="flex gap-1 mb-4" aria-hidden="true">
-            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
-            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
-            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
-          </div>
-          <p class="font-medium text-ink m-0">Werkweken 2 – 4</p>
-          <p class="text-sm text-ink-muted mt-1 mb-0">Drie weken werken aan een commerciële casus. Aan het einde een vertaalslag naar je eigen Business Challenge.</p>
-        </li>
-        <li class="border border-rule rounded-md p-5 bg-white/40">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
-              <Icon name="layers" size={20} />
-            </span>
-            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Casus 2</p>
-          </div>
-          <div class="flex gap-1 mb-4" aria-hidden="true">
-            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
-            <span class="h-2 flex-1 bg-accent-soft rounded-sm"></span>
-          </div>
-          <p class="font-medium text-ink m-0">Werkweken 5 – 6</p>
-          <p class="text-sm text-ink-muted mt-1 mb-0">Kortere, intensievere tweede casus. Opnieuw een vertaalslag naar je Business Challenge.</p>
-        </li>
-        <li class="border border-rule rounded-md p-5 bg-white/40">
-          <div class="flex items-center gap-3 mb-4">
-            <span class="w-10 h-10 rounded-full bg-accent-soft flex items-center justify-center text-accent">
-              <Icon name="check" size={20} />
-            </span>
-            <p class="text-xs uppercase tracking-[0.12em] text-ink-muted m-0">Afsluiting</p>
-          </div>
-          <div class="flex gap-1 mb-4" aria-hidden="true">
-            <span class="h-2 flex-1 bg-accent rounded-sm"></span>
-          </div>
-          <p class="font-medium text-ink m-0">Werkweek 7</p>
-          <p class="text-sm text-ink-muted mt-1 mb-0">Tweede zelftest, integratie en doorkijk naar de rest van je studie.</p>
-        </li>
-      </ol>
-
+      <TijdlijnSchema />
       <p class="text-sm mt-6 mb-0">
         <a href={url('/architectuur/')} class="inline-flex items-center gap-1">
           Bekijk de volledige programma-opbouw
@@ -125,7 +68,7 @@ import { url } from '../lib/url.ts';
             <Icon name="users" size={20} />
           </span>
           <h3 class="mb-2 mt-0">Eén werksessie per week</h3>
-          <p class="text-ink-muted m-0">30 tot 60 minuten, binnen het gewone samenwerkend leren-blok. Je werkt aan de lopende casus, krijgt feedback en bespreekt lastige keuzes met elkaar.</p>
+          <p class="text-ink-muted m-0">30 tot 60 minuten, binnen het gewone samenwerkend-leren-blok. Je werkt aan de lopende casus, krijgt feedback en bespreekt lastige keuzes met elkaar.</p>
         </div>
         <div>
           <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
@@ -140,8 +83,11 @@ import { url } from '../lib/url.ts';
 
   <section class="py-12 border-t border-rule">
     <div class="max-w-5xl">
-      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Verkennen</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <h2 class="text-2xl md:text-3xl mb-2 mt-0">Wat wil je doen</h2>
+      <p class="text-ink-muted mb-8 max-w-prose">Eerst oriënteren of direct meedoen; beide kan.</p>
+
+      <h3 class="text-xs uppercase tracking-[0.12em] text-ink-muted mt-0 mb-4 font-sans font-medium">Oriënteren</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
         <a
           href={url('/over/')}
           class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
@@ -149,7 +95,7 @@ import { url } from '../lib/url.ts';
           <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
             <Icon name="compass" size={20} />
           </span>
-          <h3 class="mb-2 mt-0 text-ink">Over het programma</h3>
+          <h4 class="mb-2 mt-0 text-ink">Over het programma</h4>
           <p class="text-sm text-ink-muted m-0">Voor wie het is, wat je eraan hebt, hoe het is opgebouwd.</p>
         </a>
         <a
@@ -159,8 +105,8 @@ import { url } from '../lib/url.ts';
           <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
             <Icon name="target" size={20} />
           </span>
-          <h3 class="mb-2 mt-0 text-ink">Wat je leert</h3>
-          <p class="text-sm text-ink-muted m-0">Drie leerdoelen die als rode draad door het programma lopen.</p>
+          <h4 class="mb-2 mt-0 text-ink">Wat je leert</h4>
+          <p class="text-sm text-ink-muted m-0">De drie vaardigheden die door het programma heen lopen.</p>
         </a>
         <a
           href={url('/weken/')}
@@ -169,7 +115,7 @@ import { url } from '../lib/url.ts';
           <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
             <Icon name="calendar" size={20} />
           </span>
-          <h3 class="mb-2 mt-0 text-ink">Per werkweek</h3>
+          <h4 class="mb-2 mt-0 text-ink">Per werkweek</h4>
           <p class="text-sm text-ink-muted m-0">Wat er in elke week gebeurt en wat je in eigen tempo doet.</p>
         </a>
         <a
@@ -179,8 +125,32 @@ import { url } from '../lib/url.ts';
           <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
             <Icon name="layers" size={20} />
           </span>
-          <h3 class="mb-2 mt-0 text-ink">Casussen</h3>
+          <h4 class="mb-2 mt-0 text-ink">Casussen</h4>
           <p class="text-sm text-ink-muted m-0">De twee casussen uit de praktijk waaraan je werkt.</p>
+        </a>
+      </div>
+
+      <h3 class="text-xs uppercase tracking-[0.12em] text-ink-muted mt-0 mb-4 font-sans font-medium">Meedoen</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a
+          href={url('/zelftest/')}
+          class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
+        >
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="check" size={20} />
+          </span>
+          <h4 class="mb-2 mt-0 text-ink">Vul de zelftest in</h4>
+          <p class="text-sm text-ink-muted m-0">Een spiegel voor jezelf, zes tot acht minuten. In te vullen vóór de startbijeenkomst.</p>
+        </a>
+        <a
+          href={url('/aanmelden/')}
+          class="block border border-rule rounded-md p-5 no-underline hover:border-accent bg-white/40 hover:bg-accent-soft/40 transition-colors"
+        >
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="mail" size={20} />
+          </span>
+          <h4 class="mb-2 mt-0 text-ink">Meld je aan</h4>
+          <p class="text-sm text-ink-muted m-0">Vier stappen. Bewuste keuze, persoonlijke welkomstmail met je deelnemerscode.</p>
         </a>
       </div>
     </div>
@@ -215,6 +185,22 @@ import { url } from '../lib/url.ts';
         Naar het aanmeldformulier
         <Icon name="arrow-right" size={18} />
       </a>
+    </div>
+  </section>
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="border border-rule rounded-md p-6 bg-white/40">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+            <Icon name="mail" size={20} />
+          </span>
+          <h2 class="mt-0 mb-0 text-xl font-sans font-semibold text-ink">Communicatie via Teams</h2>
+        </div>
+        <p class="text-ink-muted m-0 max-w-prose">
+          Alle communicatie buiten de zaal verloopt via Microsoft Teams, in een eigen kanaal voor dit programma. Geen e-mail. Na aanmelding ontvang je een uitnodiging voor het kanaal.
+        </p>
+      </div>
     </div>
   </section>
 </BaseLayout>

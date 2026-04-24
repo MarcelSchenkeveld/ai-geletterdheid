@@ -1,21 +1,86 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import PlaceholderSection from '../../components/PlaceholderSection.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
 ---
 <BaseLayout
   title="Zelftest"
-  description="Waarom de zelftest er is, wanneer je hem invult en wat er met je antwoorden gebeurt."
+  description="Een korte spiegel voor jezelf. Je vult hem twee keer in, in werkweek 1 en werkweek 7, en ziet je eigen ontwikkeling."
 >
-  <PlaceholderSection
-    title="Zelftest"
-    lede="De zelftest is op zichzelf een leermoment: je maakt je eigen positie zichtbaar voor jezelf. Je vult hem twee keer in, aan het begin en aan het einde van het programma."
-    items={[
-      "Waarom: eigenaarschap over je eigen leerproces, afstemming van het aanbod, voortgang zichtbaar maken",
-      "Wanneer: in werkweek 1 en werkweek 7 (en eventueel een tussenmeting)",
-      "Hoe: via Microsoft Forms, ingebedde link volgt",
-      "Wat met je antwoorden: we werken met deelnemerscodes, niet met namen. AVG-proof by design.",
-      "Terugkoppeling: je ziet zelf je groei tussen begin en eind; geaggregeerde inzichten worden teruggekoppeld in werkweek 7",
-    ]}
-    note="Forms-link wordt ingebed zodra het instrument klaar is."
-  />
+  <section class="py-12 md:py-16">
+    <div class="max-w-3xl">
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Zelftest</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Een spiegel voor jezelf, geen toets</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        De zelftest laat je zien waar je nu staat met AI in je werk, en helpt je straks zien wat er in zeven weken is veranderd. Geen cijfer, geen oordeel. Een spiegel.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-10 md:py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-4xl">
+        <div class="border border-rule rounded-md p-5 bg-white/40">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="clock" size={20} />
+          </span>
+          <h2 class="mt-0 mb-2 text-base font-sans font-semibold text-ink">Zes tot acht minuten</h2>
+          <p class="text-sm text-ink-muted m-0">Twintig korte vragen en één open vraag aan het einde. Geen voorbereiding nodig.</p>
+        </div>
+        <div class="border border-rule rounded-md p-5 bg-white/40">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="calendar" size={20} />
+          </span>
+          <h2 class="mt-0 mb-2 text-base font-sans font-semibold text-ink">Twee keer invullen</h2>
+          <p class="text-sm text-ink-muted m-0">In werkweek 1, minimaal 48 uur vóór de startbijeenkomst, en in werkweek 7 bij de afronding.</p>
+        </div>
+        <div class="border border-rule rounded-md p-5 bg-white/40">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent mb-3">
+            <Icon name="check" size={20} />
+          </span>
+          <h2 class="mt-0 mb-2 text-base font-sans font-semibold text-ink">Zonder cijfer</h2>
+          <p class="text-sm text-ink-muted m-0">Voor het grootste deel self-assessment. Vier kennisvragen zitten erbij, zodat je ook ziet wat je feitelijk weet.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Wat er met je antwoorden gebeurt</h2>
+      <div class="space-y-4 text-lg leading-relaxed max-w-prose">
+        <p class="m-0">In het cohort-overzicht dat we in de startbijeenkomst en in werkweek 7 bespreken, zie je nooit antwoorden van een ander persoonlijk. De rapportage is op cohort-niveau: percentages, gemiddelden, een paar thema's uit de open vraag.</p>
+        <p class="m-0">Je individuele antwoorden worden alleen verwerkt onder een eigen code, losgekoppeld van je naam. Individuele terugkoppeling gebeurt alleen als je daar zelf om vraagt, in een gesprek met je docent.</p>
+        <p class="m-0">De zelftest opent in Microsoft Forms binnen de Fontys-omgeving. Je Fontys-mailadres wordt automatisch geregistreerd zodat de meting in werkweek 7 aan die van werkweek 1 gekoppeld kan worden; daarna pseudonimiseren we dat buiten het formulier.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <h2 class="text-2xl md:text-3xl mb-6 mt-0">Wat je aan de zelftest hebt</h2>
+      <ul class="space-y-3 list-disc pl-6 text-ink-muted max-w-prose">
+        <li>Je ziet waar je nu staat, op de drie <a href={url('/vaardigheden/')}>vaardigheden</a> van het programma.</li>
+        <li>Je levert input voor de spiegel in de startbijeenkomst; daar bespreken we samen wat opvalt.</li>
+        <li>In werkweek 7 zie je wat er in zeven weken is veranderd; dat is zichtbare groei, niet een gevoel.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="py-10 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="border border-accent-soft bg-accent-soft/40 rounded-md p-6 md:p-8">
+        <h2 class="mt-0 mb-3 text-2xl">Naar de zelftest</h2>
+        <p class="text-ink-muted mb-6 m-0 max-w-prose">De eerste afname staat open zodra de aanmelding loopt. Je vult hem uiterlijk 48 uur vóór de startbijeenkomst in.</p>
+        <a
+          href="#TODO-zelftest-link"
+          class="inline-flex items-center gap-2 px-5 py-3 bg-accent text-bg no-underline hover:bg-accent-hover rounded-sm font-medium"
+        >
+          Open de zelftest
+          <Icon name="arrow-right" size={18} />
+        </a>
+        <p class="text-sm text-ink-muted italic mt-4 m-0">Link volgt; zodra het formulier actief is, staat hij hier.</p>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
