@@ -7,14 +7,12 @@
 
 @theme {
   --color-bg: #F7F3EC;
-  --color-ink: #1B2540;
-  --color-ink-muted: #575E75;
-  --color-accent: #1B2540;
-  --color-accent-hover: #10172B;
+  --color-ink: #1F1B17;
+  --color-ink-muted: #5A5148;
+  --color-accent: #2F4A3A;
+  --color-accent-hover: #1F332A;
   --color-rule: #E3DCCF;
-  --color-accent-soft: #E4E2EC;
-  --color-lavender: #7C77A9;
-  --color-sage: #5E857E;
+  --color-accent-soft: #D9E2D7;
 
   --font-serif: "Source Serif 4 Variable", ui-serif, Georgia, serif;
   --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
