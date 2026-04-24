@@ -5,45 +5,89 @@ export interface Props {
   class?: string;
 }
 
-const { variant = 'horizontal', markSize = 38, class: className = '' } = Astro.props;
+const { variant = 'horizontal', markSize = 44, class: className = '' } = Astro.props;
 
-// Beeldmerk: een serif-ampersand. Betekent "en" — jij & AI, kennis & oordeel,
-// vraag & antwoord. Typografisch fossiel (ligatuur van Latijn "et"), daarmee
-// verlengde van de serif-typografie van de site. Geen tech-cliché.
-const markBoxStyle = `width: ${markSize}px; height: ${markSize}px;`;
-const markGlyphStyle = `font-size: ${Math.round(markSize * 0.7)}px; line-height: 1; padding-bottom: 0.05em;`;
+// Beeldmerk "De Lezer": drie elementen in compositie.
+// - Cirkel (dun): kader van onderzoek, de casus waarbinnen je denkt
+// - Asymmetrische S-curve (dik): de dialoog tussen jou en AI, die het kader verlaat
+// - Vaste stip aan het eind van de curve: het moment van eigen oordeel
+// De curve begint binnen de cirkel en eindigt daarbuiten: inzicht blijft niet theoretisch,
+// het landt in je eigen werk (de vertaalslagen naar de Business Challenge).
+// Alles in currentColor zodat het zich naar de context schikt.
 ---
 {variant === 'horizontal' && (
   <span class:list={['inline-flex items-center gap-3 md:gap-4', className]}>
-    <span
-      class="inline-flex items-center justify-center rounded-md bg-accent text-bg font-serif italic flex-shrink-0"
-      style={`${markBoxStyle} ${markGlyphStyle}`}
+    <svg
+      width={markSize}
+      height={markSize}
+      viewBox="0 0 80 80"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
       aria-hidden="true"
-    >&amp;</span>
+      class="flex-shrink-0 text-accent"
+    >
+      <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="2.5"/>
+      <path
+        d="M 18 26 Q 40 32 40 42 Q 40 52 64 54"
+        stroke="currentColor"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <circle cx="64" cy="54" r="5" fill="currentColor"/>
+    </svg>
     <span class="leading-none">
-      <span class="block font-serif text-xl md:text-[1.35rem] text-ink leading-none">AI-geletterdheid</span>
-      <span class="block text-[0.68rem] md:text-xs text-ink-muted uppercase tracking-[0.12em] mt-1.5 font-sans font-medium">Fontys Commerciële Economie</span>
+      <span class="block font-serif text-xl md:text-[1.4rem] text-ink leading-[1.05]">AI-geletterdheid</span>
+      <span class="block text-[0.66rem] md:text-[0.7rem] text-ink-muted uppercase tracking-[0.18em] mt-2 font-sans font-medium">Fontys Commerciële Economie</span>
     </span>
   </span>
 )}
 {variant === 'stacked' && (
-  <span class:list={['inline-flex flex-col items-center gap-3', className]}>
-    <span
-      class="inline-flex items-center justify-center rounded-md bg-accent text-bg font-serif italic"
-      style={`${markBoxStyle} ${markGlyphStyle}`}
+  <span class:list={['inline-flex flex-col items-center gap-4', className]}>
+    <svg
+      width={markSize}
+      height={markSize}
+      viewBox="0 0 80 80"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
       aria-hidden="true"
-    >&amp;</span>
+      class="text-accent"
+    >
+      <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="2.5"/>
+      <path
+        d="M 18 26 Q 40 32 40 42 Q 40 52 64 54"
+        stroke="currentColor"
+        stroke-width="5"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      />
+      <circle cx="64" cy="54" r="5" fill="currentColor"/>
+    </svg>
     <span class="text-center leading-none">
-      <span class="block font-serif text-2xl md:text-3xl text-ink leading-none">AI-geletterdheid</span>
-      <span class="block text-xs md:text-sm text-ink-muted uppercase tracking-[0.12em] mt-2 font-sans font-medium">Fontys Commerciële Economie</span>
+      <span class="block font-serif text-3xl md:text-4xl text-ink leading-[1.05]">AI-geletterdheid</span>
+      <span class="block text-xs md:text-sm text-ink-muted uppercase tracking-[0.18em] mt-3 font-sans font-medium">Fontys Commerciële Economie</span>
     </span>
   </span>
 )}
 {variant === 'mark' && (
-  <span
-    class:list={['inline-flex items-center justify-center rounded-md bg-accent text-bg font-serif italic', className]}
-    style={`${markBoxStyle} ${markGlyphStyle}`}
+  <svg
+    width={markSize}
+    height={markSize}
+    viewBox="0 0 80 80"
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
     role="img"
     aria-label="AI-geletterdheid beeldmerk"
-  >&amp;</span>
+    class:list={['text-accent', className]}
+  >
+    <circle cx="40" cy="40" r="30" stroke="currentColor" stroke-width="2.5"/>
+    <path
+      d="M 18 26 Q 40 32 40 42 Q 40 52 64 54"
+      stroke="currentColor"
+      stroke-width="5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <circle cx="64" cy="54" r="5" fill="currentColor"/>
+  </svg>
 )}
