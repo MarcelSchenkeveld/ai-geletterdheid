@@ -189,7 +189,21 @@ import { url } from '../lib/url.ts';
   </section>
 
   <section class="py-12 border-t border-rule">
-    <div class="max-w-3xl">
+    <div class="max-w-3xl grid grid-cols-1 md:grid-cols-2 gap-4">
+      <a
+        href={url('/faq/')}
+        class="block border border-rule rounded-md p-6 bg-white/40 no-underline hover:border-accent hover:bg-accent-soft/30 transition-colors group"
+      >
+        <div class="flex items-center gap-3 mb-3">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+            <Icon name="document" size={20} />
+          </span>
+          <h2 class="mt-0 mb-0 text-xl font-sans font-semibold text-ink group-hover:text-accent">Veelgestelde vragen</h2>
+        </div>
+        <p class="text-ink-muted m-0">
+          Antwoorden op wat studenten meestal als eerste vragen. De lijst groeit mee.
+        </p>
+      </a>
       <div class="border border-rule rounded-md p-6 bg-white/40">
         <div class="flex items-center gap-3 mb-3">
           <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
@@ -197,8 +211,8 @@ import { url } from '../lib/url.ts';
           </span>
           <h2 class="mt-0 mb-0 text-xl font-sans font-semibold text-ink">Communicatie via Teams</h2>
         </div>
-        <p class="text-ink-muted m-0 max-w-prose">
-          Alle communicatie buiten de zaal verloopt via Microsoft Teams, in een eigen kanaal voor dit programma. Geen e-mail. Na aanmelding ontvang je een uitnodiging voor het kanaal.
+        <p class="text-ink-muted m-0">
+          Alle communicatie buiten de zaal verloopt via Microsoft Teams, in een eigen kanaal voor dit programma. Geen e-mail. Na aanmelding ontvang je een uitnodiging.
         </p>
       </div>
     </div>

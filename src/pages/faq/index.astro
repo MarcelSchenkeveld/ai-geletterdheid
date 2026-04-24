@@ -1,0 +1,178 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Icon from '../../components/Icon.astro';
+import { url } from '../../lib/url.ts';
+
+interface QA {
+  q: string;
+  a: string;
+}
+
+interface Categorie {
+  titel: string;
+  intro?: string;
+  icon: string;
+  vragen: QA[];
+}
+
+const categorieen: Categorie[] = [
+  {
+    titel: 'Meedoen en praktische zaken',
+    icon: 'flag',
+    vragen: [
+      {
+        q: 'Is meedoen verplicht?',
+        a: 'Nee. Dit programma is facultatief, je kiest zelf of je meedoet. De vaardigheden die je hier opbouwt zijn alleen niet optioneel in het werk dat je straks doet; ze maken je onderzoek, je marketingplan en je Business Challenge beter.',
+      },
+      {
+        q: 'Krijg ik studiepunten?',
+        a: 'Nee, geen extra studiepunten. Wel bewijs dat je direct kunt koppelen aan je ontwikkelportfolio onder Taakgebied 2. Geen extra werk dus; wel extra winst op het werk dat je toch al doet.',
+      },
+      {
+        q: 'Hoeveel tijd kost het per week?',
+        a: 'Eén werksessie van 30 tot 60 minuten binnen het samenwerkend-leren-blok, plus 2 tot 5 uur in eigen tempo. Die eigen-tempo-uren betalen zich voor een groot deel terug in het werk dat je toch al doet voor je BC en andere vakken.',
+      },
+      {
+        q: 'Wat als ik een werksessie mis?',
+        a: 'Meestal los je dat op met een medestudent die je bijpraat; de programma-opbouw is daarop ingericht. De startbijeenkomst (werkweek 1) en de afronding (werkweek 7) zijn belangrijker dan de tussenliggende werksessies; laat het me weten als je die niet kunt halen, dan kijken we wat we doen.',
+      },
+      {
+        q: 'Kan ik me later aanmelden of me weer afmelden?',
+        a: 'Aanmelden kan in de week vóór de startbijeenkomst; daarna graag even contact opnemen. Afhaken kan ook, het is een vrijwillig programma. Laat het dan wel weten via het Teams-kanaal, zodat ik de planning kan bijwerken.',
+      },
+    ],
+  },
+  {
+    titel: 'Hoe we werken',
+    icon: 'compass',
+    vragen: [
+      {
+        q: 'Welke AI-tools gebruik ik in het programma?',
+        a: 'Je bent vrij in je keuze. Werk met wat voor jou logisch is voor de fase waarin je zit: ChatGPT, Claude, Copilot, Gemini, of specifiekere tools voor marketing, copy of data. Eén van de vaardigheden die je oefent is juist: bewust kiezen welke tool past bij welke vraag.',
+      },
+      {
+        q: 'Moet ik een betaald AI-abonnement hebben?',
+        a: 'Nee. De werking van het programma leunt niet op een specifieke betaalde tool. Check wel welke AI-toegang je via Fontys hebt; dat varieert. Als je zelf een abonnement hebt, gebruik dat gerust.',
+      },
+      {
+        q: 'Hoe loopt de communicatie buiten de werksessies?',
+        a: 'Alles verloopt via een Teams-kanaal van het programma. Geen mail. Na je aanmelding ontvang je een uitnodiging voor het kanaal.',
+      },
+      {
+        q: 'Hoef ik niets voor te bereiden voor de startbijeenkomst?',
+        a: 'Eén ding wel: de zelftest invullen, uiterlijk 48 uur vóór de startbijeenkomst. De uitkomsten bespreken we in de zaal; zonder ingevulde zelftest mis je die spiegel. Zie ook de pagina over de zelftest.',
+      },
+    ],
+  },
+  {
+    titel: 'Zelftest en AI-logboek',
+    icon: 'check',
+    vragen: [
+      {
+        q: 'Is de zelftest een toets?',
+        a: 'Nee. Het is een spiegel voor jezelf: je ziet waar je nu staat met AI in je werk. Er is geen cijfer en je hoeft nergens "goed" op te scoren. Alleen vier korte kennisvragen hebben een juist/onjuist-antwoord, vooral zodat we samen zien waar in het cohort nog een blinde vlek zit.',
+      },
+      {
+        q: 'Wat gebeurt er met mijn zelftest-antwoorden?',
+        a: 'In de cohort-rapportage zie je percentages en thema\'s op groepsniveau, nooit antwoorden van iemand persoonlijk. Je individuele antwoorden worden verwerkt onder een eigen code, losgekoppeld van je naam. Individuele terugkoppeling alleen als je daar zelf om vraagt.',
+      },
+      {
+        q: 'Wat is die deelnemerscode?',
+        a: 'Een code die ik aan je Fontys-mailadres koppel, zodat analyses op individueel niveau kunnen zonder dat je naam in Forms of Claude verschijnt. Je krijgt de code in je welkomstmail na aanmelding.',
+      },
+      {
+        q: 'Moet ik echt elk AI-gebruik in mijn logboek zetten?',
+        a: 'Nee, alleen als je er iets serieus mee doet. Reken op drie tot vijf entries per week. Een snelle spellingcheck of een vertaal-vraagje hoef je niet op te schrijven; een copy-iteratie, een analyse of een creatief proces wel.',
+      },
+      {
+        q: 'Waar mag ik mijn logboek bijhouden?',
+        a: 'Vrije keuze. Word, OneNote, Notion, Tana, je notitie-app of op papier — het maakt niet uit. Twee voorwaarden: je vindt het zelf terug (ook over zes weken) en je kunt een stuk eruit snel tonen, bijvoorbeeld in een werksessie.',
+      },
+    ],
+  },
+  {
+    titel: 'Je eigen werk en portfolio',
+    icon: 'target',
+    vragen: [
+      {
+        q: 'Wat bedoel je met een "vertaalslag"?',
+        a: 'Aan het einde van werkweek 4 en werkweek 6 neem je iets van de werkwijze uit de casus mee naar je eigen lopende Business Challenge. Geen aparte opdracht, juist versnelling op het werk dat je toch al doet. Zie de pagina\'s van werkweek 4 en werkweek 6 voor de sturende vragen.',
+      },
+      {
+        q: 'Moet ik een specifieke Business Challenge hebben om mee te kunnen doen?',
+        a: 'Ja, je hebt een lopend BC-traject nodig; anders hebben de twee vertaalslagen geen doelwit. Hoofdfase-studenten hebben dat standaard.',
+      },
+      {
+        q: 'Hoe gebruik ik dit programma voor mijn portfolio?',
+        a: 'Het bewijs dat je opbouwt (je AI-logboek, je casuswerk, je reflecties) is herbruikbaar voor de leeruitkomsten in Taakgebied 2. Je koppelt het zelf aan je portfolio zoals je dat normaal ook doet; de beoordeling loopt via de reguliere portfolio-lijn, niet via dit programma.',
+      },
+    ],
+  },
+];
+---
+<BaseLayout
+  title="Veelgestelde vragen"
+  description="Antwoorden op vragen over meedoen, werkwijze, zelftest en logboek, en hoe dit programma landt in je eigen werk en portfolio."
+>
+  <section class="py-12 md:py-16">
+    <div class="max-w-3xl">
+      <p class="text-sm uppercase tracking-[0.15em] text-ink-muted mb-4 m-0">Veelgestelde vragen</p>
+      <h1 class="text-4xl md:text-5xl leading-[1.05] mb-6 mt-0">Antwoorden op wat studenten meestal vragen</h1>
+      <p class="text-xl text-ink-muted leading-relaxed mb-0 max-w-prose">
+        Deze lijst groeit mee. Vragen die binnenkomen via Teams komen hier terug, zodat een volgende student ze ook kan vinden. Staat jouw vraag er niet bij, zie onderaan.
+      </p>
+    </div>
+  </section>
+
+  {categorieen.map((cat) => (
+    <section class="py-10 md:py-12 border-t border-rule">
+      <div class="max-w-3xl">
+        <div class="flex items-center gap-3 mb-8">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+            <Icon name={cat.icon} size={20} />
+          </span>
+          <h2 class="text-2xl md:text-3xl mt-0 mb-0">{cat.titel}</h2>
+        </div>
+
+        <div class="space-y-3">
+          {cat.vragen.map((qa) => (
+            <details class="border border-rule rounded-md bg-white/40 hover:border-accent transition-colors">
+              <summary class="flex items-start justify-between gap-4 p-5 text-ink hover:text-accent">
+                <span class="font-sans font-medium">{qa.q}</span>
+                <span class="faq-chevron flex-shrink-0 mt-1 transition-transform text-accent" aria-hidden="true">
+                  <Icon name="arrow-right" size={18} />
+                </span>
+              </summary>
+              <div class="px-5 pb-5 pt-0 text-ink-muted leading-relaxed max-w-prose">
+                <p class="m-0">{qa.a}</p>
+              </div>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="py-12 border-t border-rule">
+    <div class="max-w-3xl">
+      <div class="border border-rule rounded-md p-6 md:p-8 bg-white/40">
+        <div class="flex items-center gap-3 mb-3">
+          <span class="inline-flex w-10 h-10 rounded-full bg-accent-soft items-center justify-center text-accent">
+            <Icon name="mail" size={20} />
+          </span>
+          <h2 class="mt-0 mb-0 text-xl font-sans font-semibold text-ink">Staat je vraag er niet bij?</h2>
+        </div>
+        <p class="text-ink-muted m-0 mb-5 max-w-prose">
+          Stel hem in het Teams-kanaal van het programma. Als ik hem vaker zie, komt hij hier terecht. Ben je nog niet aangemeld, dan mag je me ook rechtstreeks mailen via <a href="mailto:m.schenkeveld@fontys.nl">m.schenkeveld@fontys.nl</a>.
+        </p>
+        <a
+          href={url('/aanmelden/')}
+          class="inline-flex items-center gap-2 text-accent hover:text-accent-hover font-medium no-underline"
+        >
+          Naar aanmelden
+          <Icon name="arrow-right" size={16} />
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
